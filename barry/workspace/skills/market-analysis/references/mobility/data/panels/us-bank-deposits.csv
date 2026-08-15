@@ -1,0 +1,321 @@
+year,rank,player,share
+1994,1,"Bank of America, National Association",0.025587
+1994,2,"JPMorgan Chase Bank, National Association",0.014772
+1994,3,"Home Savings of America, FSB",0.012969
+1994,4,"Wells Fargo Bank, National Association",0.012195
+1994,5,"Citibank, National Association",0.010591
+1994,6,"The Chase Manhattan Bank",0.009275
+1994,7,"Great Western Bank",0.00903
+1994,8,"First Fidelity Bank, National Association",0.008129
+1994,9,"First Union National Bank of Florida",0.008036
+1994,10,"NationsBank of Texas, National Association",0.007078
+1995,1,"Bank of America, National Association",0.02384
+1995,2,"JPMorgan Chase Bank, National Association",0.014317
+1995,3,"Wells Fargo Bank, National Association",0.011492
+1995,4,"Citibank, National Association",0.010658
+1995,5,"Home Savings of America, FSB",0.010506
+1995,6,"NationsBank, National Association",0.010442
+1995,7,"The Chase Manhattan Bank",0.009786
+1995,8,"First Union National Bank of Florida",0.008891
+1995,9,"Great Western Bank",0.00881
+1995,10,"NationsBank, National Association (South)",0.008003
+1996,1,"JPMorgan Chase Bank, National Association",0.025174
+1996,2,"Bank of America, National Association",0.024384
+1996,3,"Wells Fargo Bank, National Association",0.021631
+1996,4,"NationsBank, National Association",0.01171
+1996,5,"Citibank, National Association",0.010818
+1996,6,"NationsBank, National Association (South)",0.010613
+1996,7,"Home Savings of America, FSB",0.010245
+1996,8,"PNC Bank, National Association",0.010128
+1996,9,"Barnett Bank, National Association",0.009719
+1996,10,"Fleet National Bank (CERT 2499)",0.009488
+1997,1,"Bank of America, National Association",0.033979
+1997,2,"JPMorgan Chase Bank, National Association",0.026225
+1997,3,"NationsBank, National Association",0.024792
+1997,4,"Wachovia Bank, National Association",0.021963
+1997,5,"Wells Fargo Bank, National Association",0.018546
+1997,6,"U.S. Bank National Association (CERT 5134)",0.013301
+1997,7,"Fleet National Bank (CERT 2499)",0.01177
+1997,8,"NationsBank of Texas, National Association",0.011671
+1997,9,"PNC Bank, National Association",0.011438
+1997,10,"KeyBank, National Association",0.011166
+1998,1,"NationsBank, National Association",0.042231
+1998,2,"Wachovia Bank, National Association",0.035858
+1998,3,"Bank of America, National Association",0.034499
+1998,4,"JPMorgan Chase Bank, National Association",0.027711
+1998,5,"Washington Mutual Bank",0.019164
+1998,6,"Wells Fargo Bank, National Association",0.018034
+1998,7,"U.S. Bank National Association (CERT 5134)",0.01267
+1998,8,"Fleet National Bank (CERT 2499)",0.012213
+1998,9,"PNC Bank, National Association",0.011499
+1998,10,"KeyBank, National Association",0.010497
+1999,1,"Bank of America, National Association",0.076329
+1999,2,"Wachovia Bank, National Association",0.034327
+1999,3,"JPMorgan Chase Bank, National Association",0.026315
+1999,4,"Washington Mutual Bank",0.017395
+1999,5,"Wells Fargo Bank, National Association",0.016989
+1999,6,"U.S. Bank National Association (CERT 5134)",0.012948
+1999,7,"Citibank, National Association",0.011954
+1999,8,"Fleet National Bank (CERT 2558)",0.010781
+1999,9,"Fleet National Bank (CERT 2499)",0.010601
+1999,10,"PNC Bank, National Association",0.010508
+2000,1,"Bank of America, National Association",0.073781
+2000,2,"Wachovia Bank, National Association",0.031869
+2000,3,"JPMorgan Chase Bank, National Association",0.031339
+2000,4,"Fleet National Bank (CERT 2558)",0.020445
+2000,5,"Wells Fargo Bank, National Association",0.016148
+2000,6,"Washington Mutual Bank",0.015565
+2000,7,"SunTrust Bank",0.014223
+2000,8,"Citibank, National Association",0.013608
+2000,9,"U.S. Bank National Association (CERT 5134)",0.012202
+2000,10,"U.S. Bank National Association",0.011833
+2001,1,"Bank of America, National Association",0.073331
+2001,2,"JPMorgan Chase Bank, National Association",0.035056
+2001,3,"Wachovia Bank, National Association",0.02962
+2001,4,"Fleet National Bank (CERT 2558)",0.024118
+2001,5,"U.S. Bank National Association",0.022789
+2001,6,"Citibank, National Association",0.021655
+2001,7,"Washington Mutual Bank",0.020158
+2001,8,"Bank One, National Association",0.01774
+2001,9,"Wells Fargo Bank, National Association",0.016125
+2001,10,"SunTrust Bank",0.014335
+2002,1,"Bank of America, National Association",0.072132
+2002,2,"Wachovia Bank, National Association",0.037438
+2002,3,"JPMorgan Chase Bank, National Association",0.034909
+2002,4,"Washington Mutual Bank",0.028061
+2002,5,"Bank One, National Association",0.025133
+2002,6,"Fleet National Bank (CERT 2558)",0.023513
+2002,7,"U.S. Bank National Association",0.022987
+2002,8,"Citibank, National Association",0.022144
+2002,9,"Wells Fargo Bank, National Association",0.017587
+2002,10,"SunTrust Bank",0.01499
+2003,1,"Bank of America, National Association",0.073033
+2003,2,"Wachovia Bank, National Association",0.040454
+2003,3,"JPMorgan Chase Bank, National Association",0.036377
+2003,4,"Wells Fargo Bank, National Association",0.030152
+2003,5,"Washington Mutual Bank",0.025586
+2003,6,"Fleet National Bank (CERT 2558)",0.024801
+2003,7,"Bank One, National Association",0.024194
+2003,8,"U.S. Bank National Association",0.021851
+2003,9,"Citibank, National Association",0.021774
+2003,10,"SunTrust Bank",0.014622
+2004,1,"Bank of America, National Association",0.076527
+2004,2,"JPMorgan Chase Bank, National Association",0.064117
+2004,3,"Wells Fargo Bank, National Association",0.046139
+2004,4,"Wachovia Bank, National Association",0.044036
+2004,5,"Washington Mutual Bank",0.026953
+2004,6,"Fleet National Bank (CERT 2558)",0.021979
+2004,7,"Citibank, National Association",0.021687
+2004,8,"U.S. Bank National Association",0.020164
+2004,9,"SunTrust Bank",0.014449
+2004,10,"HSBC Bank USA, National Association",0.010049
+2005,1,"Bank of America, National Association",0.090687
+2005,2,"JPMorgan Chase Bank, National Association",0.0652
+2005,3,"Wachovia Bank, National Association",0.049074
+2005,4,"Wells Fargo Bank, National Association",0.047324
+2005,5,"Washington Mutual Bank",0.031304
+2005,6,"Citibank, National Association",0.021702
+2005,7,"U.S. Bank National Association",0.018865
+2005,8,"SunTrust Bank",0.018209
+2005,9,"HSBC Bank USA, National Association",0.010828
+2005,10,"World Savings Bank, FSB",0.009692
+2006,1,"Bank of America, National Association",0.090493
+2006,2,"JPMorgan Chase Bank, National Association",0.067203
+2006,3,"Wachovia Bank, National Association",0.047377
+2006,4,"Wells Fargo Bank, National Association",0.040939
+2006,5,"Washington Mutual Bank",0.032922
+2006,6,"Citibank, National Association",0.030875
+2006,7,"SunTrust Bank",0.017821
+2006,8,"U.S. Bank National Association",0.017818
+2006,9,"Regions Bank",0.013933
+2006,10,"Truist Bank",0.011976
+2007,1,"Bank of America, National Association",0.09047
+2007,2,"JPMorgan Chase Bank, National Association",0.067191
+2007,3,"Wachovia Bank, National Association",0.059473
+2007,4,"Wells Fargo Bank, National Association",0.03939
+2007,5,"Citibank, National Association",0.032658
+2007,6,"Washington Mutual Bank",0.02684
+2007,7,"U.S. Bank National Association",0.017629
+2007,8,"SunTrust Bank",0.016403
+2007,9,"Regions Bank",0.01242
+2007,10,"National City Bank",0.012016
+2008,1,"Bank of America, National Association",0.099962
+2008,2,"JPMorgan Chase Bank, National Association",0.092094
+2008,3,"Wachovia Bank, National Association",0.053156
+2008,4,"Wells Fargo Bank, National Association",0.040837
+2008,5,"Citibank, National Association",0.031852
+2008,6,"U.S. Bank National Association",0.019203
+2008,7,"SunTrust Bank",0.015021
+2008,8,"National City Bank",0.013456
+2008,9,"Regions Bank",0.011814
+2008,10,"Truist Bank",0.011801
+2009,1,"Bank of America, National Association",0.107151
+2009,2,"JPMorgan Chase Bank, National Association",0.081224
+2009,3,"Wells Fargo Bank, National Association",0.053373
+2009,4,"Wachovia Bank, National Association",0.041392
+2009,5,"Citibank, National Association",0.032591
+2009,6,"PNC Bank, National Association",0.023596
+2009,7,"U.S. Bank National Association",0.022006
+2009,8,"SunTrust Bank",0.015557
+2009,9,"TD Bank, National Association",0.01436
+2009,10,"Truist Bank",0.014345
+2010,1,"Bank of America, National Association",0.105944
+2010,2,"Wells Fargo Bank, National Association",0.094583
+2010,3,"JPMorgan Chase Bank, National Association",0.085186
+2010,4,"Citibank, National Association",0.032439
+2010,5,"U.S. Bank National Association",0.023729
+2010,6,"PNC Bank, National Association",0.022831
+2010,7,"TD Bank, National Association",0.017219
+2010,8,"SunTrust Bank",0.015494
+2010,9,"Truist Bank",0.012851
+2010,10,"HSBC Bank USA, National Association",0.012128
+2011,1,"Bank of America, National Association",0.110546
+2011,2,"JPMorgan Chase Bank, National Association",0.094967
+2011,3,"Wells Fargo Bank, National Association",0.094708
+2011,4,"Citibank, National Association",0.040153
+2011,5,"U.S. Bank National Association",0.024985
+2011,6,"PNC Bank, National Association",0.02126
+2011,7,"TD Bank, National Association",0.017402
+2011,8,"SunTrust Bank",0.01476
+2011,9,"The Bank of New York Mellon",0.014555
+2011,10,"Truist Bank",0.014448
+2012,1,"Bank of America, National Association",0.110213
+2012,2,"Wells Fargo Bank, National Association",0.096827
+2012,3,"JPMorgan Chase Bank, National Association",0.095386
+2012,4,"Citibank, National Association",0.04377
+2012,5,"U.S. Bank National Association",0.024776
+2012,6,"PNC Bank, National Association",0.022337
+2012,7,"Capital One, National Association",0.020098
+2012,8,"TD Bank, National Association",0.017869
+2012,9,"Truist Bank",0.014399
+2012,10,"SunTrust Bank",0.014053
+2013,1,"Bank of America, National Association",0.105194
+2013,2,"JPMorgan Chase Bank, National Association",0.102069
+2013,3,"Wells Fargo Bank, National Association",0.101749
+2013,4,"Citibank, National Association",0.045856
+2013,5,"U.S. Bank National Association",0.025019
+2013,6,"PNC Bank, National Association",0.02229
+2013,7,"Capital One, National Association",0.019024
+2013,8,"TD Bank, National Association",0.01873
+2013,9,"Truist Bank",0.013576
+2013,10,"SunTrust Bank",0.013514
+2014,1,"Bank of America, National Association",0.109561
+2014,2,"JPMorgan Chase Bank, National Association",0.106754
+2014,3,"Wells Fargo Bank, National Association",0.101766
+2014,4,"Citibank, National Association",0.043649
+2014,5,"U.S. Bank National Association",0.025253
+2014,6,"PNC Bank, National Association",0.022084
+2014,7,"TD Bank, National Association",0.018362
+2014,8,"Capital One, National Association",0.018351
+2014,9,"SunTrust Bank",0.013691
+2014,10,"The Bank of New York Mellon",0.013215
+2015,1,"Bank of America, National Association",0.110614
+2015,2,"Wells Fargo Bank, National Association",0.102161
+2015,3,"JPMorgan Chase Bank, National Association",0.098188
+2015,4,"Citibank, National Association",0.04113
+2015,5,"U.S. Bank National Association",0.025496
+2015,6,"PNC Bank, National Association",0.022442
+2015,7,"TD Bank, National Association",0.018937
+2015,8,"Capital One, National Association",0.018519
+2015,9,"Truist Bank",0.014299
+2015,10,"SunTrust Bank",0.013909
+2016,1,"Bank of America, National Association",0.10762
+2016,2,"JPMorgan Chase Bank, National Association",0.105588
+2016,3,"Wells Fargo Bank, National Association",0.104093
+2016,4,"Citibank, National Association",0.040273
+2016,5,"U.S. Bank National Association",0.026943
+2016,6,"PNC Bank, National Association",0.021843
+2016,7,"TD Bank, National Association",0.019553
+2016,8,"Capital One, National Association",0.018533
+2016,9,"Truist Bank",0.014319
+2016,10,"Charles Schwab Bank",0.01397
+2017,1,"Bank of America, National Association",0.107116
+2017,2,"JPMorgan Chase Bank, National Association",0.104686
+2017,3,"Wells Fargo Bank, National Association",0.103686
+2017,4,"Citibank, National Association",0.040042
+2017,5,"U.S. Bank National Association",0.026919
+2017,6,"PNC Bank, National Association",0.021638
+2017,7,"TD Bank, National Association",0.020282
+2017,8,"Capital One, National Association",0.018486
+2017,9,"Charles Schwab Bank",0.013971
+2017,10,"SunTrust Bank",0.013503
+2018,1,"Bank of America, National Association",0.10837
+2018,2,"Wells Fargo Bank, National Association",0.10114
+2018,3,"JPMorgan Chase Bank, National Association",0.101045
+2018,4,"Citibank, National Association",0.03988
+2018,5,"U.S. Bank National Association",0.025855
+2018,6,"PNC Bank, National Association",0.020836
+2018,7,"TD Bank, National Association",0.020474
+2018,8,"Capital One, National Association",0.018785
+2018,9,"Charles Schwab Bank",0.017181
+2018,10,"Truist Bank",0.013292
+2019,1,"Bank of America, National Association",0.105469
+2019,2,"JPMorgan Chase Bank, National Association",0.101878
+2019,3,"Wells Fargo Bank, National Association",0.099748
+2019,4,"Citibank, National Association",0.040307
+2019,5,"Truist Bank",0.026123
+2019,6,"U.S. Bank National Association",0.026087
+2019,7,"PNC Bank, National Association",0.021241
+2019,8,"TD Bank, National Association",0.02057
+2019,9,"Capital One, National Association",0.019309
+2019,10,"Charles Schwab Bank",0.015141
+2020,1,"JPMorgan Chase Bank, National Association",0.114312
+2020,2,"Bank of America, National Association",0.109678
+2020,3,"Wells Fargo Bank, National Association",0.088081
+2020,4,"Citibank, National Association",0.04037
+2020,5,"U.S. Bank National Association",0.025643
+2020,6,"Truist Bank",0.024152
+2020,7,"PNC Bank, National Association",0.022715
+2020,8,"TD Bank, National Association",0.021463
+2020,9,"Charles Schwab Bank",0.019395
+2020,10,"Capital One, National Association",0.018523
+2021,1,"JPMorgan Chase Bank, National Association",0.11773
+2021,2,"Bank of America, National Association",0.11079
+2021,3,"Wells Fargo Bank, National Association",0.082265
+2021,4,"Citibank, National Association",0.040228
+2021,5,"PNC Bank, National Association",0.025022
+2021,6,"U.S. Bank National Association",0.024453
+2021,7,"Truist Bank",0.023413
+2021,8,"Charles Schwab Bank",0.021475
+2021,9,"TD Bank, National Association",0.020294
+2021,10,"Goldman Sachs Bank USA",0.017383
+2022,1,"JPMorgan Chase Bank, National Association",0.112983
+2022,2,"Bank of America, National Association",0.108205
+2022,3,"Wells Fargo Bank, National Association",0.078477
+2022,4,"Citibank, National Association",0.043579
+2022,5,"U.S. Bank National Association",0.025425
+2022,6,"PNC Bank, National Association",0.02477
+2022,7,"Truist Bank",0.023831
+2022,8,"Capital One, National Association",0.019908
+2022,9,"Goldman Sachs Bank USA",0.019742
+2022,10,"TD Bank, National Association",0.018493
+2023,1,"JPMorgan Chase Bank, National Association",0.116781
+2023,2,"Bank of America, National Association",0.109423
+2023,3,"Wells Fargo Bank, National Association",0.079791
+2023,4,"Citibank, National Association",0.042841
+2023,5,"U.S. Bank National Association",0.029639
+2023,6,"PNC Bank, National Association",0.024554
+2023,7,"Truist Bank",0.023353
+2023,8,"Capital One, National Association",0.021434
+2023,9,"Goldman Sachs Bank USA",0.020802
+2023,10,"TD Bank, National Association",0.017404
+2024,1,"JPMorgan Chase Bank, National Association",0.114396
+2024,2,"Bank of America, National Association",0.107867
+2024,3,"Wells Fargo Bank, National Association",0.079351
+2024,4,"Citibank, National Association",0.042421
+2024,5,"U.S. Bank National Association",0.029236
+2024,6,"PNC Bank, National Association",0.024254
+2024,7,"Truist Bank",0.022518
+2024,8,"Capital One, National Association",0.02158
+2024,9,"Goldman Sachs Bank USA",0.020867
+2024,10,"TD Bank, National Association",0.016646
+2025,1,"JPMorgan Chase Bank, National Association",0.116717
+2025,2,"Bank of America, National Association",0.10562
+2025,3,"Wells Fargo Bank, National Association",0.079518
+2025,4,"Citibank, National Association",0.04478
+2025,5,"U.S. Bank National Association",0.028402
+2025,6,"Capital One, National Association",0.027169
+2025,7,"PNC Bank, National Association",0.024228
+2025,8,"Goldman Sachs Bank USA",0.022549
+2025,9,"Truist Bank",0.022044
+2025,10,"TD Bank, National Association",0.015266

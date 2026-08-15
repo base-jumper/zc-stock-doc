@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Wrapper: resolves to the repo even when invoked via a symlink on PATH.
+self="$(readlink -f "${BASH_SOURCE[0]}")"
+root="$(cd "$(dirname "$self")/../.." && pwd)"
+venv_py="$root/.venv/yahoo-finance/bin/python"
+if [[ ! -x "$venv_py" ]]; then
+  echo "yfin: missing virtualenv at $venv_py" >&2
+  echo "      run scripts/bin/install.sh to create it." >&2
+  exit 1
+fi
+exec "$venv_py" "$root/skills/yahoo-finance/scripts/yfin.py" "$@"

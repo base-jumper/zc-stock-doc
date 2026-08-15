@@ -1,0 +1,13 @@
+year,penetration
+# US tablet ownership, share of US adults who own a tablet computer (decimal).
+# 2010-2016 Pew standalone readings (2011 is an approximate early-2011 Pew reading).
+# 2019/2021 derived from Pew age/generation breakdowns (no single Pew trend line after 2016); approximate.
+2010,0.03
+2011,0.10
+2012,0.25
+2013,0.34
+2014,0.42
+2015,0.45
+2016,0.51
+2019,0.52
+2021,0.53

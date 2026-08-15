@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Wrapper: resolves to the repo even when invoked via a symlink on PATH.
+self="$(readlink -f "${BASH_SOURCE[0]}")"
+root="$(cd "$(dirname "$self")/../.." && pwd)"
+exec python3 "$root/skills/stock-analysis/scripts/organic_growth.py" "$@"

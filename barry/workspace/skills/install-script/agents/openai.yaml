@@ -1,0 +1,4 @@
+interface:
+  display_name: "Install Script"
+  short_description: "Install Python scripts as CLI commands"
+  default_prompt: "Use $install-script to make a repository script runnable from the command line."

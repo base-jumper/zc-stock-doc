@@ -1,0 +1,149 @@
+#	ticker      	strategy            	qv	cqv	agent	company
+1	NVDA        	rule-breakers       	0.842	0.788	0.78	NVIDIA Corporation
+2	INTU        	wonderful-and-fair  	0.819	0.691	0.76	Intuit Inc.
+3	ADYEN.AS    	wonderful-and-fair  	0.664	0.619	0.82	Adyen N.V.
+4	VPR.AX      	freeroll            	0.73	0.588	0.7	Volt Group Limited
+5	AGN.AX      	rule-breakers       	0.729	0.587	0.32	Argenica Therapeutics Limited
+6	NYXH.BR     	rule-breakers       	0.695	0.574	0.54	Nyxoah SA
+7	NXE         	rule-breakers       	0.651	0.569	0.56	NexGen Energy Ltd.
+8	EVO.ST      	cash-cow            	0.564	0.517	0.78	Evolution AB
+9	CGS.AX      	rule-breakers       	0.601	0.511	0.68	Cogstate Limited
+10	NVO         	wonderful-and-fair  	0.576	0.507	0.62	Novo Nordisk A/S
+11	TOST        	rule-breakers       	0.554	0.507	0.64	Toast, Inc.
+12	MAPMYINDIA.NS	wonderful-and-fair  	0.588	0.504	0.72	C. E. Info Systems Limited (MapmyIndia Mappls)
+13	MSFT        	wonderful-and-fair  	0.568	0.501	0.74	Microsoft Corporation
+14	RPL.AX      	cash-cow            	0.59	0.492	0.7	Regal Partners Limited
+15	EQT.ST      	rule-breakers       	0.549	0.491	0.68	EQT AB
+16	HMC.AX      	freeroll            	0.566	0.487	0.72	HMC Capital Limited
+17	UBER        	cash-cow            	0.56	0.486	0.72	Uber Technologies, Inc.
+18	CSU.TO      	wonderful-and-fair  	0.557	0.481	0.74	Constellation Software Inc.
+19	GOOG        	wonderful-and-fair  	0.523	0.479	0.73	Alphabet Inc.
+20	NFLX        	wonderful-and-fair  	0.545	0.475	0.74	Netflix, Inc.
+21	CSL.AX      	cash-cow            	0.568	0.474	0.62	CSL Limited
+22	328130.KQ   	rule-breakers       	0.581	0.466	0.52	Lunit Inc.
+23	TRI         	cash-cow            	0.53	0.464	0.66	Thomson Reuters Corporation
+24	VST         	rule-breakers       	0.51	0.463	0.69	Vistra Corp.
+25	PNG.TO      	rule-breakers       	0.545	0.46	0.6	Kraken Robotics Inc.
+26	DCBO.TO     	wonderful-and-fair  	0.543	0.456	0.66	Docebo Inc.
+27	V           	cash-cow            	0.498	0.456	0.62	Visa Inc.
+28	ASSA-B.ST   	cash-cow            	0.503	0.455	0.65	ASSA ABLOY AB
+29	ASML        	wonderful-and-fair  	0.504	0.451	0.68	ASML Holding N.V.
+30	CWR.L       	rule-breakers       	0.547	0.45	0.46	Ceres Power Holdings plc
+31	GEV         	rule-breakers       	0.499	0.448	0.6	GE Vernova Inc.
+32	USB         	cash-cow            	0.498	0.444	0.7	U.S. Bancorp
+33	XRO.AX      	rule-breakers       	0.502	0.444	0.7	Xero Limited
+34	SAAB-B.ST   	rule-breakers       	0.502	0.442	0.58	Saab AB
+35	9999.HK     	cash-cow            	0.487	0.441	0.8	NetEase, Inc.
+36	GQG.AX      	cash-cow            	0.528	0.438	0.67	GQG Partners Inc.
+37	RELX        	wonderful-and-fair  	0.52	0.436	0.78	RELX PLC
+38	TTAN        	rule-breakers       	0.462	0.428	0.68	ServiceTitan, Inc.
+39	NEX.PA      	wonderful-and-fair  	0.511	0.425	0.54	Nexans S.A.
+40	SPGI        	wonderful-and-fair  	0.487	0.425	0.55	S&P Global Inc.
+41	NG.L        	wonderful-and-fair  	0.486	0.419	0.62	National Grid plc
+42	ULVR.L      	cash-cow            	0.466	0.419	0.72	Unilever PLC
+43	CLF         	freeroll            	0.517	0.417	0.58	Cleveland-Cliffs Inc.
+44	700.HK      	cash-cow            	0.475	0.414	0.74	Tencent Holdings Limited
+45	KGH.L       	cash-cow            	0.48	0.411	0.61	Knights Group Holdings plc
+46	PUB.PA      	cash-cow            	0.488	0.411	0.72	Publicis Groupe S.A.
+47	HLMA.L      	wonderful-and-fair  	0.45	0.406	0.68	Halma plc
+48	SEB-A.ST    	cash-cow            	0.47	0.404	0.62	Skandinaviska Enskilda Banken AB
+49	CEG         	wonderful-and-fair  	0.475	0.403	0.72	Constellation Energy Corporation
+50	AYA.AX      	rule-breakers       	0.5	0.4	0.45	Artrya Limited
+51	ALFEN.AS    	rule-breakers       	0.483	0.393	0.48	Alfen N.V.
+52	SU.PA       	wonderful-and-fair  	0.456	0.392	0.64	Schneider Electric S.E.
+53	AMZN        	wonderful-and-fair  	0.439	0.386	0.7	Amazon.com, Inc.
+54	WBT.AX      	rule-breakers       	0.475	0.386	0.56	Weebit Nano Limited
+55	SHL.AX      	cash-cow            	0.449	0.384	0.62	Sonic Healthcare Limited
+56	SN          	rule-breakers       	0.434	0.383	0.63	SharkNinja, Inc.
+57	RMD.AX      	cash-cow            	0.432	0.382	0.78	ResMed Inc.
+58	SSE.L       	wonderful-and-fair  	0.45	0.382	0.62	SSE plc
+59	SPOT        	rule-breakers       	0.422	0.381	0.66	Spotify Technology S.A.
+60	ACL.AX      	cash-cow            	0.449	0.377	0.58	Australian Clinical Labs Limited
+61	ETN         	wonderful-and-fair  	0.428	0.375	0.7	Eaton Corporation plc
+62	IBE.MC      	wonderful-and-fair  	0.425	0.371	0.62	Iberdrola, S.A.
+63	INVE-B.ST   	wonderful-and-fair  	0.409	0.365	0.43	Investor AB
+64	4DX.AX      	rule-breakers       	0.443	0.364	0.58	4DMedical Limited
+65	LR.PA       	cash-cow            	0.412	0.362	0.66	Legrand SA
+66	NIC.AX      	freeroll            	0.429	0.362	0.54	Nickel Industries Limited
+67	SDR.AX      	rule-breakers       	0.398	0.36	0.58	SiteMinder Limited
+68	BEP.UN.TO   	wonderful-and-fair  	0.421	0.359	0.6	Brookfield Renewable Partners L.P.
+69	HUBB        	wonderful-and-fair  	0.398	0.358	0.67	Hubbell Incorporated
+70	9501.T      	freeroll            	0.432	0.354	0.46	Tokyo Electric Power Company Holdings, Incorporated
+71	WTC.AX      	rule-breakers       	0.394	0.354	0.66	WiseTech Global Limited
+72	4478.T      	rule-breakers       	0.415	0.353	0.55	freee K.K.
+73	A7RU.SI     	cash-cow            	0.407	0.348	0.58	Keppel Infrastructure Trust
+74	TRN.MI      	wonderful-and-fair  	0.407	0.347	0.64	Terna S.p.A.
+75	ENEL.MI     	cash-cow            	0.403	0.346	0.58	Enel S.p.A.
+76	ENR.DE      	rule-breakers       	0.428	0.344	0.56	Siemens Energy AG
+77	RWE.DE      	wonderful-and-fair  	0.398	0.338	0.5	RWE Aktiengesellschaft
+78	U96.SI      	wonderful-and-fair  	0.417	0.333	0.55	Sembcorp Industries Ltd
+79	VWS.CO      	wonderful-and-fair  	0.398	0.333	0.56	Vestas Wind Systems A/S
+80	ENGI.PA     	wonderful-and-fair  	0.397	0.332	0.58	Engie SA
+81	EOAN.DE     	wonderful-and-fair  	0.384	0.329	0.52	E.ON SE
+82	DOCS        	cash-cow            	0.368	0.328	0.58	Doximity, Inc.
+83	ONT.L       	rule-breakers       	0.39	0.328	0.56	Oxford Nanopore Technologies plc
+84	REDE.MC     	wonderful-and-fair  	0.362	0.325	0.48	Redeia Corporación, S.A. (market symbol RED.MC)
+85	BEPC.TO     	wonderful-and-fair  	0.38	0.324	0.56	Brookfield Renewable Corporation
+86	ATCO-A.ST   	wonderful-and-fair  	0.351	0.323	0.58	Atlas Copco AB
+87	SAND.ST     	cash-cow            	0.358	0.317	0.66	Sandvik AB
+88	ABBN.SW     	wonderful-and-fair  	0.368	0.316	0.56	ABB Ltd
+89	DASH        	rule-breakers       	0.34	0.309	0.52	DoorDash, Inc.
+90	RMS.AX      	cash-cow            	0.361	0.305	0.58	Ramelius Resources Limited
+91	GNE.AX      	cash-cow            	0.34	0.297	0.55	Genesis Energy Limited
+92	BICO.ST     	freeroll            	0.363	0.295	0.46	BICO Group AB (publ)
+93	PRY.MI      	wonderful-and-fair  	0.346	0.293	0.54	Prysmian S.p.A.
+94	VOLV-B.ST   	cash-cow            	0.31	0.287	0.62	AB Volvo
+95	NETWEB.NS   	rule-breakers       	0.349	0.286	0.42	Netweb Technologies India Limited
+96	APA.AX      	cash-cow            	0.326	0.285	0.54	APA Group
+97	CAT.AX      	rule-breakers       	0.314	0.285	0.52	Catapult Sports Ltd
+98	CEN.NZ      	cash-cow            	0.334	0.284	0.56	Contact Energy Limited
+99	AGL.AX      	freeroll            	0.328	0.279	0.62	AGL Energy Limited
+100	EDP.LS      	wonderful-and-fair  	0.337	0.279	0.46	EDP, S.A.
+101	PME.AX      	wonderful-and-fair  	0.314	0.278	0.65	Pro Medicus Limited
+102	SNAP        	rule-breakers       	0.314	0.278	0.5	Snap Inc.
+103	IFT.NZ      	freeroll            	0.308	0.277	0.55	Infratil Limited
+104	IFX.DE      	rule-breakers       	0.318	0.275	0.56	Infineon Technologies AG
+105	ON          	wonderful-and-fair  	0.326	0.271	0.52	ON Semiconductor Corporation
+106	STO.AX      	cash-cow            	0.329	0.268	0.46	Santos Limited
+107	9503.T      	cash-cow            	0.314	0.267	0.56	The Kansai Electric Power Company, Incorporated
+108	FORTUM.HE   	cash-cow            	0.311	0.267	0.48	Fortum Oyj
+109	H.TO        	wonderful-and-fair  	0.314	0.266	0.45	Hydro One Limited
+110	WDS.AX      	cash-cow            	0.31	0.266	0.52	Woodside Energy Group Ltd
+111	FTS.TO      	wonderful-and-fair  	0.306	0.264	0.56	Fortis Inc.
+112	ORG.AX      	freeroll            	0.308	0.264	0.64	Origin Energy Limited
+113	ELI.BR      	wonderful-and-fair  	0.307	0.263	0.52	Elia Group SA/NV
+114	NPI.TO      	cash-cow            	0.292	0.256	0.42	Northland Power Inc.
+115	RKN.AX      	freeroll            	0.304	0.256	0.58	Reckon Limited
+116	ENIC        	cash-cow            	0.321	0.255	0.55	Enel Chile S.A.
+117	IFT.AX      	freeroll            	0.292	0.242	0.48	Infratil Limited
+118	GAW.L       	cash-cow            	0.264	0.239	0.62	Games Workshop Group PLC
+119	HBM         	wonderful-and-fair  	0.252	0.233	0.55	Hudbay Minerals Inc.
+120	CEN.AX      	wonderful-and-fair  	0.267	0.222	0.47	Contact Energy Limited
+121	MEL.NZ      	cash-cow            	0.246	0.211	0.45	Meridian Energy Limited
+122	NYKD.OL     	freeroll            	0.248	0.208	0.55	Nykode Therapeutics AS
+123	MCY.NZ      	cash-cow            	0.238	0.204	0.38	Mercury NZ Limited
+124	WGN.AX      	wonderful-and-fair  	0.223	0.204	0.3	Wagners Holding Company Limited
+125	CPRT        	wonderful-and-fair  	0.225	0.203	0.55	Copart, Inc.
+126	GNE.NZ      	cash-cow            	0.241	0.202	0.46	Genesis Energy Limited
+127	RENE.LS     	cash-cow            	0.24	0.201	0.42	REN - Redes Energéticas Nacionais, SGPS, S.A.
+128	ORSTED.CO   	freeroll            	0.246	0.2	0.42	Ørsted A/S
+129	WBC.AX      	cash-cow            	0.215	0.2	0.45	Westpac Banking Corporation
+130	MCY.AX      	cash-cow            	0.235	0.196	0.45	Mercury NZ Limited
+131	9513.T      	cash-cow            	0.236	0.188	0.38	Electric Power Development Co., Ltd. (J-POWER)
+132	SYL.AX      	freeroll            	0.228	0.187	0.58	Symal Group Limited
+133	HEXA-B.ST   	cash-cow            	0.194	0.169	0.52	Hexagon AB
+134	9502.T      	cash-cow            	0.191	0.163	0.4	Chubu Electric Power Company, Incorporated
+135	6861.T      	cash-cow            	0.169	0.149	0.45	Keyence Corporation
+136	CPX.TO      	cash-cow            	0.174	0.144	0.36	Capital Power Corporation
+137	LYC.AX      	rule-breakers       	0.121	0.107	0.48	Lynas Rare Earths Limited
+138	2533.HK     	rule-breakers       	0	0	0.28	Black Sesame International Holding Limited
+139	277810.KQ   	rule-breakers       	0	0	0.24	Rainbow Robotics Co.,Ltd.
+140	AEHR        	rule-breakers       	0	0	0.12	Aehr Test Systems, Inc.
+141	BRN.AX      	rule-breakers       	0	0	0.2	BrainChip Holdings Ltd
+142	HIMS        	rule-breakers       	0	0	0.35	Hims & Hers Health, Inc.
+143	MEL.AX      	                    	0	0	0	Metgasco Limited
+144	MZH.SI      	freeroll            	0	0	0.2	Nanofilm Technologies International Limited
+145	PLS.AX      	freeroll            	0	0	0.25	PLS Group Limited
+146	RGTI        	rule-breakers       	0	0	0.18	Rigetti Computing, Inc.
+147	SERV        	rule-breakers       	0	0	0.28	Serve Robotics Inc.
+148	TA.TO       	cash-cow            	0	0	0.42	TransAlta Corporation

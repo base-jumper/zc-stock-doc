@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Wrapper: resolves to the repo even when invoked via a symlink on PATH.
+# Uses yfin (needs the venv, invoked as a subprocess) + edgar under the hood, but
+# the script itself is stdlib + PyYAML, so system python3 runs it.
+self="$(readlink -f "${BASH_SOURCE[0]}")"
+root="$(cd "$(dirname "$self")/../.." && pwd)"
+exec python3 "$root/skills/stock-analysis/scripts/tam_capture_inputs.py" "$@"

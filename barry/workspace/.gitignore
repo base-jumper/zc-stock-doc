@@ -1,0 +1,62 @@
+# Agent-local runtime state inside the workspace
+.trash/
+.openclaw/
+.clawhub/lock.json
+
+# Generated memory/search/cache artifacts
+memory/.dreams/
+
+# Scratch/research downloads and temporary working files
+tmp/
+
+# Python/build/cache artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Local secrets and environment files
+.env
+.env.*
+*.secret
+*.secrets
+*.key
+*.pem
+*.p12
+*.pfx
+credentials/
+
+# Databases, logs, and runtime state that should not be versioned
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.pid
+*.sock
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node/package-manager noise if we ever create local tooling here
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/

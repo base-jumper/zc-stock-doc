@@ -1,0 +1,22 @@
+scenario-tam valuation  —  expected ROI over 8y (scenario-TAM, probability-weighted)  as of 2004-06-23
+==============================================================================
+
+  Scenario             p         tam   terminal eq      /share    ROI/yr   contrib  role model
+  --------------------------------------------------------------------------------------
+  failure          34.0%           —        50.00M      0.1027    -37.2%      1.1%  —
+  niche-survivor   40.0%      12.00B        96.00M      0.1148    -36.3%      1.5%  UpShot/Salesnet
+  it-works         22.0%      12.00B         4.65B      7.5425     +7.5%     52.7%  SEBL
+  blue-sky          4.0%      16.10B        21.73B     35.2461    +30.4%     44.8%  ORCL/SAP
+
+  Entry price             : 4.2269
+  Expected terminal price : 3.1500
+  EXPECTED ANNUALIZED ROI : -3.61%  / yr
+  Expected multiple       : 0.75x  over 8y
+  P(below entry)          : 74.0%
+  Failure probability     : 34.0%  (residual)
+  Implied tail alpha      : 1.21  (plausible band 1.5-3.0)
+  Breakeven P(it-works)   : 120% (unreachable)  vs failure alone, at a 10%/yr hurdle
+  WARNING: implied tail alpha 1.21 outside 1.5-3.0: fatter tail than venture history supports (alpha ~ 2)
+
+  valuation.scenario-tam.roi  : -0.036089
+  valuation.scenario-tam.date : 2004-06-23

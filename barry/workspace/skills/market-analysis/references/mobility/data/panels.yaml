@@ -1,0 +1,684 @@
+# Rank-mobility panel corpus index. Each entry describes one named ranking panel stored in
+# panels/<id>.csv (rows: year,rank,player,share). See ../calibration.md for the corpus contract,
+# fate vocabulary, acquisition rule, and collection discipline.
+#
+# Fields per entry:
+#   id             matches panels/<id>.csv
+#   name           human label
+#   market         market boundary + what a share measures
+#   region         geography of the ranking
+#   basis          units | revenue | subscribers | passengers | deposits | premiums | ...
+#   coverage       number of ranks the source names each year
+#   tracker        tracker/publication the ranking tables come from (the series provenance the
+#                  no-splicing rule applies to; per-year citations go in sources)
+#   tracker-notes  optional: definition changes, methodology breaks
+#   quality        seed-approximate | verified (verified = every covered year cited)
+#   penetration    optional: normalized adoption-curve position (L = 1), analyst-scored —
+#                    logistic: {t0: inflection year, k: steepness per year}
+#                    provenance: fitted | estimated (pinned by adoption data vs judgment)
+#                  F(t) = 1/(1+exp(-k(t-t0))); see ../calibration.md
+#   players        canonical name -> {founded, entered-market?, fate?, fate-year?, acquirer?, notes?}
+#   sources        one citation per covered year (or per multi-year table)
+#   notes          free-form
+
+panels:
+  - id: worldwide-smartphone-units
+    name: Worldwide smartphone unit shipments
+    market: >
+      Worldwide smartphone shipments to channel, all vendors; a share is a vendor's full-year
+      shipments as a fraction of total worldwide shipments.
+    region: Global
+    basis: units
+    coverage: 5
+    tracker: "IDC Worldwide Quarterly Mobile Phone Tracker, full-year top-5 vendor tables (press releases)"
+    quality: verified
+    penetration:
+      logistic: {t0: 2012.3, k: 0.308}
+      provenance: fitted
+    players:
+      Samsung:   {founded: 1969}
+      Apple:     {founded: 1976}
+      Huawei:    {founded: 1987, fate: fringe, fate-year: 2021, notes: "US sanctions cut smartphone volumes from 2020; still competing"}
+      LG:        {founded: 1958, fate: exited, fate-year: 2021, notes: "closed its smartphone business July 2021"}
+      Lenovo:    {founded: 1984, fate: fringe, fate-year: 2016, notes: "still competing via the Motorola brand"}
+      Xiaomi:    {founded: 2010}
+      OPPO:      {founded: 2004, entered-market: 2011, notes: "first listed smartphone model was Oppo Find Me"}
+      vivo:      {founded: 2009}
+      Transsion: {founded: 2006, entered-market: 2014, notes: "smartphones under Tecno/Infinix/itel brands"}
+    sources:
+      - "2013 ranking: https://web.archive.org/web/20140131071943id_/http://www.idc.com/getdoc.jsp?containerId=prUS24645514"
+      - "2016 ranking and Lenovo's first year below the top five: https://web.archive.org/web/20170201184608id_/http://www.idc.com/getdoc.jsp?containerId=prUS42268917"
+      - "2021 ranking and Huawei's first year below the top five: https://web.archive.org/web/20220127235658id_/https://www.idc.com/getdoc.jsp?containerId=prUS48830822"
+      - "2023 ranking: https://web.archive.org/web/20240116060626id_/https://www.idc.com/getdoc.jsp?containerId=prUS51776424"
+      - "LG mobile exit: https://web.archive.org/web/20210405015916id_/https://www.lgnewsroom.com/2021/04/lg-to-close-mobile-phone-business-worldwide/"
+      - "Samsung founded: https://en.wikipedia.org/wiki/Samsung_Electronics"
+      - "Apple founded: https://en.wikipedia.org/wiki/Apple_Inc."
+      - "Huawei founded: https://en.wikipedia.org/wiki/Huawei"
+      - "LG founded: https://en.wikipedia.org/wiki/LG_Electronics"
+      - "Lenovo founded: https://en.wikipedia.org/wiki/Lenovo"
+      - "Xiaomi founded: https://en.wikipedia.org/wiki/Xiaomi"
+      - "OPPO founded: https://en.wikipedia.org/wiki/Oppo"
+      - "OPPO smartphone entry: https://en.wikipedia.org/wiki/Oppo_phones"
+      - "vivo founded: https://en.wikipedia.org/wiki/Vivo_(technology_company)"
+      - "Transsion founded and smartphone entry: https://en.wikipedia.org/wiki/Transsion"
+    notes: >
+      IDC's tables label all four years preliminary and define shipments as branded new-device
+      shipments excluding OEM and refurbished units. The panel deliberately exercises entrants
+      (Xiaomi, Transsion), an exit (LG), and falls to fringe (Huawei, Lenovo). Company-history
+      citations are secondary sources; ranking citations and LG's exit citation are primary.
+
+  - id: worldwide-pc-shipments
+    name: Worldwide PC shipments
+    market: >
+      Worldwide IDC PC shipments to channel/end users; shares are vendor full-year shipments as a
+      fraction of IDC's reported worldwide total.
+    region: Global
+    basis: units
+    coverage: 5
+    tracker: "IDC Worldwide PC Tracker, full-year top-five vendor tables"
+    tracker-notes: >
+      IDC is the sole tracker. Early tables include x86 servers while modern traditional-PC tables
+      exclude them; the panel is therefore a sampled seed rather than a stable annual series.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 2000.0, k: 0.22}
+      provenance: estimated
+    players:
+      Compaq: {founded: 1982, fate: acquired, fate-year: 2002, acquirer: "HP Inc."}
+      IBM: {founded: 1911, fate: acquired, fate-year: 2005, acquirer: Lenovo, notes: "IBM's personal-computing division was acquired by Lenovo."}
+      "Packard Bell NEC": {founded: 1986, fate: acquired, fate-year: 2008, acquirer: "Acer Group"}
+      Apple: {founded: 1976}
+      "HP Inc.": {founded: 1939, notes: "Canonical current name for older Hewlett-Packard labels."}
+      "Dell Technologies": {founded: 1984, notes: "Canonical current name for older Dell labels."}
+      "Acer Group": {founded: 1976}
+      Lenovo: {founded: 1984}
+      Toshiba: {founded: 1875, fate: acquired, fate-year: 2018, acquirer: Sharp}
+      ASUS: {founded: 1989}
+    sources:
+      - "1996 ordering: https://www.deseret.com/1997/1/28/19291991/compaq-retains-spot-as-top-seller-of-pcs/"
+      - "1996 IDC shares: https://www.computerwoche.de/article/2791836/idc-bescheinigt-dem-pc-markt-fuer-1996-ein-16prozentiges-wachstum.html"
+      - "2006-2007 tables: https://www.edn.com/repositioning-of-major-oems-brings-about-solid-2007-pc-market/"
+      - "2014-2016 tables: https://www.marketscreener.com/news/latest/PC-Leaders-Continue-Growth-And-Share-Gains-As-Market-Remains-Slow-According-to-IDC-19683699/"
+      - "2019-2022 tables: https://www.businesswire.com/news/home/20230110006015/en/PC-Shipments-Continued-to-Slump-During-the-Holiday-Quarter-with-Recovery-Now-Looking-like-2024-According-to-IDC-Tracker"
+      - "2025 table: https://www.idc.com/resource-center/press-releases/4q25-pc-top-5-pr/"
+      - "Company histories: https://www.acer.com/corporate/en/overview/milestones, https://www.lenovo.com/us/en/about/who-we-are/history/"
+    notes: >
+      Covered years are 1996, 2006-2007, 2014-2016, 2019-2022, and 2025. The 1996 HP share is the
+      exact residual between IDC's published 65.0% Other category and the other four named vendor
+      shares; later percentages are recorded as reported, with no interpolation.
+
+  - id: us-domestic-airlines
+    name: US domestic airline passenger shares
+    market: >
+      United States domestic airline passenger market, ranked by annual passengers carried on
+      domestic segments by US carriers; shares are fractions of the full domestic market.
+    region: United States
+    basis: passengers
+    coverage: 10
+    tracker: "US DOT/Bureau of Transportation Statistics T-100 Domestic Segment Data"
+    tracker-notes: >
+      The 1995 and 2009 rankings and shares are transcribed from a multi-year table sourced to
+      DOT T-100 domestic segment data. The top-ten totals are below one because smaller carriers
+      are excluded.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1965.0, k: 0.15}
+      provenance: estimated
+    players:
+      "Delta Air Lines": {founded: 1924}
+      "American Airlines": {founded: 1930}
+      "United Airlines": {founded: 1926}
+      "US Airways": {founded: 1939}
+      "Southwest Airlines": {founded: 1967}
+      "Northwest Airlines": {founded: 1926, fate: acquired, fate-year: 2008, acquirer: "Delta Air Lines"}
+      "Continental Airlines": {founded: 1934}
+      "Trans World Airlines": {founded: 1930, fate: acquired, fate-year: 2001, acquirer: "American Airlines"}
+      "America West Airlines": {founded: 1981, fate: acquired, fate-year: 2005, acquirer: "US Airways"}
+      "Alaska Airlines": {founded: 1932}
+      "AirTran Airways": {founded: 1992}
+      JetBlue: {founded: 1998}
+    sources:
+      - "DOT/BTS T-100 dataset: https://catalog.data.gov/dataset/t-100-domestic-market-and-segment-data"
+      - "T-100 database description: https://www.transtats.bts.gov/DatabaseInfo.asp?QO_VQ=EEE"
+      - "1995 and 2009 ranking table: https://api.pageplace.de/preview/DT0400.9781317105435_A26853829/preview-9781317105435_A26853829.pdf"
+      - "Archived 2009 BTS data: https://rosap.ntl.bts.gov/view/dot/7190"
+
+  - id: us-bank-deposits
+    name: US bank deposits
+    market: >
+      Domestic deposits at all FDIC-insured institutions headquartered in US states and
+      territories, ranked by institution; a share is the institution's DEPDOM divided by DEPDOM
+      summed over the same year-end FDIC Financials reporting universe.
+    region: United States and territories
+    basis: deposits
+    coverage: 10
+    tracker: "FDIC BankFind Suite Financials API"
+    tracker-notes: >
+      Each observation uses REPDTE=YYYY1231 and ranks the API's institution records by unrounded
+      DEPDOM. The denominator is the same query universe's sum(DEPDOM), including institutions
+      headquartered in states and territories. Legal-name changes are mapped to stable company
+      lineages so they do not create false exits.
+    quality: verified
+    penetration:
+      logistic: {t0: 1950.0, k: 0.12}
+      provenance: estimated
+    players:
+      "Bank of America, National Association": {founded: 1904}
+      "JPMorgan Chase Bank, National Association": {founded: 1799, notes: "Canonical lineage for CERT 628, reported historically as Chemical Bank and Chase Manhattan before JPMorgan Chase."}
+      "Wells Fargo Bank, National Association": {founded: 1852}
+      "Home Savings of America, FSB": {founded: 1889}
+      "Citibank, National Association": {founded: 1812}
+      "The Chase Manhattan Bank": {founded: 1799, fate: acquired, fate-year: 1996, acquirer: "JPMorgan Chase Bank, National Association", notes: "Separate legacy CERT 624 institution acquired by Chemical Bank."}
+      "Great Western Bank": {founded: 1935}
+      "NationsBank, National Association": {founded: 1874}
+      "NationsBank of Texas, National Association": {founded: 1874}
+      "NationsBank, National Association (South)": {founded: 1874}
+      "Wachovia Bank, National Association": {founded: 1879, notes: "Canonical name for the First Union lineage after its Wachovia transaction."}
+      "First Union National Bank of Florida": {founded: 1908}
+      "PNC Bank, National Association": {founded: 1852}
+      "Fleet National Bank (CERT 2499)": {founded: 1791}
+      "Fleet National Bank (CERT 2558)": {founded: 1791, notes: "Canonical Fleet lineage; the inherited charter was briefly reported as BankBoston."}
+      "KeyBank, National Association": {founded: 1825}
+      "U.S. Bank National Association": {founded: 1863, notes: "Canonical name for the Firstar lineage after the U.S. Bancorp transaction."}
+      "U.S. Bank National Association (CERT 5134)": {founded: 1863}
+      "Washington Mutual Bank": {founded: 1889}
+      "SunTrust Bank": {founded: 1891}
+      "Bank One, National Association": {founded: 1873}
+      "HSBC Bank USA, National Association": {founded: 1865}
+      "World Savings Bank, FSB": {founded: 1912}
+      "National City Bank": {founded: 1845}
+      "Regions Bank": {founded: 1971}
+      "Truist Bank": {founded: 2019, notes: "Canonical lineage for CERT 9846, reported historically as Branch Banking and Trust Company before the BB&T-SunTrust merger."}
+      "TD Bank, National Association": {founded: 1852}
+      "Capital One, National Association": {founded: 1994}
+      "Charles Schwab Bank": {founded: 2003}
+      "Goldman Sachs Bank USA": {founded: 2008}
+      "The Bank of New York Mellon": {founded: 1784}
+      "First Fidelity Bank, National Association": {founded: 1994, fate: acquired, fate-year: 1996, acquirer: "Wachovia Bank, National Association"}
+      "Barnett Bank, National Association": {founded: 1877, fate: acquired, fate-year: 1998, acquirer: "NationsBank, National Association"}
+    sources:
+      - "FDIC Bank Data API documentation: https://api.fdic.gov/banks/docs"
+      - "FDIC Financials endpoint: https://api.fdic.gov/banks/financials"
+    notes: >
+      The CSV covers each December 31 from 1994 through 2025. Shares are calculated from DEPDOM
+      numerator and denominator values returned by the same Financials query and rounded to six
+      decimals only after ranking. The broader Financials universe is intentionally used instead
+      of a 50-states-plus-DC Summary-table denominator.
+
+  - id: worldwide-semiconductor-revenue
+    name: Worldwide semiconductor vendor revenue
+    market: >
+      Worldwide semiconductor vendor revenue across all semiconductor categories; shares are each
+      vendor's annual revenue as a fraction of total worldwide semiconductor revenue.
+    region: Global
+    basis: revenue
+    coverage: 3
+    tracker: "Gartner annual Worldwide Semiconductor Revenue vendor-ranking press releases"
+    tracker-notes: "Annual Gartner releases may revise prior-year figures; this panel begins in 2014."
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1995.0, k: 0.15}
+      provenance: estimated
+    players:
+      Intel: {founded: 1968}
+      "Samsung Electronics": {founded: 1969}
+      Qualcomm: {founded: 1985}
+      "SK hynix": {founded: 1983, notes: "Founded as Hyundai Electronics; later renamed hynix and SK hynix."}
+      NVIDIA: {founded: 1993}
+    sources:
+      - "2014-2018 Gartner tables: https://www.design-reuse.com/news/202528174-worldwide-semiconductor-revenue-grew-2-6-percent-in-2016-according-to-final-results-by-gartner/"
+      - "2019-2023 Gartner releases: https://www.gartner.com/en/newsroom/press-releases/2024-01-16-gartner-says-worldwide-semiconductor-revenue-declined-11-percent-in-2023"
+      - "2024 Gartner release: https://www.gartner.com/en/newsroom/press-releases/2025-04-10-gartner-says-worldwide-semiconductor-revenue-grew-21-percent-in-2024"
+      - "2025 Gartner release: https://www.gartner.com/en/newsroom/press-releases/2026-01-12-gartner-says-worldwide-semiconductor-revenue-grew-21-percent-in-2025"
+      - "Company histories: https://www.intel.com/content/www/us/en/history/virtual-vault/articles/intels-founding.html, https://news.samsung.com/global/the-history-of-samsung-electronics-1-paving-a-new-path-19681970, https://www.nvidia.com/en-gb/about-nvidia/corporate-timeline/"
+    notes: "The CSV covers a contiguous 2014-2025 annual top-three series; no earlier values were interpolated."
+
+  - id: us-carbonated-soft-drinks
+    name: US carbonated soft drinks company shares
+    market: >
+      United States carbonated soft drinks ranked by annual company volume share, covering
+      packaged and fountain/all-channel activity reported by Beverage Digest.
+    region: United States
+    basis: volume
+    coverage: 4
+    tracker: "Beverage Digest annual US carbonated soft drink company-share tables"
+    tracker-notes: >
+      Dr Pepper Snapple Group is kept separate through 2017 and Keurig Dr Pepper begins in 2018
+      after the merger; exact shares were not accessible from the fetched account-gated table.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1975.0, k: 0.15}
+      provenance: estimated
+    players:
+      "Coca-Cola": {founded: 1892}
+      PepsiCo: {founded: 1965}
+      "Dr Pepper Snapple Group": {founded: 2008, fate: acquired, fate-year: 2018, acquirer: "Keurig Green Mountain"}
+      "Keurig Dr Pepper": {founded: 2018, entered-market: 2018}
+      "Cott Corporation": {founded: 1955, notes: "Sold its traditional beverage manufacturing business to Refresco in 2018."}
+      Refresco: {founded: 1999, entered-market: 2018}
+    sources:
+      - "2013-2024 company ranking table: https://www.statista.com/statistics/225464/market-share-of-leading-soft-drink-companies-in-the-us-since-2004/"
+      - "Beverage Digest methodology: https://www.beverage-digest.com/articles/topic/162-csd?page=4"
+      - "Keurig Dr Pepper merger: https://news.keurigdrpepper.com/2018-07-09-Keurig-Dr-Pepper-Announces-Successful-Completion-of-the-Merger-between-Keurig-Green-Mountain-and-Dr-Pepper-Snapple-Group"
+      - "Refresco acquisition of Cott bottling activities: https://www.refresco.com/en/news/refresco-completes-acquisition-of-cotts-bottling-activities/"
+    notes: >
+      The annual order is recorded, with Cott through 2017 and Refresco from the 2018 transaction;
+      numeric shares remain blank pending access to the underlying account-gated table.
+
+  - id: global-auto-sales
+    name: Global auto sales by manufacturer group
+    market: >
+      Worldwide new-vehicle sales/deliveries by major manufacturer group; ranks only are recorded
+      because the available group tables use mixed reporting bases.
+    region: Global
+    basis: units
+    coverage: 10
+    tracker: "MarkLines Global Sales of Major Automakers and Groups"
+    tracker-notes: >
+      MarkLines compiles automaker reports and notes that figures may be estimated and group
+      definitions can differ. FCA/PSA become Stellantis in 2021; the series is seed-approximate.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 2003.0, k: 0.18}
+      provenance: estimated
+    players:
+      "Toyota Group": {founded: 1937}
+      "Volkswagen Group": {founded: 1937}
+      "General Motors": {founded: 1908}
+      "Renault-Nissan Alliance": {founded: 1999}
+      "Renault-Nissan-Mitsubishi Alliance": {founded: 2016, entered-market: 2016}
+      "Hyundai-Kia Group": {founded: 1967}
+      Ford: {founded: 1903}
+      "Fiat Chrysler Automobiles": {founded: 2014, fate: acquired, fate-year: 2021, acquirer: Stellantis}
+      Honda: {founded: 1948}
+      "PSA Group": {founded: 1965, fate: acquired, fate-year: 2021, acquirer: Stellantis}
+      Suzuki: {founded: 1909}
+      Stellantis: {founded: 2021}
+      BYD: {founded: 1995}
+    sources:
+      - "2013 ranking: https://www.marklines.com/en/statistics/sales/global_sales_2014"
+      - "2023 group ranking: https://www.marklines.com/en/search/0?and=true&func=12&order=&q=2023+global"
+      - "OICA sales statistics: https://oica.net/fr/sales-statistics/"
+      - "Wards/Omdia 2023 total: https://omdia.tech.informa.com/om130870/global-vehicle-sales-top-92-million-units-in-2023-december-volume-up-11"
+    notes: "Only 2013 and 2023 are covered; shares are intentionally blank."
+
+  - id: worldwide-mobile-os
+    name: Worldwide mobile operating system usage share
+    market: Worldwide mobile operating systems ranked by share of mobile web page views.
+    region: Global
+    basis: usage
+    coverage: 2
+    tracker: "StatCounter Global Stats"
+    tracker-notes: "Shares measure mobile web usage, not installed base, shipments, or sales."
+    quality: verified
+    penetration:
+      logistic: {t0: 2012.3, k: 0.308}
+      provenance: estimated
+    players:
+      Symbian: {founded: 1998, fate: defunct, fate-year: 2014}
+      iOS: {founded: 2007}
+      Android: {founded: 2008}
+    sources:
+      - "February 2011 worldwide mobile OS release: https://gs.statcounter.com/press/android-overtakes-blackberry-for-first-time"
+      - "June 2026 worldwide mobile OS tracker: https://gs.statcounter.com/os-market-share/mobile/worldwide/"
+      - "Symbian history: https://en.wikipedia.org/wiki/Symbian"
+      - "iOS launch: https://www.apple.com/newsroom/2007/01/iphone/"
+      - "Android history: https://www.android.com/history/"
+    notes: "The CSV records the two sourced observations, 2011 and 2026."
+
+  - id: us-pc-insurance-premiums
+    name: US property-and-casualty insurance direct-written premiums
+    market: >
+      US property-and-casualty insurance groups ranked by countrywide total direct-written premium
+      market share across all lines of business.
+    region: United States
+    basis: premiums
+    coverage: 10
+    tracker: "NAIC Market Share Reports for Property/Casualty Groups and Companies"
+    tracker-notes: "Group-level rankings use total all-lines direct-written premiums; shares are fractions."
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1950.0, k: 0.12}
+      provenance: estimated
+    players:
+      "State Farm Group": {founded: 1922}
+      "Zurich Insurance Group": {founded: 1872}
+      "Allstate Insurance Group": {founded: 1931}
+      "American International Group": {founded: 1919}
+      "Liberty Mutual Group": {founded: 1912}
+      "Travelers Group": {founded: 1853}
+      "Berkshire Hathaway Group": {founded: 1839}
+      "Nationwide Corporation Group": {founded: 1926}
+      "Progressive Group": {founded: 1937}
+      "Hartford Fire & Casualty Group": {founded: 1810}
+      "United Services Automobile Association Group": {founded: 1922}
+      "Chubb Limited Group": {founded: 1882}
+      "Farmers Insurance Group": {founded: 1928}
+    sources:
+      - "2009 NAIC-sourced ranking: https://doczz.net/doc/7291930/insurance-rates-regulation-in-comparison-with-open-competition"
+      - "NAIC historical catalogue: https://naic.soutronglobal.net/Portal/Public/en-US/RecordView/Index/4923"
+      - "2024 official NAIC report: https://content.naic.org/sites/default/files/publication-msr-pb-property-casualty.pdf"
+      - "NAIC 2024 release: https://content.naic.org/article/naic-releases-2024-market-share-data"
+    notes: "The panel covers 2009 and 2024; the earlier ranking is secondary reproduction of NAIC data."
+
+  - id: us-wireless-subscribers
+    name: US wireless subscribers and connections
+    market: >
+      United States mobile wireless providers ranked by reported subscribers or connections;
+      shares are fractions of the FCC-reported provider total for each covered observation.
+    region: United States
+    basis: subscribers
+    coverage: 4
+    tracker: "FCC mobile wireless competition and communications marketplace reports"
+    tracker-notes: >
+      The 2010 observation uses the FCC historical mobile-wireless competition table and the 2023
+      observation uses the FCC 2024 Communications Marketplace Report. Subscriber-versus-connection
+      definitions and provider reporting changed over time.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 2002.0, k: 0.30}
+      provenance: estimated
+    players:
+      Verizon: {founded: 2000}
+      AT&T: {founded: 2000}
+      Sprint: {founded: 1986, fate: acquired, fate-year: 2020, acquirer: "T-Mobile"}
+      "T-Mobile": {founded: 1994}
+      UScellular: {founded: 1983}
+    sources:
+      - "FCC historical subscriber table: https://docs.fcc.gov/public/attachments/FCC-13-34A1_Rcd.pdf"
+      - "FCC 2024 connection table: https://docs.fcc.gov/public/attachments/FCC-24-136A1.pdf"
+      - "FCC approval of T-Mobile/Sprint merger: https://www.fcc.gov/document/fcc-approves-t-mobile-sprint-merger"
+    notes: "The CSV covers 2010 and 2023, a 13-year span; shares are recorded only where published by FCC."
+
+  - id: worldwide-search-engines
+    name: Worldwide search-engine usage share
+    market: >
+      Worldwide search-engine usage measured by search-engine referrals from web page views
+      across desktop, mobile, tablet, and console platforms; shares are fractions of the whole
+      defined worldwide search-engine usage market.
+    region: Global
+    basis: usage
+    coverage: 5
+    tracker: "StatCounter Global Stats"
+    tracker-notes: >
+      The all-platform StatCounter series uses annual observations from 2009 through 2025. The
+      source also reports an Other category, which is excluded from the named top-five panel.
+      MSN is combined with Bing, YANDEX and YANDEX RU are combined as Yandex, and Ask Jeeves is
+      canonicalized as Ask.com.
+    quality: verified
+    penetration:
+      logistic: {t0: 2011.5, k: 0.16}
+      provenance: estimated
+    players:
+      Google: {founded: 1998}
+      Bing: {founded: 1975, entered-market: 2009}
+      "Yahoo!": {founded: 1994, entered-market: 1994}
+      Baidu: {founded: 2000, entered-market: 2000}
+      Yandex: {founded: 1997, entered-market: 1997}
+      AOL: {founded: 1983}
+      Ask.com: {founded: 1996, entered-market: 1996}
+      DuckDuckGo: {founded: 2008, entered-market: 2008}
+    sources:
+      - "2009-2025 annual chart: https://gs.statcounter.com/chart.php?all-search_engine-ww-yearly-200901-202512"
+      - "2009-2025 annual CSV: https://gs.statcounter.com/search-engine-market-share/all/chart.php?device=Desktop%20%26%20Mobile%20%26%20Tablet%20%26%20Console&device_hidden=desktop%2Bmobile%2Btablet%2Bconsole&multi-device=true&statType_hidden=search_engine&region_hidden=ww&granularity=yearly&statType=Search%20Engine&region=Worldwide&fromInt=2009&toInt=2025&fromYear=2009&toYear=2025&csv=1"
+      - "Worldwide tracker: https://gs.statcounter.com/search-engine-market-share/all/worldwide"
+      - "StatCounter methodology: https://gs.statcounter.com/about"
+      - "Company histories: https://about.google/intl/en_ALL/our-story/, https://news.microsoft.com/source/2009/05/28/microsofts-new-search-at-bing-com-helps-people-make-better-decisions/, https://ir.baidu.com/shareholder-services/investor-faqs, https://yandex.com/company/history, https://en.wikipedia.org/wiki/AOL, https://en.wikipedia.org/wiki/Ask.com, https://duckduckgo.com/about"
+    notes: "The incomplete 2026 observation was excluded; published percentages were converted to fractions without estimation."
+
+  - id: worldwide-desktop-browsers
+    name: Worldwide desktop browser usage share
+    market: Worldwide desktop web browsers ranked by share of desktop web page views.
+    region: Global
+    basis: usage
+    coverage: 5
+    tracker: "StatCounter Global Stats desktop browser market share"
+    tracker-notes: >
+      The tracker distinguishes desktop usage from mobile, tablet, and console usage. Browser
+      families are canonicalized across naming changes, including Microsoft Edge and Edge Legacy.
+    quality: verified
+    penetration:
+      logistic: {t0: 2001.0, k: 0.25}
+      provenance: estimated
+    players:
+      Chrome: {founded: 2008, entered-market: 2008}
+      "Internet Explorer": {founded: 1995, fate: defunct, fate-year: 2022}
+      Firefox: {founded: 2004, entered-market: 2004}
+      Safari: {founded: 2003, entered-market: 2003}
+      Opera: {founded: 1995}
+      Edge: {founded: 2015, entered-market: 2015}
+    sources:
+      - "StatCounter desktop tracker: https://gs.statcounter.com/browser-market-share/desktop/worldwide"
+      - "2009-2025 annual CSV: https://gs.statcounter.com/browser-market-share/desktop/chart.php?device=Desktop&device_hidden=desktop&statType_hidden=browser&region_hidden=ww&granularity=yearly&statType=Browser&region=Worldwide&fromInt=2009&toInt=2025&fromYear=2009&toYear=2025&csv=1"
+      - "2009 annual view: https://gs.statcounter.com/browser-market-share/desktop/worldwide/2009"
+      - "2025 annual view: https://gs.statcounter.com/browser-market-share/desktop/worldwide/2025"
+      - "Chrome launch: https://blog.google/products/chrome/google-chrome-launches/"
+      - "Firefox history: https://blog.mozilla.org/en/products/firefox/firefox-20-years/"
+      - "Safari launch: https://www.apple.com/newsroom/2003/01/apple-unveils-safari/"
+      - "Opera history: https://www.opera.com/about/history"
+      - "Internet Explorer launch: https://news.microsoft.com/1995/08/24/microsoft-internet-explorer-available-with-windows-95/"
+      - "Edge launch: https://blogs.windows.com/windowsexperience/2015/07/29/windows-10-is-here/"
+    notes: >
+      Coverage spans 2009-2025. Internet Explorer labels are canonicalized, Edge and Edge Legacy
+      are combined, and the source's Other category is excluded from the named top-five panel.
+
+  - id: global-beer-brewers
+    name: Global beer brewers by production
+    market: >
+      Worldwide brewing groups ranked by annual beer output. Shares are fractions of total world
+      beer production when directly published by BarthHaas.
+    region: Global
+    basis: units
+    coverage: 40
+    tracker: "BarthHaas Report Top 40 Brewers"
+    tracker-notes: >
+      BarthHaas ranks brewing groups rather than individual brands or breweries and combines brewer
+      disclosures with estimates where company figures are unavailable. Group boundaries changed
+      through mergers, renamings, and Russian business restructurings.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1950.0, k: 0.10}
+      provenance: estimated
+    players:
+      "AB InBev": {founded: 2004}
+      SABMiller: {founded: 2002, fate: acquired, fate-year: 2016, acquirer: "AB InBev"}
+      Heineken: {founded: 1864}
+      Carlsberg: {founded: 1847}
+      "China Res. Snow Breweries": {founded: 1994}
+      "Tsingtao Brewery Group": {founded: 1903}
+      "Molson Coors": {founded: 2005}
+      Yanjing: {founded: 1980}
+      Kirin: {founded: 1885}
+      "BGI / Groupe Castel": {founded: 1949}
+      "Efes Group": {founded: 1969}
+      "Asahi Group": {founded: 1889}
+      "Gold Star": {founded: 1958}
+      "Diageo (Guinness)": {founded: 1759}
+      Polar: {founded: 1941}
+      "San Miguel Corporation": {founded: 1890}
+      "Singha Corporation": {founded: 1933}
+      "Grupo Petrópolis": {founded: 1994}
+      "Oriental Brewery": {founded: 1933}
+      "Saigon Beverage Corp. (SABECO)": {founded: 1875}
+      "Grupo Mahou - San Miguel": {founded: 1890}
+      "Radeberger Gruppe": {founded: 1872}
+      "Pearl River": {founded: 1985}
+      CCU: {founded: 1850}
+      "United Breweries Group": {founded: 1857}
+      "Oettinger Gruppe": {founded: 1731}
+      Damm: {founded: 1876}
+      HiteJinro: {founded: 2011}
+      Suntory: {founded: 1899}
+      Obolon: {founded: 1980}
+      "Bitburger Braugruppe": {founded: 1817}
+      Sapporo: {founded: 1876}
+      "Krombacher Gruppe": {founded: 1803}
+      "Hanoi Beverage Corp. (HABECO)": {founded: 1957}
+      "Beer Thai (Chang)": {founded: 1994}
+      "Brau Holding International": {founded: 2007}
+      "Cervecería Regional": {founded: 1929}
+      "SiPing Ginsber Brewery": {founded: 1990, fate: acquired, fate-year: 2014, acquirer: "AB InBev"}
+      Warsteiner: {founded: 1753}
+      "Lan Bei Beer Co.": {founded: 1997}
+      "Bavaria N.V.": {founded: 1719, notes: "Renamed Swinkels Family Brewers in 2018."}
+      "TCB Beteiligungsgesellschaft mbH": {founded: 2002}
+      "Constellation Brands": {founded: 1945}
+      "Yunnan Lancang River": {founded: 1997}
+      "Paulaner Gruppe": {founded: 1634}
+      "Karlsberg Brewery": {founded: 1878}
+      "Swinkels Family Brewers": {founded: 1719, entered-market: 2018}
+      "Estrella de Galicia": {founded: 1906}
+      "Olvi Group": {founded: 1879}
+      "Moscow Brewing Company": {founded: 2008}
+      "Royal Unibrew": {founded: 1989}
+      Veltins: {founded: 1824}
+      Martens: {founded: 1758}
+      "Financière ACP": {founded: 2023, entered-market: 2023}
+      Baltika: {founded: 1990, entered-market: 2024}
+      "OPH United Breweries": {founded: 2024, entered-market: 2024}
+      "JSC AB Inbev Efes": {founded: 2006, entered-market: 2025}
+      "Bochkarev Breweries": {founded: 1974, entered-market: 2025}
+    sources:
+      - "BarthHaas report archive: https://www.barthhaasx.com/about-us/downloads/download/reports-brochures"
+      - "2013-2025 Top 40 tables: https://www.barthhaas.com/fileadmin/user_upload/Tab_Top-40_breweries.pdf"
+      - "2021 contemporaneous Top 40 table: https://www.barthhaas.com/fileadmin/user_upload/01-barthhaas-2022/Company/News/2022/2022_06_08/Top40_Table.pdf"
+      - "2021/2022 report: https://www.barthhaas.com/fileadmin/user_upload/01-barthhaas-2022/Downloads/Reports_Broschures/BarthHaas_Reports/English/2020-2030/BarthHaas_Report_2021_2022.pdf"
+      - "2022 Top 40 table: https://www.barthhaas.com/fileadmin/user_upload/TOP40_Tab_Pressemitteilung_EN.pdf"
+      - "2022/2023 report: https://www.barthhaas.com/fileadmin/user_upload/01-barthhaas-2022/Downloads/Reports_Broschures/BarthHaas_Reports/Deutsch/2020-2030/WEB_BarthHaas_Report_2022_23_EN.pdf"
+      - "2023/2024 report: https://www.barthhaas.com/fileadmin/user_upload/01-barthhaas-2022/Resources/BarthHaas_Report/2024/en/WEB_BH_Bericht_2023_24_EN.pdf"
+      - "Latest Top 40 table: https://www.barthhaas.com/fileadmin/user_upload/TOP40_Table.pdf"
+      - "World beer-production chart: https://www.barthhaas.com/fileadmin/user_upload/15_chart_beer-production.jpg"
+      - "2024/2025 report: https://www.barthhaas.com/fileadmin/user_upload/01-barthhaas-2022/Resources/BarthHaas_Report/2025/eng/Web_BarthHaas_Report_2024_25..pdf"
+    notes: >
+      The 2013-2025 annual tables are complete. Shares are either published directly or calculated
+      from brewer output and the same report edition's world-production denominator. The 2021
+      observation uses its contemporaneous table rather than the retrospectively revised 2022 table.
+
+  - id: global-container-shipping-lines
+    name: Global container shipping lines by operated fleet capacity
+    market: >
+      Worldwide liner/container shipping operators ranked by TEU capacity of ships actively
+      deployed on liner trades. Shares are fractions of total world liner-fleet capacity.
+    region: Global
+    basis: capacity
+    coverage: 10
+    tracker: "Alphaliner TOP 100"
+    tracker-notes: >
+      Alphaliner measures operated deployed capacity, including owned and chartered ships, and
+      consolidates subsidiaries by operating group. Historical group definitions changed through
+      COSCO/CSCL/OOCL, CMA CGM/APL, and ONE formation.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 1988.0, k: 0.15}
+      provenance: estimated
+    players:
+      Maersk: {founded: 1904}
+      MSC: {founded: 1970}
+      "CMA CGM": {founded: 1978}
+      Evergreen: {founded: 1968}
+      "Hapag-Lloyd": {founded: 1970}
+      "China Shipping Container Lines (CSCL)": {founded: 1997, fate: acquired, fate-year: 2016, acquirer: "COSCO Shipping"}
+      "Hanjin Shipping": {founded: 1977, fate: defunct, fate-year: 2017}
+      APL: {founded: 1848, fate: acquired, fate-year: 2016, acquirer: "CMA CGM"}
+      "COSCO Shipping": {founded: 1961}
+      "NYK Line": {founded: 1885, fate: acquired, fate-year: 2017, acquirer: ONE}
+      MOL: {founded: 1884, fate: acquired, fate-year: 2017, acquirer: ONE}
+      ONE: {founded: 2017, entered-market: 2017}
+      OOCL: {founded: 1969, fate: acquired, fate-year: 2018, acquirer: "COSCO Shipping"}
+      "Yang Ming": {founded: 1972}
+      PIL: {founded: 1967}
+      HMM: {founded: 1976}
+      ZIM: {founded: 1945}
+    sources:
+      - "Alphaliner methodology: https://alphaliner.axsmarine.com/documents/Alphaliner-TOP100.pdf"
+      - "2006 snapshot: https://www.sambuz.com/doc/supplementary-report-ppt-presentation-300345"
+      - "April 2006 shares: https://www.slideserve.com/Samuel/history-of-cma-cgm"
+      - "2014 snapshot: https://magazines.marinelink.com/Magazines/MaritimeReporter/201406/page/60"
+      - "2018 snapshot: https://www.kline.co.jp/en/news/ir/ir-602230592948829310/main/0/link/factbook_E_2018.pdf"
+      - "2019 snapshot: https://www.kline.co.jp/en/news/ir/ir-201908291730/main/0/link/Factbook2019_E_RV2.pdf"
+      - "2022 snapshot: https://stusupplychain.com/alphaliner-top-100-shipping-companies.html"
+      - "2025 snapshot: https://www.worldports.org/latest-global-top-100-container-shipping-companies-by-capacity-july-2025/"
+      - "May 2025 complete Alphaliner table: https://www.kline.co.jp/en/ir/library/fact/main/014/teaserItems2/0/linkList/06/link/FACTBOOK_202509_E-05.pdf"
+    notes: >
+      Six public snapshots cover 2006-2025. The 2014 and 2022 shares are calculated from each
+      snapshot's Alphaliner TEU capacities and global total; the other shares are transcribed from
+      their cited same-snapshot tables.
+
+  - id: us-fixed-broadband-providers
+    name: US fixed broadband providers
+    market: >
+      United States fixed broadband providers ranked by provider-level FCC Form 477/BDC access
+      and subscription presence.
+    region: United States
+    basis: access
+    coverage: 10
+    tracker: "FCC Form 477 and Broadband Data Collection"
+    tracker-notes: >
+      The panel uses fixed broadband providers reporting service above 200 kbps in at least one
+      direction. Provider identities are normalized to current holding-company names where practical.
+      The FCC does not publish one consistent national provider league table in every annual report.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 2007.0, k: 0.30}
+      provenance: estimated
+    players:
+      Comcast: {founded: 1963}
+      "AT&T": {founded: 1885}
+      "Time Warner Cable": {founded: 2003, fate: acquired, fate-year: 2016, acquirer: "Charter Communications"}
+      Verizon: {founded: 2000}
+      "Lumen Technologies": {founded: 1968, notes: "2014 observations use the CenturyLink operating identity; renamed Lumen in 2020."}
+      "Charter Communications": {founded: 1993}
+      "Cox Communications": {founded: 1898}
+      Cablevision: {founded: 1973, fate: acquired, fate-year: 2016, acquirer: "Altice USA"}
+      "Frontier Communications": {founded: 1935}
+      Windstream: {founded: 2006}
+      "Altice USA": {founded: 2015, entered-market: 2016}
+      "T-Mobile": {founded: 1994}
+      "TDS Telecom": {founded: 1969}
+    sources:
+      - "FCC December 2014 Form 477: https://www.fcc.gov/form-477-broadband-deployment-data-december-2014-version-3"
+      - "FCC Internet Access Services, June 2024: https://docs.fcc.gov/public/attachments/DOC-411463A1.pdf"
+      - "FCC fixed broadband definitions: https://help.bdc.fcc.gov/hc/en-us/articles/5296951104667-Fixed-Broadband-Subscription-Definitions"
+      - "Charter acquisition of Time Warner Cable: https://www.fcc.gov/document/fcc-approves-charter-time-warner-cable-bright-house-transactions"
+      - "Altice acquisition of Cablevision: https://www.alticeusa.com/news/altice-completes-acquisition-cablevision"
+      - "Company histories: https://corporate.comcast.com/company/history, https://about.att.com/pages/history, https://www.verizon.com/about/our-company/history, https://ir.lumen.com/company/history/"
+    notes: "Covered years are 2014 and 2024. Shares remain blank because comparable whole-market provider shares were not directly published for both observations."
+
+  - id: global-cloud-infrastructure
+    name: Worldwide cloud infrastructure services provider market share
+    market: >
+      Worldwide cloud infrastructure services ranked by provider revenue share, including IaaS,
+      PaaS, and private or hosted-private cloud services.
+    region: Global
+    basis: revenue
+    coverage: 6
+    tracker: "Synergy Research Group Cloud Infrastructure Services"
+    tracker-notes: >
+      The 2014 observation is full-year data and the 2024 observation is a Q2 snapshot. Synergy's
+      terminology shifted from private and hybrid cloud to hosted private cloud, so this panel is
+      seed-approximate rather than verified.
+    quality: seed-approximate
+    penetration:
+      logistic: {t0: 2021.0, k: 0.25}
+      provenance: estimated
+    players:
+      "Amazon Web Services": {founded: 2006, entered-market: 2006}
+      Microsoft: {founded: 1975}
+      IBM: {founded: 1911}
+      Google: {founded: 1998}
+      Salesforce: {founded: 1999}
+      Rackspace: {founded: 1998}
+      Alibaba: {founded: 1999}
+      Oracle: {founded: 1977}
+    sources:
+      - "Synergy 2014 full-year ranking: https://www.srgresearch.com/articles/aws-market-share-reaches-five-year-high-despite-microsoft-growth-surge"
+      - "Synergy 2024 Q2 ranking: https://www.srgresearch.com/articles/cloud-is-a-global-market-apart-from-china"
+      - "AWS history: https://aws.amazon.com/about-aws/"
+      - "Microsoft history: https://news.microsoft.com/announcement/microsoft-50th-anniversary/"
+      - "IBM history: https://www.ibm.com/history"
+      - "Google history: https://about.google/intl/en_ALL/our-story/"
+      - "Salesforce history: https://www.salesforce.com/company/"
+      - "Rackspace history: https://www.rackspace.com/about"
+      - "Alibaba history: https://www.alibabagroup.com/en-US/about-alibaba"
+      - "Oracle history: https://www.oracle.com/corporate/history/"
+    notes: "The 2024 source identifies Alibaba, Oracle, and Salesforce as ranks four through six but does not publish their individual shares."

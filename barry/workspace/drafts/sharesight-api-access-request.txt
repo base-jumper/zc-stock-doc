@@ -1,0 +1,13 @@
+To: support@sharesight.com
+Subject: Request API access for Sharesight account
+
+Hello Sharesight Support,
+
+Could you please enable API access for my Sharesight account?
+
+Sharesight account email: nipabot.ai@gmail.com
+
+I would like to use the Sharesight API to access my own portfolio data programmatically. Could you please provide the required OAuth/API credentials (Client ID and Client Secret), and let me know what Redirect URI you need configured if applicable?
+
+Thanks,
+Nipa

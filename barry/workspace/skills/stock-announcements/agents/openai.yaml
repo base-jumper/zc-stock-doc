@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stock Announcements"
+  short_description: "Process new AU/US filings into stock docs"
+  default_prompt: "Use $stock-announcements to process new stock announcements."

@@ -1,0 +1,1326 @@
+# Concentration calibration corpus. Each entry is one labelled training example: the structural
+# trait scores a market exhibits (the input) paired with the rank-share distribution it has
+# developed at MATURITY (the outcome, always in shares/<id>.csv). Together these examples define
+# and, later, calibrate the trait -> (s1, r) mapping. Realized parameters are always derived fresh
+# by concentration_fit.py from the shares CSV, never cached here. See ../concentration.md for the
+# model, production trait specification, scoring discipline, and contract for adding entries.
+#
+# Fields per entry:
+#   id            matches shares/<id>.csv
+#   name          human label
+#   region        geography of the share basis
+#   share-basis   revenue | subscribers | units | queries — what the shares measure
+#   matured-year  year the realized shares were observed (the outcome as-of)
+#   categories    tags for nearest-neighbour selection
+#   traits        {score, confidence} per trait id, scored from mechanism (see ../concentration.md)
+#   outcome-quality
+#                 observed-ranked-shares | synthetic-geometric-shares
+#   derived-from  source aggregate-moment file and row id for synthetic shares
+#   quality       seed-approximate | verified
+#   sources       where the shares / trait evidence come from
+#
+# Trait ids are defined in traits/. Production direct ridge uses network-effects, scale-economies
+# and switching-costs to predict s1 and r independently. All seven remain scored so candidate
+# specifications can be reevaluated as the corpus grows.
+
+calibration:
+  - id: us-web-search
+    name: US web search
+    region: US
+    share-basis: queries
+    matured-year: 2023
+    categories: [consumer-internet, data-moat, winner-take-all]
+    traits:
+      network-effects:      {score: 0.35, confidence: 0.85}
+      switching-costs:      {score: 0.10, confidence: 0.9}
+      data-scale-advantage: {score: 0.55, confidence: 0.75}
+      brand-reputation:     {score: 0.70, confidence: 0.85}
+      capital-intensity:    {score: 0.50, confidence: 0.85}
+      scale-economies:      {score: 0.80, confidence: 0.90}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "StatCounter Global Stats, US search-engine share, all devices, monthly Jan-Dec 2023; annual means calculated from the downloadable CSV: https://gs.statcounter.com/search-engine-market-share/all/united-states-of-america/2023"
+      - "Google Form S-1, filed 2004-08-04 (search mechanism: link-graph relevance, large index, traffic/brand, low user friction, server infrastructure, competition and uncertain patent protection): https://www.sec.gov/Archives/edgar/data/1288776/000119312504131481/ds1.htm"
+      - "Google, 'How Search works' (automated crawling/indexing and ranking systems use aggregate and anonymized interaction data to assess relevance): https://www.google.com/search/howsearchworks/how-search-works/ranking-results/"
+    notes: >
+      Search is free and another engine is one URL away, so switching cost is negligible. Crawling,
+      indexing and interaction signals provide a real scale-quality loop, but diminishing returns and
+      replicable web data hold it below strong-moat territory. Advertiser/user feedback is indirect
+      and multi-homing is easy, so network effects are bounded. Brand directs habitual queries.
+      Distributed indexing requires meaningful infrastructure and has strong fixed-cost economies;
+      entry is legally open and patent protection is not a hard gate. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-cloud-infrastructure
+    name: US / global cloud infrastructure (IaaS+PaaS)
+    region: Global
+    share-basis: revenue
+    matured-year: 2023
+    categories: [enterprise-infra, capital-intensive, scale-economies, oligopoly]
+    traits:
+      network-effects:      {score: 0.30, confidence: 0.80}
+      switching-costs:      {score: 0.75, confidence: 0.90}
+      data-scale-advantage: {score: 0.15, confidence: 0.8}
+      brand-reputation:     {score: 0.50, confidence: 0.80}
+      capital-intensity:    {score: 0.90, confidence: 0.95}
+      scale-economies:      {score: 0.85, confidence: 0.90}
+      regulatory-barriers:  {score: 0.25, confidence: 0.85}
+    quality: verified
+    sources:
+      - "Synergy Research Group, 2024-02-01, Q4 2023 global cloud-infrastructure revenue shares (AWS 31%, Microsoft 24%, Google 11%): https://www.srgresearch.com/articles/cloud-market-gets-its-mojo-back-q4-increase-in-cloud-spending-reaches-new-highs"
+      - "Armbrust et al., Above the Clouds, UC Berkeley, 2009 (data-centre purchasing/utilisation economies and data-transfer lock-in risks): https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf"
+      - "Ofcom, Cloud services market study final report, 2023 (egress fees, committed-spend discounts, interoperability and technical barriers to switching/multi-cloud): https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/244808-cloud-services-market-study/associated-documents/final-report-cloud-services-market-study.pdf"
+      - "Amazon 2023 Form 10-K (technology infrastructure investment and AWS security, availability and breadth): https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm"
+    notes: >
+      Hyperscale data centres require very large recurring capital and yield purchasing, utilisation,
+      power and fixed-cost economies. Data gravity, egress fees, committed spend, proprietary services
+      and re-platforming risk create substantial lock-in. Developer ecosystems create a bounded
+      indirect effect, but multi-cloud is possible; no evidence supports a material usage-data quality
+      flywheel. Enterprise trust tilts procurement. Compliance raises cost but does not cap entry.
+      Shares verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-ridesharing
+    name: US ridesharing
+    region: US
+    share-basis: revenue
+    matured-year: 2023
+    categories: [marketplace, network-effects, low-capital, duopoly]
+    traits:
+      network-effects:      {score: 0.50, confidence: 0.90}
+      switching-costs:      {score: 0.10, confidence: 0.90}
+      data-scale-advantage: {score: 0.20, confidence: 0.65}
+      brand-reputation:     {score: 0.40, confidence: 0.75}
+      capital-intensity:    {score: 0.15, confidence: 0.90}
+      scale-economies:      {score: 0.45, confidence: 0.80}
+      regulatory-barriers:  {score: 0.50, confidence: 0.90}
+    quality: verified
+    sources:
+      - "Bloomberg Second Measure, US observed rideshare consumer spending (2023 chart; 74% Uber / 26% Lyft at year-end): https://secondmeasure.com/datapoints/rideshare-industry-overview/"
+      - "California Public Utilities Commission Decision 13-09-045, 2013-09-19 (TNC permit, insurance, driver-check and safety requirements): https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M077/K132/77132276.PDF"
+      - "Uber Form S-1, 2019 (local liquidity network, driver and rider multi-homing, low switching costs, asset-light driver supply, and platform data): https://www.sec.gov/Archives/edgar/data/1543151/000119312519103850/d647752ds1.htm"
+    notes: >
+      Driver/rider liquidity is a real but city-local network effect weakened by easy multi-homing on
+      both sides. Riders retain no costly workflow or data, so switching is nearly frictionless.
+      Dispatch data can improve matching, but independent evidence does not show a hard-to-replicate,
+      non-plateauing quality loop, holding data advantage low. Drivers supply vehicles, making entry
+      capital light; central software and density give moderate scale. Safety reputation matters.
+      Permits, insurance and checks are meaningful regulatory hurdles but do not cap licences. Shares
+      verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-domestic-airlines
+    name: US domestic airlines
+    region: US
+    share-basis: units
+    matured-year: 2023
+    categories: [transport, commodity, fragmented, weak-moat]
+    traits:
+      network-effects:      {score: 0.35, confidence: 0.90}
+      switching-costs:      {score: 0.30, confidence: 0.85}
+      data-scale-advantage: {score: 0.10, confidence: 0.8}
+      brand-reputation:     {score: 0.45, confidence: 0.85}
+      capital-intensity:    {score: 0.80, confidence: 0.95}
+      scale-economies:      {score: 0.55, confidence: 0.90}
+      regulatory-barriers:  {score: 0.50, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US DOT BTS TranStats archived 2024-02-15, domestic traffic share for Dec 2022-Nov 2023, measured by revenue passenger miles: https://web.archive.org/web/20240215140922/https://www.transtats.bts.gov/"
+      - "US GAO, Commercial Aviation: Legacy Airlines Must Further Reduce Costs to Restore Profitability, GAO-04-836, 2004 (aircraft/labour fixed costs, networks, LCC entry and cost structure): https://www.gao.gov/products/gao-04-836"
+      - "US GAO, Airline Deregulation, GAO-05-945, 2005 (open economic entry after deregulation and remaining safety oversight): https://www.gao.gov/products/gao-05-945"
+      - "US DOT, Airport slots (slot controls at JFK, LGA and DCA): https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/systemops/perf_analysis/slot_administration"
+    notes: >
+      Hub breadth, schedule frequency and frequent-flyer partnerships create bounded network and
+      loyalty effects, but comparison shopping and route-level choice limit lock-in. Safety/service
+      reputation tilts choice without overriding fare and schedule. Aircraft and airport facilities
+      make the entry ticket heavy; fleet, network and overhead fixed costs give moderate economies
+      that can be reached below national-leader scale. FAA certification and scarce slots at a few
+      airports are real gates, while economic entry is otherwise open. Operational data does not
+      create a demand-side quality loop. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares. The flat top is poorly geometric by construction.
+
+  - id: global-mobile-os
+    name: Global mobile operating systems
+    region: Global
+    share-basis: device-usage
+    matured-year: 2023
+    categories: [consumer-tech, platform, network-effects, switching-costs, duopoly]
+    traits:
+      network-effects:      {score: 0.75, confidence: 0.90}
+      switching-costs:      {score: 0.75, confidence: 0.90}
+      data-scale-advantage: {score: 0.20, confidence: 0.70}
+      brand-reputation:     {score: 0.60, confidence: 0.85}
+      capital-intensity:    {score: 0.55, confidence: 0.85}
+      scale-economies:      {score: 0.80, confidence: 0.90}
+      regulatory-barriers:  {score: 0.15, confidence: 0.90}
+    quality: verified
+    sources:
+      - "StatCounter Global Stats, worldwide mobile operating-system share, monthly Jan-Dec 2023; 2023 annual means computed from the downloadable CSV (Android 70.4%, iOS 29.0%, Samsung 0.4%): https://gs.statcounter.com/os-market-share/mobile/worldwide/2023"
+      - "UK CMA, Mobile ecosystems market study final report, 2022 (app-developer/user indirect network effects; data, app, purchase and accessory switching frictions; multi-homing constraints): https://assets.publishing.service.gov.uk/media/62a229c28fa8f50395c0a8e1/mobile-ecosystems-market-study-final-report.pdf"
+      - "Android Open Source Project, Compatibility program overview (open source availability; compatibility enables a common app ecosystem): https://source.android.com/docs/compatibility/overview"
+    notes: >
+      App users attract developers and app availability attracts users, a strong indirect effect
+      bounded by developer multi-homing. Apps, purchases, learned workflows, cloud data and accessories
+      make ecosystem switching costly. OS usage data is not shown to create a non-replicable product-
+      quality loop, so data advantage is held low. Device/platform trust matters. OS engineering and
+      developer tooling have high fixed costs and global reuse, though Android source lowers the pure
+      capital ticket; no licence caps OS entry. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares. The hard-duopoly top is poorly geometric.
+
+  - id: discrete-gpus
+    name: Discrete GPUs (desktop add-in boards)
+    region: Global
+    share-basis: units
+    matured-year: 2023
+    categories: [semiconductors, capital-intensive, scale-economies, software-ecosystem, near-monopoly]
+    traits:
+      network-effects:      {score: 0.55, confidence: 0.85}
+      switching-costs:      {score: 0.50, confidence: 0.85}
+      data-scale-advantage: {score: 0.10, confidence: 0.85}
+      brand-reputation:     {score: 0.65, confidence: 0.85}
+      capital-intensity:    {score: 0.70, confidence: 0.90}
+      scale-economies:      {score: 0.85, confidence: 0.90}
+      regulatory-barriers:  {score: 0.20, confidence: 0.85}
+    quality: verified
+    sources:
+      - "Jon Peddie Research Q4 2023 add-in-board market report, via WCCFTech: Nvidia ~80%, AMD ~19%, Intel ~1% of desktop discrete-GPU unit shipments: https://wccftech.com/amd-nvidia-intel-aib-discrete-gpu-market-share-report-q4-2023/"
+      - "NVIDIA 2024 Form 10-K (CUDA/software ecosystem, developer adoption, foundry and capacity commitments, R&D and brand): https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm"
+      - "TSMC 2023 Annual Report (advanced-node capital expenditure and scale/learning economics): https://investor.tsmc.com/english/annual-reports"
+    notes: >
+      CUDA, drivers, libraries and developer tooling form an indirect software ecosystem and create
+      moderate workflow/code switching costs; gaming brand and driver reliability tilt purchase.
+      More shipped GPUs do not themselves improve GPU quality, holding data advantage near zero.
+      Fabless vendors avoid owning fabs, but leading-edge design, masks, R&D and capacity commitments
+      remain a high ticket; semiconductor fixed costs and learning yield strong scale economies. IP
+      matters but does not constitute an exclusive legal franchise. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-carbonated-soft-drinks
+    name: US carbonated soft drinks
+    region: US
+    share-basis: revenue
+    matured-year: 2022
+    categories: [consumer-staples, brand-driven, distribution-scale, oligopoly]
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.90, confidence: 0.95}
+      capital-intensity:    {score: 0.50, confidence: 0.85}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "Beverage Digest 2022 US carbonated-soft-drink company dollar shares, as reported by Statista (Coca-Cola 44.9%, PepsiCo 27.3%, Keurig Dr Pepper 21.0%, Refresco 2.6%, National Beverage 0.5%): https://www.statista.com/statistics/225504/leading-carbonated-soft-drink-companies-in-the-us/"
+      - "The Coca-Cola Company 2023 Form 10-K (trademarks, advertising, concentrate/bottling system, distribution and competition): https://www.sec.gov/Archives/edgar/data/21344/000002134424000009/ko-20231231.htm"
+      - "FTC, Coca-Cola/Dr Pepper bottling case, 1986 (brand differentiation, advertising and bottling/distribution economics): https://www.ftc.gov/legal-library/browse/cases-proceedings/commission-decision-volumes/volume-110"
+    notes: >
+      Consumer taste, habit, trademarks and sustained advertising create an unusually strong free-choice
+      preference moat. A drink does not improve with other drinkers or usage data, and consumers switch
+      at negligible cost. Bottling capacity is meaningful but broadly financeable; national advertising,
+      concentrate production, procurement and route distribution provide strong scale economies. Food
+      rules and trademarks protect names rather than cap beverage entry. Shares verified/cited; traits
+      checked against durable mechanism evidence without using realized shares. The flat top is poorly
+      geometric.
+
+  - id: credit-rating-agencies
+    name: US / global credit rating agencies
+    region: Global
+    share-basis: outstanding-ratings
+    matured-year: 2022
+    categories: [financial-services, regulatory-barriers, reputation, oligopoly]
+    traits:
+      network-effects:      {score: 0.55, confidence: 0.85}
+      switching-costs:      {score: 0.45, confidence: 0.80}
+      data-scale-advantage: {score: 0.25, confidence: 0.70}
+      brand-reputation:     {score: 0.90, confidence: 0.95}
+      capital-intensity:    {score: 0.15, confidence: 0.90}
+      scale-economies:      {score: 0.65, confidence: 0.85}
+      regulatory-barriers:  {score: 0.80, confidence: 0.95}
+    quality: verified
+    sources:
+      - "SEC Office of Credit Ratings, Staff Report on NRSROs, February 2024 (share of total outstanding credit ratings across all categories, 2023 certifications reflecting year-end 2022 data: S&P 49.96%, Moody's 31.73%, Fitch 12.46%): https://www.sec.gov/files/feb-2024-ocr-staff-report.pdf"
+      - "US DOJ, Competition and Monopoly: Single-Firm Conduct Under Section 2, ch. 3 (credit-rating reputation and regulatory reliance as entry barriers; SEC staff findings): https://www.justice.gov/archives/atr/competition-and-monopoly-single-firm-conduct-under-section-2-sherman-act-chapter-3"
+      - "SEC, NRSRO registration and oversight (application, recordkeeping, governance and annual certification requirements): https://www.sec.gov/about/divisions-offices/office-credit-ratings"
+    notes: >
+      Investors and mandates value a rating partly because it is recognised and trusted, creating a
+      bounded issuer/investor coordination effect and a very strong reputation gate. Issuers face
+      process friction when changing agencies, but commonly use several. Historical default data aids
+      models, yet methodology and public credit data make the loop replicable enough to hold the score
+      low. Analyst platforms have moderate fixed-cost scale and little physical capital. NRSRO
+      registration, oversight and regulatory use are a high legal/compliance barrier. Shares verified/
+      cited; traits checked against durable mechanism evidence without using realized shares.
+
+  - id: large-commercial-aircraft
+    name: Large commercial aircraft
+    region: Global
+    share-basis: units
+    matured-year: 2023
+    categories: [industrials, capital-intensive, scale-economies, regulatory-barriers, duopoly]
+    traits:
+      network-effects:      {score: 0.30, confidence: 0.80}
+      switching-costs:      {score: 0.65, confidence: 0.90}
+      data-scale-advantage: {score: 0.10, confidence: 0.90}
+      brand-reputation:     {score: 0.70, confidence: 0.90}
+      capital-intensity:    {score: 0.95, confidence: 0.95}
+      scale-economies:      {score: 0.90, confidence: 0.95}
+      regulatory-barriers:  {score: 0.85, confidence: 0.95}
+    quality: verified
+    sources:
+      - "Airbus and Boeing full-year 2023 commercial-aircraft delivery counts (Airbus 735, Boeing 528; shares 58.2% / 41.8%), via Forecast International Flight Plan: https://flightplan.forecastinternational.com/2024/01/15/airbus-and-boeing-report-december-and-full-year-2023-commercial-aircraft-orders-and-deliveries/"
+      - "US GAO, Commercial Aviation Manufacturing, GAO-14-376T, 2014 (billions and years of development, certification, supplier and production-scale barriers): https://www.gao.gov/products/gao-14-376t"
+      - "FAA, Aircraft certification (type, production and airworthiness certification requirements): https://www.faa.gov/aircraft/air_cert/airworthiness_certification"
+      - "Airbus 2023 Universal Registration Document (development investment, learning/production ramp, installed-fleet support and customer commonality): https://www.airbus.com/en/investors/financial-results-annual-reports"
+    notes: >
+      A clean-sheet mainline aircraft requires billions, many years, specialised suppliers and a
+      production ramp, making capital and learning-curve economies exceptionally strong. Type and
+      production certification are hard, durable legal gates. Fleet commonality, pilot/maintenance
+      training, spares and infrastructure impose material switching costs; installed-fleet support has
+      a bounded complement effect. Safety and dispatch-reliability reputation strongly affect purchase.
+      Flight data does not make the airframe inherently better at scale. Shares verified/cited; traits
+      checked against durable mechanism evidence without using realized shares. The two-point split is
+      poorly geometric by construction.
+
+  - id: us-card-payment-networks
+    name: US card payment networks
+    region: US
+    share-basis: purchase-volume
+    matured-year: 2023
+    categories: [payments, network-effects, two-sided, oligopoly]
+    traits:
+      network-effects:      {score: 0.75, confidence: 0.95}
+      switching-costs:      {score: 0.40, confidence: 0.85}
+      data-scale-advantage: {score: 0.35, confidence: 0.75}
+      brand-reputation:     {score: 0.70, confidence: 0.90}
+      capital-intensity:    {score: 0.55, confidence: 0.85}
+      scale-economies:      {score: 0.80, confidence: 0.90}
+      regulatory-barriers:  {score: 0.45, confidence: 0.85}
+    quality: verified
+    sources:
+      - "The Nilson Report figures compiled by The Motley Fool, 2023 US credit-card purchase-volume share by network (Visa 52%, Mastercard 24%, American Express 19%, Discover 5%): https://www.fool.com/money/research/credit-debit-card-market-share-network-issuer/"
+      - "US DOJ, Competitive Impact Statement, United States v. Visa and Plaid, 2020 (two-sided network effects and high entry barriers in online debit): https://www.justice.gov/atr/case-document/file/1334726/dl"
+      - "Federal Reserve, Regulation II final rule on debit-card routing, 2022 (at least two unaffiliated networks and routing choice, weakening exclusivity): https://www.federalreserve.gov/newsevents/pressreleases/bcreg20221003a.htm"
+      - "Visa 2023 Form 10-K (global processing infrastructure, acceptance, security/fraud services, brand and regulation): https://www.sec.gov/Archives/edgar/data/1403161/000140316123000099/v-20230930.htm"
+    notes: >
+      Merchant acceptance attracts cardholders and cardholders attract merchants, a strong two-sided
+      effect weakened by widespread multi-homing and routing rules. Issuers, acquirers and merchants
+      incur integration and certification costs, but consumers can carry several cards. Transaction
+      data improves fraud/risk services, though diminishing returns and shared inputs hold the data
+      score down. Trust and acceptance marks matter. Resilient global processing has meaningful capital
+      and strong fixed-cost scale. Regulation raises compliance and sometimes mandates competition
+      rather than capping entry. Shares verified/cited; traits checked against mechanism evidence
+      without using realized shares. The flat top is poorly geometric.
+
+  - id: x86-cpus
+    name: x86 CPUs (Intel / AMD)
+    region: Global
+    share-basis: units
+    matured-year: 2023
+    categories: [semiconductors, capital-intensive, scale-economies, ip-barrier, duopoly]
+    traits:
+      network-effects:      {score: 0.65, confidence: 0.90}
+      switching-costs:      {score: 0.70, confidence: 0.90}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.55, confidence: 0.85}
+      capital-intensity:    {score: 0.90, confidence: 0.95}
+      scale-economies:      {score: 0.90, confidence: 0.95}
+      regulatory-barriers:  {score: 0.75, confidence: 0.90}
+    quality: verified
+    sources:
+      - "Mercury Research Q4 2023 CPU shares via Tom's Hardware; x86-only unit share Intel ~80% / AMD ~20% (AMD reported at 18.4% of all client+server processor units including ARM): https://www.tomshardware.com/pc-components/cpus/amd-takes-revenue-share-from-intel-in-server-desktop-and-notebooks-new-mercury-research-data-shares-q4-2023-data"
+      - "AMD 2023 Form 10-K (x86 cross-licence, architecture/software compatibility, foundry dependence, R&D and capacity commitments): https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.htm"
+      - "Intel 2023 Form 10-K (capital-intensive fabs, process-development costs, x86 ecosystem, brand and manufacturing scale): https://www.sec.gov/Archives/edgar/data/50863/000005086324000010/intc-20231230.htm"
+      - "FTC, In re Intel complaint, 2009 (x86 instruction-set licences and compatibility ecosystem as entry constraints): https://www.ftc.gov/legal-library/browse/cases-proceedings/061-0247-intel-corporation-matter"
+    notes: >
+      The installed x86 software/tooling base creates a strong indirect compatibility ecosystem, while
+      recompilation, validation and platform qualification impose material switching costs. Processor
+      quality comes from design and process technology, not a usage-data flywheel. OEM/enterprise trust
+      matters but buying remains specification-driven. Leading-edge process R&D, fabs or foundry access,
+      masks and design require exceptional capital and fixed-cost scale. x86 instruction-set licences
+      and cross-licence restrictions form a high IP gate. Shares verified/cited; traits checked against
+      durable mechanism evidence without using realized shares.
+
+  - id: us-restaurants
+    name: US restaurants
+    region: US
+    share-basis: revenue
+    matured-year: 2024
+    categories: [consumer-services, commodity, fragmented, weak-moat]
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.10, confidence: 0.85}
+      brand-reputation:     {score: 0.40, confidence: 0.90}
+      capital-intensity:    {score: 0.25, confidence: 0.90}
+      scale-economies:      {score: 0.35, confidence: 0.90}
+      regulatory-barriers:  {score: 0.20, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US restaurant-chain 2024 US system-wide sales (Technomic-based) compiled by Orbital, against ~$1.1T total US restaurant industry sales (McDonald's ~$53B, Starbucks ~$31B, Chick-fil-A ~$22B, ... leader share ~4.8%): https://www.withorbital.com/data/largest-restaurant-chains-in-the-us/"
+      - "US Census Bureau, Accommodation and Food Services, Establishment and Firm Size Statistics (industry dominated by local establishments and small firms): https://www.census.gov/programs-surveys/susb.html"
+      - "McDonald's 2023 Form 10-K (franchise model, brand, purchasing/advertising scale, restaurant investment and competition): https://www.sec.gov/Archives/edgar/data/63908/000006390824000024/mcd-20231231.htm"
+      - "US SBA, Restaurant Revitalization Fund program guide (ordinary restaurant permits and cost structure; no numerical entry cap): https://www.sba.gov/funding-programs/loans/covid-19-relief-options/restaurant-revitalization-fund"
+    notes: >
+      A meal does not improve with other diners and customers can change venues immediately. Loyalty
+      data can modestly improve offers, but it is replicable and not the core product. Chain brands tilt
+      trust and habit while local reputation remains contestable. A single outlet needs meaningful but
+      broadly financeable capital; franchising shifts much of it to operators. Purchasing, advertising
+      and systems offer moderate economies that flatten well below national scale. Health, zoning and
+      liquor rules are local hurdles, not a general numerical cap. Shares verified/cited; traits checked
+      against durable mechanism evidence without using realized shares.
+
+  - id: us-naics-311230
+    name: US breakfast cereal manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [consumer-staples, brand-driven, manufacturing, oligopoly]
+    outcome-quality: synthetic-geometric-shares
+    derived-from:
+      type: aggregate-moments
+      file: moments/census-2022-pilot.csv
+      key: us-naics-311230
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.85, confidence: 0.90}
+      capital-intensity:    {score: 0.55, confidence: 0.80}
+      scale-economies:      {score: 0.75, confidence: 0.85}
+      regulatory-barriers:  {score: 0.15, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 311230 (revenue concentration ratios and HHI): https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "Kellogg Company 2022 Form 10-K (owned cereal trademarks, manufacturing inputs and energy, R&D, advertising, private-label competition and purchase factors): https://www.sec.gov/Archives/edgar/data/55067/000162828023004299/k-20221231.htm"
+    notes: >
+      A cereal does not improve with other buyers or usage data, and consumers can switch each
+      purchase. Durable trademarks, habitual preference and advertising make brand the principal
+      dominance mechanism, while private labels and price competition keep it below an extreme.
+      Processing plants, procurement, national advertising, R&D and distribution create meaningful
+      capital and scale economies; ordinary food rules raise compliance cost without capping entry.
+      The outcome is estimated from official HHI plus CR4/CR8; CR20/CR50 are held-out fit checks.
+
+  - id: us-naics-532111
+    name: US passenger car rental
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [consumer-services, fleet-capital, travel, oligopoly]
+    outcome-quality: synthetic-geometric-shares
+    derived-from:
+      type: aggregate-moments
+      file: moments/census-2022-pilot.csv
+      key: us-naics-532111
+    traits:
+      network-effects:      {score: 0.15, confidence: 0.80}
+      switching-costs:      {score: 0.10, confidence: 0.90}
+      data-scale-advantage: {score: 0.15, confidence: 0.75}
+      brand-reputation:     {score: 0.55, confidence: 0.85}
+      capital-intensity:    {score: 0.75, confidence: 0.90}
+      scale-economies:      {score: 0.70, confidence: 0.85}
+      regulatory-barriers:  {score: 0.35, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 532111 (revenue concentration ratios and HHI): https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "Avis Budget Group 2022 Form 10-K (recognized brands, 655,000-vehicle average fleet, 36 million transactions, licensing and global location network): https://www.sec.gov/Archives/edgar/data/723612/000072361223000015/car-20221231.htm"
+      - "Hertz 2022 Form 10-K (airport concessions, fixed rents and fees, location network and one-way rental benefits): https://www.sec.gov/Archives/edgar/data/47129/000165785323000039/htz-20221231.htm"
+    notes: >
+      Customers can compare brands per trip, so loyalty and account history create little lock-in.
+      Recognised brands tilt trust and convenience. A broad location network modestly improves
+      availability and one-way rentals but does not create a strong user-to-user effect. Fleet
+      ownership and airport facilities require substantial finance; procurement, fleet utilisation,
+      reservation systems and shared infrastructure provide scale. Airport concessions are meaningful
+      local gates rather than a national licence cap. The outcome uses official aggregate moments.
+
+  - id: us-naics-561450
+    name: US credit bureaus
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [financial-data, data-moat, regulated, oligopoly]
+    outcome-quality: synthetic-geometric-shares
+    derived-from:
+      type: aggregate-moments
+      file: moments/census-2022-pilot.csv
+      key: us-naics-561450
+    traits:
+      network-effects:      {score: 0.55, confidence: 0.85}
+      switching-costs:      {score: 0.55, confidence: 0.80}
+      data-scale-advantage: {score: 0.85, confidence: 0.95}
+      brand-reputation:     {score: 0.60, confidence: 0.85}
+      capital-intensity:    {score: 0.45, confidence: 0.80}
+      scale-economies:      {score: 0.80, confidence: 0.90}
+      regulatory-barriers:  {score: 0.65, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 561450 (revenue concentration ratios and HHI): https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "CFPB, report on the nationwide credit bureaus (each held 200m+ consumer files and received monthly updates from roughly 10,000 furnishers covering 1.3bn tradelines): https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-report-details-how-the-nations-largest-credit-bureaus-manage-consumer-data/"
+      - "CFPB, credit-reporting overview and FCRA requirements (data sources, permissible purposes and duties applying to bureaus, users and furnishers): https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-reporting-company-en-1251/"
+    notes: >
+      More furnishers and broader files improve report coverage, while lender demand encourages
+      furnishing, creating a bounded data-network effect weakened by multi-bureau reporting. Long
+      histories, identity resolution and nationwide files form a strong cumulative data advantage.
+      Lender integrations, model validation and recognised accuracy create switching and reputation
+      friction. Secure data infrastructure and compliance have high fixed cost but limited physical
+      capital; FCRA duties are a substantial legal/compliance barrier without a numerical entry cap.
+
+  - id: us-naics-326211
+    name: US tire manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [automotive, brand-driven, capital-intensive, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from:
+      type: aggregate-moments
+      file: moments/census-2022-pilot.csv
+      key: us-naics-326211
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.20, confidence: 0.80}
+      data-scale-advantage: {score: 0.10, confidence: 0.85}
+      brand-reputation:     {score: 0.75, confidence: 0.90}
+      capital-intensity:    {score: 0.80, confidence: 0.90}
+      scale-economies:      {score: 0.80, confidence: 0.90}
+      regulatory-barriers:  {score: 0.25, confidence: 0.80}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 326211 (revenue concentration ratios and HHI): https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "Goodyear 2022 Form 10-K (57 manufacturing facilities, material trademarks, global distribution, OE/replacement channels, patents and facility-modernisation capex): https://www.sec.gov/Archives/edgar/data/42582/000095017023002558/gt-20221231.htm"
+    notes: >
+      Tires do not gain utility from other buyers or from a usage-data loop. Consumers can change
+      replacement brands, while OE qualification, fleet specifications and dealer relationships add
+      bounded switching friction. Safety and performance reputation make brand important. Plants,
+      tooling, compound and process R&D, purchasing, global distribution and utilisation drive high
+      capital and scale economies. Safety standards and testing add compliance cost but do not reserve
+      the market to a fixed set of firms. The outcome uses official aggregate moments.
+
+  - id: us-naics-332710
+    name: US machine shops
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [industrial-services, fragmented, low-volume, weak-moat]
+    outcome-quality: synthetic-geometric-shares
+    derived-from:
+      type: aggregate-moments
+      file: moments/census-2022-pilot.csv
+      key: us-naics-332710
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.20, confidence: 0.75}
+      data-scale-advantage: {score: 0.10, confidence: 0.80}
+      brand-reputation:     {score: 0.20, confidence: 0.80}
+      capital-intensity:    {score: 0.45, confidence: 0.85}
+      scale-economies:      {score: 0.25, confidence: 0.85}
+      regulatory-barriers:  {score: 0.15, confidence: 0.80}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 332710 (revenue concentration ratios and HHI): https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 332710 definition (low-volume machining on a job or order basis using CNC and other machine tools): https://www.census.gov/naics/?details=332710&input=332710&year=2022"
+      - "NIST MEP, Small Manufacturer Capital Needs Assessment (equipment and working-capital needs across small manufacturing firms): https://www.nist.gov/document/mepcapitalneedsassessmentfinalpdf"
+    notes: >
+      Job-shop output is ordered bilaterally: no user network or shared usage-data loop exists.
+      Qualification, drawings and accumulated process knowledge create modest relationship friction,
+      while local reputation matters more than national brand. CNC and inspection equipment require
+      meaningful but broadly financeable capital. Low-volume custom work limits plant-level scale,
+      and entry is not licence-capped. This is a deliberately fragmented industrial anchor; official
+      aggregate moments imply a leader below one percent and pass both top and held-out tail checks.
+
+  - id: us-naics-483112
+    name: US deep sea passenger transportation
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [transport, capital-intensive, regulated, oligopoly]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-483112}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.85}
+      switching-costs:      {score: 0.15, confidence: 0.80}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.65, confidence: 0.85}
+      capital-intensity:    {score: 0.95, confidence: 0.95}
+      scale-economies:      {score: 0.75, confidence: 0.85}
+      regulatory-barriers:  {score: 0.55, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 483112: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 483112 definition: https://www.census.gov/naics/?details=483112&input=483112&year=2022"
+      - "Carnival Corporation 2025 Form 10-K (shipbuilding commitments, fleet operations, portfolio brands, marketing, and safety/environmental compliance): https://www.sec.gov/Archives/edgar/data/815097/000081509726000007/ccl-20251130.htm"
+      - "International Maritime Organization, passenger-ship safety (SOLAS design, equipment, operation, and inspection requirements): https://www.imo.org/en/ourwork/safety/pages/passengerships.aspx"
+      - "Sys, Blauwens, Omey, Van de Voorde and Witlox, 'Economies of scale in cruise shipping,' 2020 (vessel-level scale mechanisms and their limits): https://link.springer.com/article/10.1057/s41278-020-00158-3"
+    notes: >
+      Cruise demand does not become more valuable with other passengers, and booking another line
+      forfeits little beyond modest loyalty benefits; operating data is not a demonstrated
+      scale-quality flywheel. Brand, itinerary confidence and safety reputation materially tilt a
+      discretionary, high-ticket purchase. Ocean-going ships are specialised billion-dollar-class
+      assets, while larger vessels, fleet procurement, marketing and shared operations produce
+      substantial but not unlimited scale economies. SOLAS and environmental regimes impose
+      meaningful compliance and inspection hurdles without fixing the number of operators. Shares
+      verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-455110
+    name: US department stores
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [retail, brand-driven, scale-economies]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-455110}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.20, confidence: 0.85}
+      data-scale-advantage: {score: 0.15, confidence: 0.75}
+      brand-reputation:     {score: 0.60, confidence: 0.85}
+      capital-intensity:    {score: 0.60, confidence: 0.85}
+      scale-economies:      {score: 0.65, confidence: 0.85}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 455110: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 455110 definition: https://www.census.gov/naics/?details=455110&input=455110&year=2022"
+      - "Macy's 2025 Form 10-K (nameplates/private brands, loyalty programs, sourcing, inventory, stores, warehouses, and ordinary-course regulation): https://www.sec.gov/Archives/edgar/data/794367/000162828026021721/m-20260131.htm"
+    notes: >
+      Department-store assortment does not improve because more shoppers use the same retailer, and
+      consumers can shop rivals without meaningful loss; loyalty balances add only modest friction.
+      Customer data aids personalisation but is replicable and not shown to compound product quality.
+      Nameplates, private labels and service reputation materially tilt free choice. Large stores,
+      seasonal inventory and distribution facilities require meaningful capital, while sourcing,
+      logistics, advertising and private-label development support moderate-to-strong scale
+      economies. Ordinary retail rules do not gate entry. Shares verified/cited; traits checked
+      against mechanism evidence without using realized shares.
+
+  - id: us-naics-713110
+    name: US amusement and theme parks
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [leisure, brand-driven, capital-intensive]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-713110}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.15, confidence: 0.85}
+      data-scale-advantage: {score: 0.10, confidence: 0.80}
+      brand-reputation:     {score: 0.85, confidence: 0.90}
+      capital-intensity:    {score: 0.95, confidence: 0.95}
+      scale-economies:      {score: 0.65, confidence: 0.85}
+      regulatory-barriers:  {score: 0.45, confidence: 0.80}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 713110: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 713110 definition: https://www.census.gov/naics/?details=713110&input=713110&year=2022"
+      - "The Walt Disney Company 2025 Form 10-K (park/resort assets, admissions economics, intellectual property, brands, capital investment, and safety/regulatory exposure): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm"
+    notes: >
+      A park visit is not more valuable merely because more people attend, and guests can choose a
+      different attraction without losing data or workflow; visitation data is not a demonstrated
+      hard-to-replicate quality loop. Recognised characters, themed intellectual property, safety
+      reputation and destination trust create a very strong preference moat. Land, rides, hotels and
+      infrastructure are exceptionally capital intensive. Shared IP, marketing, technology and
+      destination infrastructure create material scale economies, though parks remain geographically
+      local. Zoning, ride safety and environmental approvals are meaningful project hurdles but do
+      not legally cap the operator count. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares.
+
+  - id: us-naics-331315
+    name: US aluminum sheet, plate, and foil manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [materials, capital-intensive, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-331315}
+    traits:
+      network-effects:      {score: 0.02, confidence: 0.95}
+      switching-costs:      {score: 0.55, confidence: 0.90}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.30, confidence: 0.80}
+      capital-intensity:    {score: 0.90, confidence: 0.95}
+      scale-economies:      {score: 0.85, confidence: 0.90}
+      regulatory-barriers:  {score: 0.40, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 331315: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 331315 definition: https://www.census.gov/naics/?details=331315&input=331315&year=2022"
+      - "Kaiser Aluminum 2025 Form 10-K (rolling/heat-treatment equipment, high fixed costs, multi-year customer qualification, specialised investment, and environmental/FDA requirements): https://www.sec.gov/Archives/edgar/data/811596/000119312526059575/kalu-20251231.htm"
+    notes: >
+      Rolled aluminum is specification-driven: neither other buyers nor supplier usage data improves
+      the material itself, and supplier name matters mainly as evidence of quality. Aerospace,
+      automotive and can-stock customers impose rigorous, sometimes multi-year qualifications, so
+      an approved supplier is costly to replace. Rolling mills, heat treatment and coating lines are
+      large specialised assets, and high fixed costs require sustained utilisation, supporting very
+      strong scale economies. Environmental permits, food-contact rules and product qualifications
+      slow entry but do not reserve the market to a fixed set of firms. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-517111
+    name: US wired telecommunications carriers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [telecommunications, infrastructure, regulated]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-517111}
+    traits:
+      network-effects:      {score: 0.15, confidence: 0.80}
+      switching-costs:      {score: 0.55, confidence: 0.85}
+      data-scale-advantage: {score: 0.05, confidence: 0.85}
+      brand-reputation:     {score: 0.45, confidence: 0.80}
+      capital-intensity:    {score: 0.95, confidence: 0.95}
+      scale-economies:      {score: 0.90, confidence: 0.95}
+      regulatory-barriers:  {score: 0.65, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 517111: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 517111 definition: https://www.census.gov/naics/?details=517111&input=517111&year=2022"
+      - "AT&T 2025 Form 10-K (fiber construction, network capital, traffic aggregation and marginal-cost economics, bundles, brand, and communications regulation): https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm"
+    notes: >
+      Interconnection makes the communications system valuable but is interoperable rather than a
+      provider-specific user network; subscriber data does not make access quality compound.
+      Installation, bundled services and enterprise network integration create meaningful switching
+      friction, while reliability and security reputation tilt provider choice. Fiber construction
+      and electronics require enormous sunk capital, and dense traffic on shared networks produces
+      very strong fixed-cost economies. Rights-of-way, pole access, construction permits and carrier
+      obligations are substantial local gates, though they do not impose a universal licence cap.
+      Shares verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-522210
+    name: US credit card issuing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [financial-services, data-moat, regulated]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-522210}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.85}
+      switching-costs:      {score: 0.55, confidence: 0.85}
+      data-scale-advantage: {score: 0.45, confidence: 0.70}
+      brand-reputation:     {score: 0.55, confidence: 0.80}
+      capital-intensity:    {score: 0.30, confidence: 0.85}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.80, confidence: 0.95}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 522210: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 522210 definition: https://www.census.gov/naics/?details=522210&input=522210&year=2022"
+      - "Capital One 2025 Form 10-K (issuer and payment-network distinction, underwriting/data, rewards, funding, technology, and bank capital/regulation): https://www.sec.gov/Archives/edgar/data/927628/000092762826000024/cof-20251231.htm"
+      - "Office of the Comptroller of the Currency, Comptroller's Licensing Manual: Charters (bank-charter application, capital, management and business-plan review): https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-licensing-manual/files/charters.pdf"
+    notes: >
+      Card issuers generally ride interoperable payment networks, so merchant acceptance is mainly a
+      network-level effect rather than an issuer-specific one. Rewards, recurring payments, balances
+      and bundled banking create real friction, but consumers can multi-home and transfer balances.
+      Account and transaction histories improve underwriting and fraud models, yet bureau and
+      external data, diminishing returns and well-funded entrants keep this below a strong proprietary
+      flywheel. Trust and service reputation tilt choice. Funding, technology, risk operations and
+      marketing scale strongly; the physical entry ticket is moderate. A bank charter, regulatory
+      capital, supervision and consumer-credit compliance form a high legal barrier. Shares verified/
+      cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-456110
+    name: US pharmacies and drug retailers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [retail, healthcare, regulated]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-456110}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.30, confidence: 0.85}
+      data-scale-advantage: {score: 0.10, confidence: 0.75}
+      brand-reputation:     {score: 0.55, confidence: 0.85}
+      capital-intensity:    {score: 0.45, confidence: 0.85}
+      scale-economies:      {score: 0.70, confidence: 0.90}
+      regulatory-barriers:  {score: 0.65, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 456110: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 456110 definition: https://www.census.gov/naics/?details=456110&input=456110&year=2022"
+      - "CVS Health 2025 Form 10-K (retail-pharmacy operations, purchasing/distribution, digital and loyalty capabilities, capital investment, and pharmacy regulation): https://www.sec.gov/Archives/edgar/data/64803/000006480326000010/cvs-20251231.htm"
+      - "National Association of Boards of Pharmacy, boards of pharmacy (state licensing and regulation of pharmacies and pharmacists): https://nabp.pharmacy/about/boards-of-pharmacy/"
+    notes: >
+      A prescription is not more valuable because more customers use the retailer, and dispensing
+      data is not shown to create a hard-to-replicate quality loop. Prescription histories,
+      insurance relationships and convenience create modest transfer friction, while safety,
+      availability and service reputation materially tilt choice. Stores, inventories and
+      distribution centres require meaningful but broadly financeable capital. National purchasing,
+      distribution, technology and advertising provide strong scale economies. State pharmacy and
+      pharmacist licences, controlled-substance rules and extensive compliance are durable hurdles,
+      but qualified operators are not numerically capped. Shares verified/cited; traits checked
+      against mechanism evidence without using realized shares.
+
+  - id: us-naics-311351
+    name: US chocolate and confectionery manufacturing from cacao beans
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [consumer-staples, brand-driven, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-311351}
+    traits:
+      network-effects:      {score: 0.03, confidence: 0.95}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.85, confidence: 0.95}
+      capital-intensity:    {score: 0.65, confidence: 0.90}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.15, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 311351: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 311351 definition: https://www.census.gov/naics/?details=311351&input=311351&year=2022"
+      - "The Hershey Company 2025 Form 10-K (brand recognition and loyalty, advertising, manufacturing capacity, distribution, trademarks, competition, and food regulation): https://www.sec.gov/Archives/edgar/data/47111/000162828026008586/hsy-20251231.htm"
+    notes: >
+      Chocolate does not improve with other consumers or usage data, and buyers can switch products
+      at negligible cost. Taste, habit, quality expectations, trademarks and sustained advertising
+      create a very strong free-choice brand moat. Processing and packaging plants require meaningful
+      capital, while national manufacturing, procurement, advertising and distribution provide
+      strong scale economies. Food-safety and labelling rules impose compliance but are not a scarce
+      licence or exclusive IP gate. Shares verified/cited; traits checked against mechanism evidence
+      without using realized shares.
+
+  - id: us-naics-325120
+    name: US industrial gas manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [chemicals, capital-intensive, switching-costs]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-325120}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.80, confidence: 0.95}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.40, confidence: 0.80}
+      capital-intensity:    {score: 0.95, confidence: 0.95}
+      scale-economies:      {score: 0.85, confidence: 0.90}
+      regulatory-barriers:  {score: 0.35, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 325120: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 325120 definition: https://www.census.gov/naics/?details=325120&input=325120&year=2022"
+      - "Linde 2025 Form 10-K (on-site plants and pipelines, 10-20 year total-requirement contracts, local delivery radii, energy costs, infrastructure, and regulation): https://www.sec.gov/Archives/edgar/data/1707925/000162828026011430/lin-20251231.htm"
+    notes: >
+      Industrial gases are specification commodities whose quality does not improve with other users
+      or usage data. On-site plants, customer-site tanks and pipelines are physically integrated,
+      and total-requirement contracts commonly run 10-20 years, creating very high switching costs;
+      reliability reputation matters for critical processes. Air-separation and hydrogen plants,
+      pipelines and fleets are highly specialised capital. Plant utilisation, energy efficiency,
+      pipeline density and short economic delivery radii produce strong local scale economies.
+      Safety and environmental rules are meaningful compliance hurdles but do not cap entry. Shares
+      verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-331314
+    name: US secondary smelting and alloying of aluminum
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [materials, capital-intensive, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-331314}
+    traits:
+      network-effects:      {score: 0.02, confidence: 0.95}
+      switching-costs:      {score: 0.35, confidence: 0.80}
+      data-scale-advantage: {score: 0.05, confidence: 0.85}
+      brand-reputation:     {score: 0.20, confidence: 0.80}
+      capital-intensity:    {score: 0.75, confidence: 0.90}
+      scale-economies:      {score: 0.65, confidence: 0.85}
+      regulatory-barriers:  {score: 0.55, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 331314: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 331314 definition: https://www.census.gov/naics/?details=331314&input=331314&year=2022"
+      - "US Environmental Protection Agency, Secondary Aluminum Production NESHAP (covered furnaces, emission controls, monitoring, testing and recordkeeping): https://www.epa.gov/stationary-sources-air-pollution/secondary-aluminum-production-national-emission-standards"
+      - "The Aluminum Association, recycling (scrap collection, sorting, remelting and energy/resource economics): https://www.aluminum.org/Recycling"
+    notes: >
+      Secondary aluminum is a specification commodity with no user network or demonstrated
+      data-quality flywheel; supplier reputation matters mainly for consistent chemistry and delivery.
+      Alloy qualification and scrap-stream familiarity create moderate switching friction. Furnaces,
+      sorting, casting and emissions-control equipment require substantial specialised capital, while
+      energy utilisation, scrap procurement and throughput produce meaningful economies that flatten
+      below the largest national scale. Air-emissions standards require controls, testing and
+      recordkeeping, creating a real permitting/compliance barrier without numerically capping firms.
+      Shares verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-424720
+    name: US petroleum products merchant wholesalers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [energy, wholesale, commodity]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-424720}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.25, confidence: 0.80}
+      data-scale-advantage: {score: 0.05, confidence: 0.85}
+      brand-reputation:     {score: 0.25, confidence: 0.75}
+      capital-intensity:    {score: 0.55, confidence: 0.85}
+      scale-economies:      {score: 0.50, confidence: 0.80}
+      regulatory-barriers:  {score: 0.40, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 424720: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 424720 definition: https://www.census.gov/naics/?details=424720&input=424720&year=2022"
+      - "World Kinect 2025 Form 10-K (commodity procurement, credit and working-capital needs, storage/transport logistics, customer relationships, and regulation): https://www.sec.gov/Archives/edgar/data/789460/000078946026000015/wkc-20251231.htm"
+      - "US Environmental Protection Agency, oil spill prevention and preparedness regulations (SPCC and facility-response obligations): https://www.epa.gov/oil-spills-prevention-and-preparedness-regulations"
+    notes: >
+      Petroleum products are fungible: neither other customers nor distributor data improves the
+      product, and price and logistics outweigh the wholesaler name. Supply relationships, credit
+      lines and delivery integration add modest switching friction. Working capital, tanks, terminals
+      and transport capacity are meaningful, although much capacity can be leased or contracted.
+      Procurement, credit, risk management and route density provide moderate scale economies rather
+      than a steep national cost curve. Fuel handling, environmental and spill-prevention rules impose
+      real compliance costs but do not cap entry. Shares verified/cited; traits checked against
+      mechanism evidence without using realized shares.
+
+  - id: us-naics-513130
+    name: US book publishers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [media, intellectual-property, publishing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-513130}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.25, confidence: 0.80}
+      data-scale-advantage: {score: 0.10, confidence: 0.70}
+      brand-reputation:     {score: 0.45, confidence: 0.80}
+      capital-intensity:    {score: 0.20, confidence: 0.85}
+      scale-economies:      {score: 0.65, confidence: 0.85}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 513130: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 513130 definition: https://www.census.gov/naics/?details=513130&input=513130&year=2022"
+      - "News Corp 2025 Form 10-K (HarperCollins imprints, author/content acquisition, publishing rights, marketing and multi-format distribution): https://www.sec.gov/Archives/edgar/data/1564708/000156470825000419/nws-20250630.htm"
+    notes: >
+      Readers value each title rather than the publisher's user count, and sales data does not create
+      a demonstrated compounding improvement in book quality. Authors face contractual and editorial
+      relationship friction but can place later works elsewhere. Imprint reputation helps attract
+      authors and secure retailer attention, while consumer pull usually attaches more to authors and
+      titles than the corporate publisher. Physical capital is light; editorial platforms, marketing,
+      print purchasing, distribution and portfolio risk-spreading create meaningful scale economies.
+      Copyright protects individual works, not entry into publishing. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-524126
+    name: US direct property and casualty insurance carriers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [insurance, data-moat, regulated]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-524126}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.95}
+      switching-costs:      {score: 0.35, confidence: 0.90}
+      data-scale-advantage: {score: 0.45, confidence: 0.75}
+      brand-reputation:     {score: 0.65, confidence: 0.90}
+      capital-intensity:    {score: 0.25, confidence: 0.90}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.80, confidence: 0.95}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 524126: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 524126 definition: https://www.census.gov/naics/?details=524126&input=524126&year=2022"
+      - "Progressive 2025 Form 10-K (state-by-state operations, underwriting, external and telematics data, claims service, brand, bundling, and regulation): https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm"
+      - "National Association of Insurance Commissioners, Uniform Certificate of Authority Application (state insurer licensing and solvency review): https://content.naic.org/industry/ucaa"
+    notes: >
+      Insurance does not become more useful as the same carrier gains policyholders. Annual renewal
+      and comparison shopping constrain lock-in, though bundles, agent relationships and claims
+      history create moderate friction. Larger loss pools, claims histories and telematics improve
+      segmentation, but external data, actuarial methods, reinsurance and diminishing returns keep
+      the proprietary scale-quality loop moderate. Financial strength, claims handling and trust make
+      reputation important. Physical capital is light, while risk pooling, advertising, technology
+      and claims infrastructure scale strongly. State licences, solvency capital, form/rate review and
+      compliance create a high barrier without a numerical cap. Shares verified/cited; traits checked
+      against mechanism evidence without using realized shares.
+
+  - id: us-naics-541830
+    name: US media buying agencies
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [advertising, data, professional-services]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-541830}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.80}
+      switching-costs:      {score: 0.50, confidence: 0.85}
+      data-scale-advantage: {score: 0.30, confidence: 0.70}
+      brand-reputation:     {score: 0.65, confidence: 0.85}
+      capital-intensity:    {score: 0.10, confidence: 0.90}
+      scale-economies:      {score: 0.55, confidence: 0.85}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 541830: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 541830 definition: https://www.census.gov/naics/?details=541830&input=541830&year=2022"
+      - "Omnicom 2025 Form 10-K (media planning/buying, client relationships, integrated data and technology platforms, global service networks, personnel dependence, and competition): https://www.sec.gov/Archives/edgar/data/29989/000002998926000006/omc-20251231.htm"
+    notes: >
+      Media inventory and audiences sit on third-party platforms, so an agency's client count creates
+      little provider-specific network value. Campaign history, workflow integration and team
+      knowledge make agency changes disruptive, while perceived judgement, execution and conflict
+      management create a strong reputation gate. Proprietary identity and planning tools help, but
+      platforms, clients and data vendors supply much of the underlying data; no hard-to-replicate
+      compounding loop is established. The business is people- and software-heavy with little physical
+      capital. Global reach, specialist tools and buying coordination provide moderate scale, and
+      ordinary privacy/advertising rules do not licence-cap entry. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-211130
+    name: US natural gas extraction
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [energy, capital-intensive, regulated]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-211130}
+    traits:
+      network-effects:      {score: 0.02, confidence: 0.95}
+      switching-costs:      {score: 0.10, confidence: 0.90}
+      data-scale-advantage: {score: 0.05, confidence: 0.90}
+      brand-reputation:     {score: 0.10, confidence: 0.90}
+      capital-intensity:    {score: 0.90, confidence: 0.95}
+      scale-economies:      {score: 0.55, confidence: 0.85}
+      regulatory-barriers:  {score: 0.65, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 211130: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 211130 definition: https://www.census.gov/naics/?details=211130&input=211130&year=2022"
+      - "EOG Resources 2025 Form 10-K (acreage and drilling rights, seismic/reservoir technology, drilling capital, commodity competition, and environmental regulation): https://www.sec.gov/Archives/edgar/data/821189/000082118926000054/eog-20251231.htm"
+      - "US Environmental Protection Agency, controlling air pollution from oil and natural-gas operations (federal operating and monitoring requirements): https://www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations"
+    notes: >
+      Natural gas is a commodity: buyers do not benefit from joining a producer's network, can source
+      elsewhere, and attach little preference to the producer name. Geological and operating data
+      improve finding and development decisions, not the gas product itself, so they are not scored as
+      a demand-side data-scale advantage. Leasing acreage, drilling and gathering infrastructure
+      require very large risk capital. Pad development, shared infrastructure, purchasing and
+      technical learning provide moderate economies, but geology and well decline limit firm-wide
+      scale. Mineral rights, drilling permits and environmental rules are substantial gates without
+      a nationwide numerical licence cap. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares.
+
+  - id: us-naics-333131
+    name: US mining machinery and equipment manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [industrial-equipment, switching-costs, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-333131}
+    traits:
+      network-effects:      {score: 0.25, confidence: 0.80}
+      switching-costs:      {score: 0.60, confidence: 0.90}
+      data-scale-advantage: {score: 0.20, confidence: 0.70}
+      brand-reputation:     {score: 0.80, confidence: 0.90}
+      capital-intensity:    {score: 0.70, confidence: 0.90}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.20, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 333131: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 333131 definition: https://www.census.gov/naics/?details=333131&input=333131&year=2022"
+      - "Caterpillar 2025 Form 10-K (global dealer network, parts/service, installed equipment, mining technology, reliability, manufacturing and product regulation): https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm"
+    notes: >
+      A broad dealer, parts and service network becomes more useful as the installed base supports
+      local coverage, but the effect is indirect, regional and compatible with multiple equipment
+      brands. Fleet standardisation, technician training, parts inventories and financing create
+      substantial switching costs. Connected-machine data aids fleet services, but the filing does
+      not establish a non-plateauing product-quality flywheel, holding data advantage low. Reliability,
+      safety and lifecycle support make brand exceptionally important. Engineering, factories and
+      dealer/service infrastructure require heavy capital, while R&D, manufacturing, parts and global
+      support scale strongly. Product and emissions standards raise cost but do not cap entrants.
+      Shares verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-332911
+    name: US industrial valve manufacturing
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [industrial-components, switching-costs, manufacturing]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-332911}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.75}
+      switching-costs:      {score: 0.60, confidence: 0.90}
+      data-scale-advantage: {score: 0.10, confidence: 0.75}
+      brand-reputation:     {score: 0.65, confidence: 0.90}
+      capital-intensity:    {score: 0.60, confidence: 0.85}
+      scale-economies:      {score: 0.60, confidence: 0.85}
+      regulatory-barriers:  {score: 0.35, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 332911: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 332911 definition: https://www.census.gov/naics/?details=332911&input=332911&year=2022"
+      - "Flowserve 2025 Form 10-K (engineered valves, installed-base aftermarket, custom parts, service centres, reliability/brand, manufacturing and standards): https://www.sec.gov/Archives/edgar/data/30625/000003062526000003/fls-20251231.htm"
+    notes: >
+      Installed equipment supports parts and service availability, but common standards and regional
+      service competitors bound any indirect network effect. Custom engineering, plant qualification,
+      maintenance procedures and proprietary replacement parts make switching costly in critical
+      applications. Monitoring data aids service without demonstrating a compounding product-quality
+      moat. Reliability and safety reputation materially influence specification. Foundries,
+      machining, testing and service centres require substantial but financeable capital; engineering,
+      procurement and factory utilisation give moderate economies. Industry codes and end-customer
+      approvals slow entry but do not form an exclusive licence gate. Shares verified/cited; traits
+      checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-512110
+    name: US motion picture and video production
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [media, project-based, intellectual-property]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-512110}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.75}
+      switching-costs:      {score: 0.20, confidence: 0.80}
+      data-scale-advantage: {score: 0.10, confidence: 0.70}
+      brand-reputation:     {score: 0.55, confidence: 0.80}
+      capital-intensity:    {score: 0.35, confidence: 0.80}
+      scale-economies:      {score: 0.45, confidence: 0.80}
+      regulatory-barriers:  {score: 0.15, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 512110: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 512110 definition: https://www.census.gov/naics/?details=512110&input=512110&year=2022"
+      - "Warner Bros. Discovery 2025 Form 10-K (project production, talent, content/IP, studio brands, production facilities, distribution and hit risk): https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm"
+    notes: >
+      Each production is a project whose value comes from talent and content rather than the
+      producer's user count; audience data informs commissioning but is widely available and does
+      not reliably compound creative quality. Talent, financiers and distributors can change
+      counterparties between projects, limiting lock-in. Studio reputation and execution history help
+      attract talent, financing and distribution, though consumer choice generally follows the title
+      and stars. Equipment and facilities can often be rented, keeping the capital ticket moderate.
+      Libraries, production infrastructure, marketing and risk-spreading provide moderate scale but
+      creative costs remain project-variable. Copyright protects works rather than market entry.
+      Shares verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-541910
+    name: US marketing research and public opinion polling
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [professional-services, data, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-541910}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.85}
+      switching-costs:      {score: 0.40, confidence: 0.80}
+      data-scale-advantage: {score: 0.35, confidence: 0.65}
+      brand-reputation:     {score: 0.60, confidence: 0.85}
+      capital-intensity:    {score: 0.15, confidence: 0.90}
+      scale-economies:      {score: 0.45, confidence: 0.80}
+      regulatory-barriers:  {score: 0.15, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 541910: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 541910 definition: https://www.census.gov/naics/?details=541910&input=541910&year=2022"
+      - "Ipsos, 2025 Year in Review (research panels, technology, methodologies, client relationships and professional-services economics): https://www.ipsos.com/en/ipsos-year-review-2025"
+      - "ICC/ESOMAR International Code on Market, Opinion and Social Research and Data Analytics (consent, privacy, transparency and professional standards): https://esomar.org/code-and-guidelines/icc-esomar-code"
+    notes: >
+      Research clients do not gain material value merely because other clients use the same firm.
+      Long-running trackers, historical series, questionnaires and embedded reporting workflows make
+      switching disruptive. Proprietary panels and norms improve coverage and benchmarking, but
+      samples can be recruited, data can be purchased and returns plateau, so evidence does not
+      support a strong compounding data moat. Methodological credibility, confidentiality and
+      respondent quality make reputation important. The business is labour/software light in physical
+      capital; panels, technology and specialist methods scale moderately while custom work remains
+      variable. Privacy and research codes raise compliance but do not licence-cap entry. Shares
+      verified/cited; traits checked against mechanism evidence without using realized shares.
+
+  - id: us-naics-311811
+    name: US retail bakeries
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [food-service, local, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-311811}
+    traits:
+      network-effects:      {score: 0.02, confidence: 0.95}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.02, confidence: 0.90}
+      brand-reputation:     {score: 0.35, confidence: 0.80}
+      capital-intensity:    {score: 0.30, confidence: 0.85}
+      scale-economies:      {score: 0.20, confidence: 0.85}
+      regulatory-barriers:  {score: 0.30, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 311811: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 311811 definition: https://www.census.gov/naics/?details=311811&input=311811&year=2022"
+      - "US Food and Drug Administration, Food Code (model retail-food sanitation, equipment, process and inspection requirements): https://www.fda.gov/food/retail-food-protection/fda-food-code"
+    notes: >
+      A local bakery's product does not improve with its customer count or proprietary usage data,
+      and customers can change bakeries freely. Taste, freshness and local reputation tilt choice,
+      but the effect is geographically bounded and unknown shops can establish credibility quickly.
+      Ovens, mixers, fit-out and working inventory require modest, broadly financeable capital.
+      Production is labour-intensive, perishability restricts shipping and unit-cost advantages
+      flatten at local scale. Food permits, inspections and sanitation rules are genuine entry steps
+      but readily attainable rather than scarce licences. Shares verified/cited; traits checked
+      against mechanism evidence without using realized shares.
+
+  - id: us-naics-541511
+    name: US custom computer programming services
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [software-services, switching-costs, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-541511}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.85}
+      switching-costs:      {score: 0.45, confidence: 0.85}
+      data-scale-advantage: {score: 0.10, confidence: 0.75}
+      brand-reputation:     {score: 0.55, confidence: 0.85}
+      capital-intensity:    {score: 0.05, confidence: 0.95}
+      scale-economies:      {score: 0.25, confidence: 0.85}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 541511: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 541511 definition: https://www.census.gov/naics/?details=541511&input=541511&year=2022"
+      - "Accenture 2025 Form 10-K (custom technology work, long client relationships, people intensity, reputation, proprietary assets and limits/benefits of global scale): https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm"
+    notes: >
+      Custom code does not become intrinsically better as other clients hire the same programmer, and
+      project experience is not a demonstrated proprietary data flywheel. Mid-project knowledge,
+      system access, integrations and maintenance responsibility create meaningful switching costs.
+      Delivery reputation and technical credibility matter in risk-sensitive procurement, although
+      clients can assess teams and references. Entry requires laptops and skilled labour rather than
+      sunk physical capital. Reusable methods and global staffing help, but billable labour and
+      client-specific work keep scale economies modest. No professional licence or exclusive IP
+      regime caps general programming entry. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares.
+
+  - id: us-naics-423830
+    name: US industrial machinery and equipment merchant wholesalers
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [industrial-distribution, switching-costs, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-423830}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.75}
+      switching-costs:      {score: 0.50, confidence: 0.85}
+      data-scale-advantage: {score: 0.20, confidence: 0.70}
+      brand-reputation:     {score: 0.55, confidence: 0.85}
+      capital-intensity:    {score: 0.45, confidence: 0.85}
+      scale-economies:      {score: 0.65, confidence: 0.90}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 423830: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 423830 definition: https://www.census.gov/naics/?details=423830&input=423830&year=2022"
+      - "W.W. Grainger 2025 Form 10-K (supplier breadth, stocked distribution centres, inventory management/e-procurement integration, customer relationships, brand and supply-chain scale): https://www.sec.gov/Archives/edgar/data/277135/000027713526000011/gww-20251231.htm"
+    notes: >
+      Supplier breadth and availability create a weak indirect assortment effect, but manufacturers,
+      rival distributors and online channels permit multi-sourcing. E-procurement links, approved-vendor
+      status, on-site inventory systems and product knowledge create meaningful switching friction.
+      Demand data improves stocking and search, but suppliers and rivals can replicate much of it, so
+      the data loop is held low. Availability, technical accuracy and delivery reliability make
+      reputation important. Warehouses and inventory require meaningful capital, while purchasing,
+      assortment, automation and route density support strong scale economies. Ordinary wholesale and
+      product rules do not licence-cap entry. Shares verified/cited; traits checked against mechanism
+      evidence without using realized shares.
+
+  - id: us-naics-611430
+    name: US professional and management development training
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [education-services, brand-driven, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-611430}
+    traits:
+      network-effects:      {score: 0.10, confidence: 0.75}
+      switching-costs:      {score: 0.35, confidence: 0.80}
+      data-scale-advantage: {score: 0.15, confidence: 0.65}
+      brand-reputation:     {score: 0.65, confidence: 0.85}
+      capital-intensity:    {score: 0.10, confidence: 0.90}
+      scale-economies:      {score: 0.45, confidence: 0.80}
+      regulatory-barriers:  {score: 0.10, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 611430: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 611430 definition: https://www.census.gov/naics/?details=611430&input=611430&year=2022"
+      - "Franklin Covey 2025 Form 10-K (proprietary training content, subscriptions, implementation tools, client deployment, brand/IP and delivery economics): https://www.sec.gov/Archives/edgar/data/886206/000088620625000085/fc-20250831x10k.htm"
+    notes: >
+      Training value comes from content and instruction rather than the number of unrelated learners;
+      alumni/community effects are weak and optional. Organisation-wide curricula, facilitator
+      training, assessments and subscription deployment create moderate switching friction. Learner
+      data can refine delivery, but no hard-to-replicate compounding quality loop is established.
+      Trusted content, instructor quality and recognised methods materially influence purchase.
+      Physical capital is light; digital content and assessment platforms scale, while facilitation
+      and consulting remain labour-variable. Copyright protects content but no licence caps general
+      management-training entry. Shares verified/cited; traits checked against mechanism evidence
+      without using realized shares.
+
+  - id: us-naics-812113
+    name: US nail salons
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [personal-services, local, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-812113}
+    traits:
+      network-effects:      {score: 0.02, confidence: 0.95}
+      switching-costs:      {score: 0.10, confidence: 0.90}
+      data-scale-advantage: {score: 0.02, confidence: 0.90}
+      brand-reputation:     {score: 0.30, confidence: 0.80}
+      capital-intensity:    {score: 0.15, confidence: 0.90}
+      scale-economies:      {score: 0.10, confidence: 0.90}
+      regulatory-barriers:  {score: 0.45, confidence: 0.90}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 812113: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 812113 definition: https://www.census.gov/naics/?details=812113&input=812113&year=2022"
+      - "US Occupational Safety and Health Administration, Health Hazards in Nail Salons (salon processes, chemical controls, ventilation and worker-protection requirements): https://www.osha.gov/nail-salons"
+      - "New York Department of State, Appearance Enhancement licensing overview (business and practitioner licensing and compliance requirements): https://dos.ny.gov/appearance-enhancement"
+    notes: >
+      Nail service does not improve with other customers or accumulated provider data, and clients can
+      book another salon with minimal loss. Personal relationships, hygiene and local reviews create
+      modest reputation and habit but do not support a national preference moat. Fit-out, ventilation,
+      workstations and supplies are inexpensive relative to most service businesses, and technician
+      labour plus local capacity leave almost no sustained unit-cost scale. States commonly license
+      establishments and practitioners and impose sanitation/chemical controls; these are meaningful
+      entry steps but readily attainable, not scarce licences. Shares verified/cited; traits checked
+      against mechanism evidence without using realized shares.
+
+  - id: us-naics-722513
+    name: US limited-service restaurants
+    region: US
+    share-basis: sales-value-shipments-or-revenue
+    matured-year: 2022
+    categories: [restaurants, brand-driven, fragmented]
+    outcome-quality: synthetic-geometric-shares
+    derived-from: {type: aggregate-moments, file: moments/census-2022-pilot.csv, key: us-naics-722513}
+    traits:
+      network-effects:      {score: 0.05, confidence: 0.90}
+      switching-costs:      {score: 0.05, confidence: 0.95}
+      data-scale-advantage: {score: 0.10, confidence: 0.70}
+      brand-reputation:     {score: 0.85, confidence: 0.95}
+      capital-intensity:    {score: 0.55, confidence: 0.90}
+      scale-economies:      {score: 0.75, confidence: 0.90}
+      regulatory-barriers:  {score: 0.25, confidence: 0.85}
+    quality: verified
+    sources:
+      - "US Census Bureau, 2022 Economic Census, EC2200SIZECONCEN, NAICS 722513: https://www2.census.gov/programs-surveys/economic-census/data/2022/sector00/EC2200SIZECONCEN.zip"
+      - "US Census Bureau, 2022 NAICS 722513 definition: https://www.census.gov/naics/?details=722513&input=722513&year=2022"
+      - "McDonald's 2025 Form 10-K (global brand, franchise operating system, restaurant capital, supplier/franchisee coordination, marketing and regulation): https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm"
+      - "US Food and Drug Administration, Food Code (model retail-food sanitation, equipment, process and inspection requirements): https://www.fda.gov/food/retail-food-protection/fda-food-code"
+    notes: >
+      A meal does not improve because more diners choose the chain, and consumers can switch
+      restaurants without lock-in. Loyalty and ordering data can personalise offers and operations,
+      but no proprietary non-plateauing product-quality loop is established. Taste expectations,
+      consistency, convenience and food-safety trust create a very strong brand preference. Restaurant
+      sites and kitchen fit-outs require meaningful but broadly financeable capital. Advertising,
+      procurement, menu development, technology and a franchised operating system create strong scale
+      economies. Food permits, inspections and franchise rules impose compliance but do not cap the
+      number of concepts. Shares verified/cited; traits checked against mechanism evidence without
+      using realized shares.

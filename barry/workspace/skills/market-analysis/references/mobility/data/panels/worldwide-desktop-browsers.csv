@@ -1,0 +1,86 @@
+year,rank,player,share
+2009,1,Internet Explorer,0.5971
+2009,2,Firefox,0.3048
+2009,3,Chrome,0.0327
+2009,4,Safari,0.031
+2009,5,Opera,0.0262
+2010,1,Internet Explorer,0.5145
+2010,2,Firefox,0.3127
+2010,3,Chrome,0.1025
+2010,4,Safari,0.0431
+2010,5,Opera,0.0196
+2011,1,Internet Explorer,0.4293
+2011,2,Firefox,0.282
+2011,3,Chrome,0.2108
+2011,4,Safari,0.0533
+2011,5,Opera,0.0184
+2012,1,Internet Explorer,0.3374
+2012,2,Chrome,0.3323
+2012,3,Firefox,0.2415
+2012,4,Safari,0.0617
+2012,5,Opera,0.017
+2013,1,Chrome,0.4263
+2013,2,Internet Explorer,0.2925
+2013,3,Firefox,0.2082
+2013,4,Safari,0.0484
+2013,5,Opera,0.0115
+2014,1,Chrome,0.4878
+2014,2,Internet Explorer,0.2319
+2014,3,Firefox,0.1957
+2014,4,Safari,0.05
+2014,5,Opera,0.0143
+2015,1,Chrome,0.5437
+2015,2,Internet Explorer,0.1888
+2015,3,Firefox,0.1754
+2015,4,Safari,0.0506
+2015,5,Opera,0.0181
+2016,1,Chrome,0.6117
+2016,2,Firefox,0.1545
+2016,3,Internet Explorer,0.1211
+2016,4,Safari,0.0478
+2016,5,Edge,0.0263
+2017,1,Chrome,0.634
+2017,2,Firefox,0.139
+2017,3,Internet Explorer,0.0899
+2017,4,Safari,0.0547
+2017,5,Edge,0.0393
+2018,1,Chrome,0.6802
+2018,2,Firefox,0.1103
+2018,3,Internet Explorer,0.0664
+2018,4,Safari,0.0538
+2018,5,Edge,0.0417
+2019,1,Chrome,0.6998
+2019,2,Firefox,0.095
+2019,3,Safari,0.0683
+2019,4,Internet Explorer,0.0486
+2019,5,Edge,0.0451
+2020,1,Chrome,0.6874
+2020,2,Safari,0.09
+2020,3,Firefox,0.0872
+2020,4,Edge,0.0602
+2020,5,Internet Explorer,0.0296
+2021,1,Chrome,0.6732
+2021,2,Safari,0.0986
+2021,3,Edge,0.0878
+2021,4,Firefox,0.0791
+2021,5,Opera,0.0266
+2022,1,Chrome,0.6638
+2022,2,Edge,0.1061
+2022,3,Safari,0.0932
+2022,4,Firefox,0.0783
+2022,5,Opera,0.03
+2023,1,Chrome,0.646
+2023,2,Safari,0.1194
+2023,3,Edge,0.1102
+2023,4,Firefox,0.0625
+2023,5,Opera,0.039
+2024,1,Chrome,0.6532
+2024,2,Edge,0.1327
+2024,3,Safari,0.0889
+2024,4,Firefox,0.067
+2024,5,Opera,0.0295
+2025,1,Chrome,0.704
+2025,2,Edge,0.1169
+2025,3,Safari,0.0671
+2025,4,Firefox,0.0518
+2025,5,Opera,0.0244

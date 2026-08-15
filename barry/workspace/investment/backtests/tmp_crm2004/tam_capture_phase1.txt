@@ -1,0 +1,28 @@
+tam-capture valuation  —  'it works' ROI over 8y (TAM-capture, terminal-anchored)  as of 2004-06-23
+================================================================
+  role model: SEBL
+
+  Terminal build-up (at maturity)
+  --------------------------------------------
+    revenue (TAM x capture) :          2.28B
+    profit  (x margin)      :        387.60M  (EBIT)
+    enterprise value        :          4.65B  @ 12.00x
+    - net debt              :           0.00
+    = equity value          :          4.65B
+
+  Market cap now      :          2.06B
+  Shares now -> exit  :        486.80M -> 616.66M  (+26.7% total)
+  Entry price         :         4.2269
+  Terminal price      :         7.5425
+
+  ANNUALIZED ROI      : +7.51%  / yr
+  Return multiple     : 1.78x  over 8y
+
+  Return attribution (annualized)
+  --------------------------------------------
+    value creation    +10.73%   (2.26x today's mkt cap)
+    dilution          -2.91%
+    = total           +7.51%
+
+  valuation.tam-capture.roi  : 0.075071
+  valuation.tam-capture.date : 2004-06-23

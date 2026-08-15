@@ -1,0 +1,120 @@
+{
+  "rf1": [
+    {
+      "month": "2026-01",
+      "date": "2026-01-31",
+      "anchor": 3.75,
+      "url": "https://www.regalfm.com/pdf/34c86182-cce2-4dca-8e38-f7b71ae9e4d5/Platform/ListPage/Regal-Investment-Fund-Newsletter-January-2026.pdf",
+      "price_date": "2026-01-30",
+      "price": 3.5999999046325684,
+      "gap": -0.04000002543131509
+    },
+    {
+      "month": "2026-02",
+      "date": "2026-02-28",
+      "anchor": 3.74,
+      "url": "https://www.regalfm.com/pdf/555c6c14-d1ba-45fa-a406-24740f1e3440/Platform/ListPage/Regal-Investment-Fund-Newsletter-February-2026.pdf",
+      "price_date": "2026-02-27",
+      "price": 3.4000000953674316,
+      "gap": -0.09090906540977772
+    },
+    {
+      "month": "2026-03",
+      "date": "2026-03-31",
+      "anchor": 3.55,
+      "url": "https://www.regalfm.com/pdf/5ea78083-62ca-4c76-b13a-a67b2043d9e9/Platform/ListPage/Regal-Investment-Fund-Newsletter-March-2026.pdf",
+      "price_date": "2026-03-31",
+      "price": 3.3299999237060547,
+      "gap": -0.06197185247716763
+    },
+    {
+      "month": "2026-04",
+      "date": "2026-04-30",
+      "anchor": 3.68,
+      "url": "https://www.regalfm.com/pdf/e44eef75-ea9d-4b52-9bcb-95e1dee34c0e/Platform/ListPage/Regal-Investment-Fund-Newsletter-April-2026.pdf",
+      "price_date": "2026-04-30",
+      "price": 3.4700000286102295,
+      "gap": -0.05706520961678552
+    },
+    {
+      "month": "2026-05",
+      "date": "2026-05-31",
+      "anchor": 3.72,
+      "url": "https://www.regalfm.com/pdf/208fbce5-fc2d-47f8-b25f-2a81992108b0/Platform/ListPage/Regal-Investment-Fund-Newsletter-May-2026.pdf",
+      "price_date": "2026-05-29",
+      "price": 3.390000104904175,
+      "gap": -0.0887096492193079
+    },
+    {
+      "month": "2026-06",
+      "date": "2026-06-30",
+      "anchor": 3.67,
+      "url": "https://www.regalfm.com/pdf/4a2e68ff-9b95-430b-8fae-3c16793ecfa7/Platform/ListPage/Regal-Investment-Fund-Newsletter-June-2026.pdf",
+      "price_date": "2026-06-30",
+      "price": 3.440000057220459,
+      "gap": -0.06267028413611475
+    }
+  ],
+  "lsf": [
+    {
+      "month": "2026-01",
+      "date": "2026-01-31",
+      "anchor": 4.39,
+      "after_tax": 3.94,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/02/2026-01-LSF-Monthly-Report-Monthly-NTA.pdf",
+      "price_date": "2026-01-30",
+      "price": 4.151137351989746,
+      "gap": -0.05441062597044499
+    },
+    {
+      "month": "2026-02",
+      "date": "2026-02-28",
+      "anchor": 4.33,
+      "after_tax": 3.91,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/03/2026-02-LSF-Monthly-Report-Monthly-NTA.pdf",
+      "price_date": "2026-02-27",
+      "price": 4.347873687744141,
+      "gap": 0.004127872458230986
+    },
+    {
+      "month": "2026-03",
+      "date": "2026-03-31",
+      "anchor": 3.86,
+      "after_tax": 3.64,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/04/2026-03-LSF-Monthly-Report-Monthly-NTA.pdf",
+      "price_date": "2026-03-31",
+      "price": 3.917449951171875,
+      "gap": 0.014883407039345986
+    },
+    {
+      "month": "2026-04",
+      "date": "2026-04-30",
+      "anchor": 4.11,
+      "after_tax": 3.81,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/05/2026-04-LSF-Monthly-Report-Monthly-NTA.pdf",
+      "price_date": "2026-04-30",
+      "price": 4.0860490798950195,
+      "gap": -0.005827474478097505
+    },
+    {
+      "month": "2026-05",
+      "date": "2026-05-31",
+      "anchor": 4.38,
+      "after_tax": 4.01,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/06/2026-05-LSF-Monthly-Report-Monthly-NTA.pdf",
+      "price_date": "2026-05-29",
+      "price": 4.453000068664551,
+      "gap": 0.01666668234350488
+    },
+    {
+      "month": "2026-06",
+      "date": "2026-06-30",
+      "anchor": 4.32,
+      "after_tax": 3.95,
+      "url": "https://reporting.l1.com.au/wp-content/uploads/2026/07/L1-Long-Short-Fund-Limited-Monthly-Report-June-2026.pdf",
+      "price_date": "2026-06-30",
+      "price": 4.71999979019165,
+      "gap": 0.09259254402584483
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+year,penetration
+# US smartphone ownership, share of US adults (decimal).
+# 2007-2010 are pre-Pew ESTIMATES (bridge points; see doc Sources). 2011-2025 are Pew Research Center.
+2007,0.05
+2008,0.10
+2009,0.17
+2010,0.24
+2011,0.35
+2012,0.46
+2013,0.56
+2014,0.58
+2015,0.68
+2016,0.77
+2019,0.81
+2021,0.85
+2023,0.90
+2024,0.91
+2025,0.91
