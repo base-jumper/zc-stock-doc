@@ -1,0 +1,45 @@
+# Agent-local state
+/.agents/
+/.codex/
+**/workspace/MEMORY.md
+**/workspace/memory/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/credentials.json
+**/secrets.json
+
+# Logs and temporary files
+*.log
+*.pid
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+temp/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# JavaScript
+node_modules/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
