@@ -59,7 +59,7 @@ together.
 5. For a material change, use the `stock-doc` and `stock-analysis` skills. Update the
    document as a living current view, replace stale content in place, and do not append
    a dated news log. Refresh affected scoring and valuation outputs, set
-   `last-updated` to today, and set `updated-by: Nipa`.
+   `last-updated` to today, and set `updated-by: Barry`.
 6. Directly inspect the finished stock-doc before acknowledging its candidates.
 
 Edit and re-score a ticker at most once per run.

@@ -15,7 +15,7 @@ For the ticker printed:
    - Re-run the relevant valuation script(s) if valuation inputs changed.
    - Re-run `skills/stock-analysis/scripts/overall_score.py <TICKER>` so `overall.qv_score` and `overall.cqv_score` are current.
    - Update `overall.agent_score` if the judgement call changed.
-7. Update front matter: set `last-updated` to today's date and `updated-by: Nipa`.
+7. Update front matter: set `last-updated` to today's date and `updated-by: Barry`.
 8. Keep the doc concise, decision-useful, sourced where possible, and internally consistent.
 9. Do not message Nick. The output of this task is the one updated stock-doc file only. If there is nothing material to update, still refresh the checked-as-of state where appropriate, update `last-updated`, and leave the file clean.
 
