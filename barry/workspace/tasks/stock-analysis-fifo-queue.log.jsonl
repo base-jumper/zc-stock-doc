@@ -248,3 +248,16 @@
 {"event": "queued", "ticker": "LYV", "ts": "2026-08-11T13:35:14.200850+00:00"}
 {"event": "queued", "ticker": "TENG.L", "ts": "2026-08-11T13:35:17.355372+00:00"}
 {"event": "completed", "ticker": "005380.KS", "ts": "2026-08-12T13:34:08.692952+00:00"}
+{"event": "completed", "ticker": "SE", "ts": "2026-08-16T05:56:19.021171+00:00"}
+{"event": "completed", "ticker": "RELIANCE.NS", "ts": "2026-08-16T09:16:52.182910+00:00"}
+{"event": "completed", "ticker": "HDFCBANK.NS", "ts": "2026-08-16T12:31:25.626147+00:00"}
+{"event": "queued", "ticker": "9988.HK", "ts": "2026-08-17T14:25:53.012602+00:00"}
+{"event": "queued", "ticker": "9888.HK", "ts": "2026-08-17T14:25:53.042395+00:00"}
+{"event": "queued", "ticker": "1810.HK", "ts": "2026-08-17T14:25:53.071517+00:00"}
+{"event": "queued", "ticker": "1211.HK", "ts": "2026-08-17T14:25:53.100788+00:00"}
+{"event": "queued", "ticker": "PDD", "ts": "2026-08-17T14:25:53.129921+00:00"}
+{"event": "queued", "ticker": "3690.HK", "ts": "2026-08-17T14:25:53.159072+00:00"}
+{"event": "queued", "ticker": "9618.HK", "ts": "2026-08-17T14:25:53.188889+00:00"}
+{"event": "queued", "ticker": "1024.HK", "ts": "2026-08-17T14:25:53.217836+00:00"}
+{"event": "queued", "ticker": "TME", "ts": "2026-08-17T14:25:53.247042+00:00"}
+{"event": "queued", "ticker": "0981.HK", "ts": "2026-08-17T14:25:53.275815+00:00"}

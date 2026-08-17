@@ -2,20 +2,20 @@
 ticker: ACL.AX
 company: Australian Clinical Labs Limited
 watching: true
-last-updated: 2026-07-15
-updated-by: Nipa
+last-updated: 2026-08-16
+updated-by: Barry
 disqualified: false
 analysis-strategy: cash-cow
 traits:
   earnings-quality: {score: 0.65, confidence: 0.72}
   free-cash-flow-generation: {score: 0.82, confidence: 0.80}
-  fundamental-stability: {score: 0.68, confidence: 0.72}
+  fundamental-stability: {score: 0.68, confidence: 0.75}
   pricing-power: {score: 0.50, confidence: 0.60}
   capital-allocation: {score: 0.72, confidence: 0.75}
   returns-on-capital: {score: 0.66, confidence: 0.75}
   conservative-debt: {score: 0.52, confidence: 0.75}
-  key-person-risk: {score: 0.70, confidence: 0.55}
-  incentive-alignment: {score: 0.68, confidence: 0.65}
+  key-person-risk: {score: 0.70, confidence: 0.70}
+  incentive-alignment: {score: 0.68, confidence: 0.70}
   reinvestment-runway: {score: 0.40, confidence: 0.60}
   downside-support: {score: 0.35, confidence: 0.65}
   mispricing: {score: 0.45, confidence: 0.45}
@@ -29,33 +29,33 @@ traits:
   customer-devotion: {score: 0.50, confidence: 0.40}
 valuation:
   exit-multiple:
-    price: 2.27
-    entry-multiple: 13.35
+    price: 2.35
+    entry-multiple: 13.82
     years: 5
     metric: Earnings
     fundamental: 0.17
     growth: [0%, 5%, 4%, 3%, 3%]
     exit-multiple: 13
     dilution: -1%
-    dividend-yield: 5.5%
-    roi: 0.092012
-    date: 2026-07-15
+    dividend-yield: 5.4%
+    roi: 0.084582
+    date: 2026-08-16
 strategies:
   cash-cow:
     score:      0.6581
-    confidence: 0.7047
+    confidence: 0.7262
   freeroll:
     score:      0.4216
-    confidence: 0.5518
+    confidence: 0.5567
   rule-breakers:
     score:      0.5146
-    confidence: 0.6057
+    confidence: 0.6098
   wonderful-and-fair:
     score:      0.5884
-    confidence: 0.6718
+    confidence: 0.6923
 overall:
-  qv_score:    0.449
-  cqv_score:   0.377
+  qv_score:    0.431
+  cqv_score:   0.367
   agent_score: 0.58
 ---
 
@@ -65,7 +65,7 @@ overall:
 
 Australian Clinical Labs is an Australian private pathology provider. It operates accredited laboratories and collection networks serving GPs, specialists, hospitals, corporate clients and patients. The profit engine is scale pathology: high fixed-cost lab infrastructure, collection-centre density, logistics, billing accuracy and labour productivity. The company is one of the larger private hospital pathology providers nationally, but it still operates in a regulated and competitive market where Medicare Benefits Schedule (MBS) settings matter.
 
-The latest reported year was solid but not spectacular. FY25 revenue was A$741.3m, up 6.4%; underlying EBIT was A$68.0m, up 8.7%; underlying EBIT margin was 9.2%; underlying NPAT was A$34.0m; underlying EPS was 17.8c; and free cash flow before interest, tax and financing was A$70.8m. Management also returned A$44.0m via dividends and buyback and reduced net debt excluding lease liabilities by A$8.4m. The more recent 1H26 report was mixed: revenue fell 1.0% to A$365.4m as ACL rationalised underperforming sites and saw subdued MBS conditions, but underlying EBIT still rose 2.4% to A$28.0m and margin improved to 7.7%.
+The latest reported year was solid but not spectacular. FY25 revenue was A$741.3m, up 6.4%; underlying EBIT was A$68.0m, up 8.7%; underlying EBIT margin was 9.2%; underlying NPAT was A$34.0m; underlying EPS was 17.8c; and free cash flow before interest, tax and financing was A$70.8m. Management also returned A$44.0m via dividends and buyback and reduced net debt excluding lease liabilities by A$8.4m. The more recent 1H26 report was mixed: revenue fell 1.0% to A$365.4m as ACL rationalised underperforming sites and saw subdued MBS conditions, but underlying EBIT still rose 2.4% to A$28.0m and margin improved to 7.7%. ACL will release FY26 results on 17 August 2026. Its February guidance was A$735-745m revenue and A$66-69m underlying EBIT before, or A$64-67m after, the FY26 gender-undervaluation wage impact.
 
 This is best framed as a modest-growth cash cow: not a hyper-growth healthcare disruptor, not an obvious asset-backed freeroll, and not quite a wonderful compounder because reinvestment runway and pricing power are constrained.
 
@@ -83,11 +83,11 @@ Cash generation is the clearest positive. FY25 free cash flow before interest, t
 
 The practical point is that the dividend and buyback were covered by cash generation in FY25 while debt still fell. This is why the stock fits cash-cow better than growth-compounder. Confidence is not higher because the cleanest company-reported FCF metric is before interest, tax and financing, so future updates should reconcile maintenance capex, lease payments, tax and interest to owner earnings.
 
-### Fundamental Stability — 0.68 / 0.72
+### Fundamental Stability — 0.68 / 0.75
 
 Demand for pathology is structurally recurring: doctors and hospitals continue to need diagnostics, and ageing demographics help underlying volumes. ACL also reported FY25 MBS outlays up about 7.8%, slightly ahead of the market, plus growth in specialist and non-MBS testing. In 1H26, oncology genomic testing, carrier screening, NIPT and fertility-related services remained areas of strength.
 
-The risk is that the revenue base is not fully within ACL’s control. 1H26 revenue fell 1.0%, ACL MBS outlays contracted 1.4% versus market growth of 1.8%, and management called out site rationalisation, vitamin B12 Medicare funding changes and softer GP consultation activity. This is a stable healthcare service, but the earnings stream is not immune to reimbursement, labour and collection-centre economics.
+The risk is that the revenue base is not fully within ACL’s control. 1H26 revenue fell 1.0%, ACL MBS outlays contracted 1.4% versus market growth of 1.8%, and management called out site rationalisation, vitamin B12 Medicare funding changes and softer GP consultation activity. A third-party service-provider cyber incident at the SunDoctors subsidiary also led it to notify about 280,000 people whose information could have been involved; ACL said its broader pathology and laboratory environments were unaffected. This is a stable healthcare service, but reimbursement, labour, collection-centre economics and data-security failures can still disrupt earnings or create remediation costs.
 
 ### Pricing Power — 0.50 / 0.60
 
@@ -113,17 +113,17 @@ Debt is manageable but not pristine. Yahoo showed total debt around A$315m and c
 
 The cash generation reduces solvency risk, but a cash-cow thesis should not require heroic leverage. This remains a monitoring item, especially if earnings soften or the dividend/buyback continue at a high combined payout.
 
-### Key-Person Risk — 0.70 / 0.55
+### Key-Person Risk — 0.70 / 0.70
 
-CEO and Managing Director Melinda McGrath is important and the board extended her term through August 2026 after major shareholder Crescent Capital sold its stake and board representation changed. That transition raises some key-person and governance continuity risk.
+Melinda McGrath will step down as Group CEO and Executive Director on 31 August 2026 after ten years. Greg Horan, formerly CEO of Healthscope, joined ACL as CEO-elect on 1 June and takes over on 31 August. The three-month handover and Horan’s experience leading a complex healthcare network reduce abrupt succession risk, though an external CEO transition still creates near-term execution and culture risk.
 
-The business itself is operationally institutional rather than founder-dependent: laboratories, collection networks, LIS workflows and hospital/GP relationships are broader than one executive. Confidence is limited because management depth and succession quality are harder to assess from public material.
+The business is operationally institutional rather than founder-dependent: laboratories, collection networks, LIS workflows and hospital/GP relationships are broader than one executive. Confidence is not higher until Horan has established a record at ACL and management depth beneath the CEO is clearer.
 
-### Incentive Alignment — 0.68 / 0.65
+### Incentive Alignment — 0.68 / 0.70
 
-The FY25 remuneration framework is reasonably aligned with shareholders. The CEO participated in short-term and long-term variable remuneration; the STVR gateway was underlying EBITDA margin, and FY25 CEO STVR paid at 85% of target. The FY23 LTVR tested below threshold on indexed TSR and vested nil. For FY26 grants, the board committed to reducing the service-based LTVR component and using EPS and relative TSR for the performance-based portion.
+The FY25 remuneration framework was reasonably aligned with shareholders. The CEO participated in short-term and long-term variable remuneration; the STVR gateway was underlying EBITDA margin, and FY25 CEO STVR paid at 85% of target. The FY23 LTVR tested below threshold on indexed TSR and vested nil. For FY26 grants, the board committed to reducing the service-based LTVR component and using EPS and relative TSR for the performance-based portion.
 
-The positives are clear profitability and shareholder-return metrics. The negatives are low insider ownership by founder-led standards and some reliance on adjusted metrics. Better detail on broader executive ownership and per-share capital-return discipline would firm this up.
+Incoming CEO Greg Horan’s package comprises A$1.0m base pay plus superannuation, a target STI of 50% of remuneration rising to 70% at stretch, and an LTI opportunity equal to 100% of remuneration, subject to shareholder approval and Board-set performance targets. The mix is performance-heavy, but the actual targets and broad executive ownership remain important unknowns; low insider ownership and reliance on adjusted metrics cap the score.
 
 ### Strategy fit and why the others lost
 
@@ -131,7 +131,7 @@ Cash Cow wins because the strongest evidence is recurring healthcare demand, hig
 
 ## Overall
 
-ACL is a decent small-cap healthcare cash generator, not a screaming bargain and not a world-class compounder. The attractive part is tangible: FY25 cash conversion, a fully franked dividend near 5-6%, buybacks, debt reduction, and margin improvement despite a tough operating backdrop. The unattractive part is also tangible: regulated reimbursement exposure, modest top-line growth, high lease/debt obligations in Yahoo’s balance-sheet view, competitive pathology markets, and a short clean post-COVID history.
+ACL is a decent small-cap healthcare cash generator, not a screaming bargain and not a world-class compounder. The attractive part is tangible: FY25 cash conversion, a fully franked dividend near 5-6%, buybacks, debt reduction, and margin improvement despite a tough operating backdrop. The unattractive part is also tangible: regulated reimbursement exposure, modest top-line growth, high lease/debt obligations in Yahoo’s balance-sheet view, competitive pathology markets, a short clean post-COVID history, an imminent CEO transition, and unresolved regulatory or remediation risk from the SunDoctors cyber incident.
 
 My valuation-aware agent score is 0.58. That means “watchable/income-interesting at the right price,” not “high-conviction compounder.” The stock can work if earnings hold around the high-teens cents per share, dividends remain covered, and buybacks continue below fair value; it probably disappoints if Medicare/labour pressure turns it into a melting ice cube.
 
@@ -141,14 +141,14 @@ Chosen method: exit-multiple on earnings, framed as a cash-cow return. I used ea
 
 Inputs:
 
-- Price: A$2.27 from Yahoo Finance on 2026-07-15.
-- Current fundamental: A$0.17/share, triangulating FY25 underlying EPS of 17.8c, trailing EPS around 14c and current-year consensus EPS around 16.3c.
-- Growth: 0%, 5%, 4%, 3%, 3%. This bakes in near-term FY26 softness followed by modest recovery toward consensus next-year EPS growth.
-- Exit multiple: 13x earnings, slightly below the current trailing multiple and close to the forward P/E zone.
+- Price: A$2.35 from Yahoo Finance on 2026-08-16.
+- Current fundamental: A$0.17/share, triangulating FY25 underlying EPS of 17.8c, trailing EPS around 14c, FY26 guidance and current-year consensus EPS around 16.3c.
+- Growth: 0%, 5%, 4%, 3%, 3%. The first modeled year deliberately does not capitalise Yahoo’s roughly 12.5% FY27 consensus EPS growth before the FY26 result; later years assume only a modest recovery.
+- Exit multiple: 13x earnings, below the current 16.8x trailing multiple and close to the roughly 12.8x forward P/E.
 - Dilution: -1% per year, reflecting buybacks partly offset by issuance.
-- Dividend yield: 5.5%, broadly in line with Yahoo’s indicated dividend yield.
+- Dividend yield: 5.4%, broadly in line with Yahoo’s indicated yield.
 
-The script-calculated annualized ROI is about 9.2%. Attribution is mostly income (~5.7% annualized) plus modest growth/buyback accretion, partly offset by a small multiple headwind. That is acceptable for a cash cow, but the margin of safety is not huge.
+The script-calculated annualized ROI is about 8.5%. Attribution is mostly income (~5.7% annualized) plus modest growth/buyback accretion, partly offset by a small multiple headwind. That is acceptable for a cash cow, but the margin of safety is not huge.
 
 ## Thesis Connections
 
@@ -158,10 +158,11 @@ The script-calculated annualized ROI is about 9.2%. Attribution is mostly income
 
 ## Watch
 
-- FY26 full-year result versus guidance/consensus: revenue around A$760-780m and underlying EBIT around A$67-73m were the key guidance markers found in company materials.
-- Whether 2H26 GP volumes improve after bulk-billing incentive changes.
-- Dividend cover on a clean after-interest, after-tax, after-lease and maintenance-capex basis.
-- Net debt including lease obligations, not just management’s ex-lease net debt.
+- FY26 full-year results on 17 August 2026 versus revised guidance: A$735-745m revenue, A$66-69m underlying EBIT before, or A$64-67m after, the gender-undervaluation wage impact. Yahoo consensus on 16 August was about A$736.7m revenue and 16.3c EPS.
+- Whether the guided stronger 2H26 margin and GP-volume recovery occurred, and whether management still expects at least A$8m of FY27 EBIT initiatives.
+- Greg Horan’s 31 August CEO handover, initial strategy, disclosed incentive targets and retention of operational leadership.
+- SunDoctors cyber-incident remediation, OAIC or other regulatory action, costs, and any evidence that exposure extends beyond the affected subsidiary.
+- Dividend cover on a clean after-interest, after-tax, after-lease and maintenance-capex basis; net debt including lease obligations.
 - MBS/reimbursement changes, especially tests such as vitamin B12 where funding changes already affected activity.
 - Buyback price discipline and actual share-count reduction.
 
@@ -169,5 +170,8 @@ The script-calculated annualized ROI is about 9.2%. Attribution is mostly income
 
 - Australian Clinical Labs FY25 results announcement and investor material, ASX announcement dated 26 Aug 2025: https://announcements.asx.com.au/asxpdf/20250826/pdf/06nb3mcrxhw47j.pdf
 - Australian Clinical Labs 2025 Annual Report, ASX announcement dated 19 Sep 2025: https://announcements.asx.com.au/asxpdf/20250919/pdf/06pdq3w4bfzt4p.pdf
-- Australian Clinical Labs 1H26 Appendix 4D / half-year report, ASX announcement dated 16 Feb 2026: https://announcements.asx.com.au/asxpdf/20260216/pdf/06wb8xm10qdpgh.pdf
-- Yahoo Finance via `yfin` for quote, valuation, financials, metrics, dividends and analyst estimates, collected 2026-07-15.
+- Australian Clinical Labs 1H26 Appendix 4D / half-year report and revised FY26 guidance, ASX announcement dated 16 Feb 2026: https://announcements.asx.com.au/asxpdf/20260216/pdf/06wb8xm10qdpgh.pdf
+- Australian Clinical Labs appointment of Greg Horan as Group CEO and Executive Director, ASX announcement dated 28 May 2026: https://announcements.asx.com.au/asxpdf/20260528/pdf/0701jy156m12vc.pdf
+- Australian Clinical Labs SunDoctors cyber-incident update, ASX announcement dated 18 Jun 2026: https://announcements.asx.com.au/asxpdf/20260618/pdf/070rbxcpjw8gqr.pdf
+- Australian Clinical Labs FY26 results webinar notice, ASX announcement dated 10 Aug 2026: https://announcements.asx.com.au/asxpdf/20260810/pdf/072ltp4w3zn41x.pdf
+- Yahoo Finance via `yfin` for quote, valuation, financials, dividends and analyst estimates, collected 2026-08-16.

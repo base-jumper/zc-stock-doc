@@ -2,60 +2,60 @@
 ticker: ENGI.PA
 company: Engie SA
 watching: true
-last-updated: 2026-07-09
-updated-by: Nipa
+last-updated: 2026-08-16
+updated-by: Barry
 disqualified: false
 analysis-strategy: wonderful-and-fair
 traits:
-  earnings-quality: {score: 0.55, confidence: 0.75}
-  free-cash-flow-generation: {score: 0.30, confidence: 0.80}
-  fundamental-stability: {score: 0.78, confidence: 0.80}
-  returns-on-capital: {score: 0.45, confidence: 0.80}
-  pricing-power: {score: 0.65, confidence: 0.65}
-  reinvestment-runway: {score: 0.70, confidence: 0.75}
-  capital-allocation: {score: 0.58, confidence: 0.65}
-  conservative-debt: {score: 0.58, confidence: 0.80}
-  key-person-risk: {score: 0.80, confidence: 0.60}
-  incentive-alignment: {score: 0.55, confidence: 0.50}
-  downside-support: {score: 0.50, confidence: 0.65}
-  mispricing: {score: 0.45, confidence: 0.60}
-  catalyst: {score: 0.35, confidence: 0.55}
-  right-place-and-time: {score: 0.60, confidence: 0.70}
-  top-dog: {score: 0.65, confidence: 0.70}
-  sustainable-advantage: {score: 0.60, confidence: 0.65}
-  durable-growth: {score: 0.35, confidence: 0.75}
-  organic-growth: {score: 0.55, confidence: 0.65}
-  management-backing: {score: 0.60, confidence: 0.60}
-  customer-devotion: {score: 0.40, confidence: 0.50}
+  earnings-quality: {score: 0.55, confidence: 0.82}
+  free-cash-flow-generation: {score: 0.35, confidence: 0.88}
+  fundamental-stability: {score: 0.78, confidence: 0.85}
+  returns-on-capital: {score: 0.45, confidence: 0.85}
+  pricing-power: {score: 0.65, confidence: 0.75}
+  reinvestment-runway: {score: 0.72, confidence: 0.85}
+  capital-allocation: {score: 0.55, confidence: 0.80}
+  conservative-debt: {score: 0.45, confidence: 0.90}
+  key-person-risk: {score: 0.80, confidence: 0.70}
+  incentive-alignment: {score: 0.72, confidence: 0.90}
+  downside-support: {score: 0.48, confidence: 0.75}
+  mispricing: {score: 0.50, confidence: 0.75}
+  catalyst: {score: 0.42, confidence: 0.75}
+  right-place-and-time: {score: 0.65, confidence: 0.80}
+  top-dog: {score: 0.65, confidence: 0.75}
+  sustainable-advantage: {score: 0.60, confidence: 0.75}
+  durable-growth: {score: 0.38, confidence: 0.85}
+  organic-growth: {score: 0.55, confidence: 0.75}
+  management-backing: {score: 0.65, confidence: 0.75}
+  customer-devotion: {score: 0.45, confidence: 0.65}
 valuation:
   exit-multiple:
-    price: 26.78
-    entry-multiple: 13.39
+    price: 25.72
+    entry-multiple: 12.55
     years: 5
     metric: Earnings
-    fundamental: 2.00
-    growth: 4%
+    fundamental: 2.05
+    growth: 3%
     exit-multiple: 12.5
     dilution: 0%
-    dividend-yield: 5.0%
-    roi: 0.079178
-    date: 2026-07-09
+    dividend-yield: 5.2%
+    roi: 0.082873
+    date: 2026-08-16
 strategies:
   cash-cow:
-    score:      0.5491
-    confidence: 0.718
+    score:      0.5545
+    confidence: 0.8253
   freeroll:
-    score:      0.4832
-    confidence: 0.6362
+    score:      0.5152
+    confidence: 0.7703
   rule-breakers:
-    score:      0.5279
-    confidence: 0.6509
+    score:      0.5662
+    confidence: 0.7802
   wonderful-and-fair:
-    score:      0.5983
-    confidence: 0.6998
+    score:      0.5919
+    confidence: 0.817
 overall:
-  qv_score:    0.397
-  cqv_score:   0.332
+  qv_score:    0.404
+  cqv_score:   0.365
   agent_score: 0.58
 ---
 # ENGI.PA — Engie SA
@@ -64,105 +64,108 @@ overall:
 
 ENGIE is a large French integrated energy utility. It owns and operates renewable generation, batteries and flexible thermal generation; regulated and semi-regulated gas, power, storage, LNG and district-heating networks; energy supply and energy-management businesses; and nuclear interests in Belgium. The company is repositioning toward a lower-risk utility mix: more networks, renewables, batteries and local energy infrastructure, and less outright exposure to merchant energy prices.
 
-FY2025 results were solid but not cleanly growing. ENGIE reported **€71.9b** revenue, **€14.7b EBITDA**, **€8.8b EBIT excluding Nuclear**, and **€4.9b net recurring income group share**. EBIT excluding Nuclear rose **+2.2% organically** and results landed at the upper end of guidance, but reported revenue and net recurring income fell from 2024 as energy prices normalised. The Board proposed a **€1.35/share** 2025 dividend, a **67% payout** of recurring net income.
+H1 2026 showed modest underlying growth rather than a clean top-line expansion. Revenue fell **3.6%** to **€36.7b**, but EBITDA excluding Nuclear rose **1.6% organically** to **€7.7b** and EBIT excluding Nuclear rose **1.2% organically** to **€5.3b**. Net recurring income group share was **€3.0b**, down from **€3.1b**, while statutory net income rose to **€3.3b**, helped by **€0.6b** of after-tax commodity mark-to-market gains. Management upgraded 2026 guidance to **€4.9–5.5b** NRIgs and **€9.2–10.2b** EBIT excluding Nuclear.
 
-The strategic engine is straightforward: keep the legacy utility cash flows stable, invest heavily into renewables, batteries and infrastructure, and make earnings progressively more regulated/contracted. ENGIE added **6.2 GW** of renewable and battery capacity in 2025, reached **57.2 GW** of renewable/storage capacity, reiterated a **95 GW by 2030** target, and plans **€34–38b** of gross capex over 2026–2028 with around **90%** aimed at renewables, batteries and infrastructure. The announced acquisition of **UK Power Networks** pushes the mix further toward regulated electricity distribution.
+The strategic engine is straightforward: keep the legacy utility cash flows stable, invest into renewables, batteries and infrastructure, and make earnings progressively more regulated or contracted. Renewable and storage capacity reached **59.5 GW** at June 2026, up **2.4 GW** in six months, with **6.4 GW** under construction and **2.4 GW** of PPAs signed. The **UK Power Networks** acquisition closed on 7 May 2026 and contributed **€180m** of EBIT in its first two months, materially increasing exposure to regulated electricity distribution.
 
-No universal disqualifier found. The main risks are not accounting integrity or near-term solvency, but high capital intensity, meaningful leverage, regulatory/political exposure, nuclear/decommissioning tail liabilities, and a dividend that should be judged against recurring earnings/CFFO rather than conventional free cash flow.
+No universal disqualifier was found. The main risks are high capital intensity, materially higher leverage after UKPN, regulatory and political exposure, nuclear and decommissioning liabilities, volatile commodity and working-capital effects, and a dividend that should be judged against recurring earnings and through-cycle cash generation rather than one period's conventional free cash flow.
 
 ## Trait Assessment
 
-### Earnings Quality — 0.55 / confidence 0.75
+### Earnings Quality — 0.55 / confidence 0.82
 
-ENGIE has real earning power, but it is not especially predictable. FY2025 net recurring income group share was **€4.9b** and management guides **€4.6–5.2b** for 2026, rising to **€5.2–5.8b** by 2028. That recurring-profit base supports the dividend and gives a usable valuation anchor.
+ENGIE has real earning power, but it is not especially clean or predictable. H1 2026 NRIgs was **€3.0b**, only slightly below the prior year, and management raised full-year guidance to **€4.9–5.5b**. Cash Flow From Operations was **€6.9b**; the statutory cash-flow statement showed **€7.1b** of operating cash flow and **€3.1b** of purchases of property, plant, equipment and intangibles, leaving roughly **€4.0b** before acquisitions and other investing flows.
 
-The caveat is quality and volatility. Yahoo statement data show net income was positive across 2022–2025, but the growth path is lumpy: net income was only **€216m** in 2022, **€2.2b** in 2023, **€4.1b** in 2024 and **€3.8b** in 2025. Local `earnings_quality.py` flagged cumulative free-cash-flow conversion of only **0.29×** over the available four-year window, and ENGIE relies heavily on recurring/adjusted metrics because energy-price moves, nuclear items, impairments, restructuring and working-capital swings make statutory cash flow noisy.
+The caveat is volatility and definition risk. H1 statutory earnings included **€0.6b** of after-tax commodity mark-to-market gains, CFFO fell **18%** year on year as Nuclear EBITDA declined, and ENGIE's CFFO definition excludes maintenance capex and nuclear phase-out expenditure. The available annual record also contains large working-capital, nuclear and growth-capex swings. Recurring earnings remain the most useful valuation anchor, but they need to be reconciled to through-cycle cash generation.
 
-That is good enough for a mature utility but not enough for a high score. Confidence would improve with a 10-year rebuilt record of recurring net income, CFFO after maintenance capex, and major one-off charges from annual reports.
+### Returns on Capital — 0.45 / confidence 0.85
 
-### Returns on Capital — 0.45 / confidence 0.80
+ENGIE is an infrastructure-heavy utility, so the relevant question is whether returns exceed the cost of capital with stability, not whether they resemble software margins. The 2025 Universal Registration Document reported **9.6% ROACE**, while the local Yahoo-based script estimated 2025 ROIC at about **7.9%**. These are acceptable regulated-utility returns, but not the fingerprint of a high-return compounder.
 
-ENGIE is an infrastructure-heavy utility, so the right read is whether returns exceed cost of capital with stability, not whether it looks like a software company. The local returns script showed ROIC of about **7.9%** in 2025 and **8.5%** in 2024, improving from the 2022 trough; ROCE was similar at **7.7%** in 2025. For regulated/contracted assets this is acceptable, but it is not a high-return compounder fingerprint.
+H1 2026 was directionally positive: Infrastructures EBIT rose **4.4% organically**, including **18.6%** organic growth in Power Networks, and UKPN contributed **€180m** of EBIT in two months. The unresolved issue is the denominator: industrial capital employed rose to **€93.8b** from **€71.2b** a year earlier after UKPN. A full-year UKPN contribution and disclosed returns on the enlarged capital base are needed before concluding that the acquisition creates per-share value above ENGIE's cost of capital.
 
-The better evidence is directional: networks EBIT grew **+28.8% organically** in 2025, Renewables & BESS EBIT grew **+6.2% organically**, and management expects new investments including distribution networks to add **€2.7–3.1b** of EBIT over 2026–2028. The score remains capped because a large asset base, goodwill, leverage and regulated returns mean the spread over WACC is probably modest rather than exceptional.
+### Pricing Power / Durable Moat — 0.65 / confidence 0.75
 
-### Pricing Power / Durable Moat — 0.65 / confidence 0.65
+ENGIE has a real utility-style moat from regulated networks, concessions, long-lived generation and storage assets, scale in corporate PPAs, customer relationships and operational expertise across complex energy systems. H1 Gas Networks EBIT benefited from European tariff increases, while Power Networks benefited from inflation-linked tariff indexation in Latin America. The UKPN acquisition adds a **€11.4b** regulated asset value base.
 
-ENGIE has a real moat, but it is utility-style rather than brand-style. The strongest sources are regulated networks, concessions, long-lived generation/storage assets, scale in corporate PPAs, customer relationships, and operational expertise across complex energy systems. In 2025 the Networks segment benefited from French tariff increases, and ENGIE remained a corporate PPA leader with **4.8 GW** signed.
+This is not unrestricted pricing power. Regulators set network returns, supply and energy-management margins remain competitive and volatile, and renewable returns can compress when capital floods the sector. The moat is durable enough to support stability, but not wide enough to justify a premium compounder multiple without better project-level return evidence.
 
-This is not unrestricted pricing power. Supply and energy-management margins can be competitive, renewable returns can compress when capital floods the sector, and regulated networks earn allowed returns set by regulators. The moat is durable enough to underwrite stability, but not wide enough to demand a premium compounder multiple without better project-level return evidence.
+### Reinvestment Runway — 0.72 / confidence 0.85
 
-### Reinvestment Runway — 0.70 / confidence 0.75
+The runway is the best part of the case. At June 2026 ENGIE had **59.5 GW** of renewable and storage capacity, **6.4 GW** under construction and a **122 GW** development pipeline. It signed **2.4 GW** of PPAs in H1, twice the prior-year level. The data-centre load pipeline increased to **7 GW**, including **4 GW** at an advanced stage, and ENGIE had secured **47%** of its target to supply 50 TWh to technology and data-centre customers by 2030.
 
-The runway is the best part of the case. ENGIE is positioned directly in electrification, grid investment, renewables, batteries, biomethane and district heating/cooling. It ended 2025 with **57.2 GW** of renewable/storage capacity, had about **90 projects under construction** representing **~14 GW**, and reiterated a **95 GW** installed renewable/storage target for 2030. Management plans **€34–38b** of gross capex over 2026–2028, around **90%** into renewables, batteries and infrastructure.
+The opportunity is large, but the economics are not automatically wonderful. Regulated networks lower risk but earn allowed returns; renewables and batteries compete for interconnection, land, contracts and equipment. The score is solid rather than high because the runway is likely to earn mid-single- to high-single-digit returns on capital rather than a high-teens compounding spread.
 
-The runway is real, but the economics are not automatically wonderful. A regulated network acquisition like UK Power Networks lowers risk and adds stability, but also absorbs capital at regulated returns. Renewables and batteries have growth, but they compete for interconnection, land, contracts and equipment. The score is solid rather than high because the opportunity is large but likely to earn mid-single-to-high-single-digit returns on capital, not a high-teens compounding spread.
+### Capital Allocation — 0.55 / confidence 0.80
 
-### Capital Allocation — 0.58 / confidence 0.65
+Capital allocation is strategically coherent but financially demanding. UKPN closed for **€12.2b** of cash consideration and added **€19.0b** to net financial debt including **€7.0b** of debt assumed. ENGIE partly funded it with **€2.3b** of hybrid debt and **107m** new shares issued at €28, diluting existing holders by **4.4%**. The acquired network had **€11.4b** of RAV and contributed **€180m** of EBIT in its first two months, but a full-year return on the purchase price is not yet observable.
 
-Capital allocation is broadly rational but still proving itself. Positives: ENGIE is concentrating capex into renewables, batteries and infrastructure; divesting around **€6b** of assets over 2026–2028 including UKPN-related portfolio adjustment; targeting **€0.8–1.0b** of EBIT uplift from performance actions; and keeping a stated strong-investment-grade balance-sheet target. The UKPN deal is strategically coherent because regulated electricity networks improve the risk profile.
+Excluding UKPN, H1 capex was **€3.9b**, including **€2.6b** of growth capex, and 90% went to Renewable & Flex Power and Infrastructure. This is consistent with the strategy, while the upgraded guidance gives early evidence that execution is on track. The mark-down reflects the large acquisition premium, higher leverage, dilution and a **€3.5b** ordinary dividend outflow; per-share NRIgs and debt reduction now matter more than growth in absolute assets or adjusted EBIT.
 
-Concerns: the dividend is high, conventional 2025 free cash flow was negative in Yahoo data, and the UKPN acquisition is a large capital allocation step whose price/returns need continued scrutiny. The local capital-allocation script showed cumulative 2022–2025 dividends of **€15.4b** versus volatile free cash flow and a weak 2025 FCF cover reading. That does not mean the dividend is unsustainable on ENGIE's preferred CFFO/recurring-income basis, but it does mean public equity holders should watch whether growth capex plus dividends are forcing leverage higher.
+### Conservative Debt — 0.45 / confidence 0.90
 
-### Conservative Debt — 0.58 / confidence 0.80
+The balance sheet is no longer conservative, although it remains investment grade and liquid. At June 2026, net financial debt was **€54.9b** and economic net debt was **€60.3b**, up **€16.0b** and **€15.1b** respectively from year-end. Economic net debt / EBITDA rose from **3.1×** to **4.2×** because only two months of UKPN earnings were consolidated. Management targets no more than **4.0×** after including a full-year UKPN contribution.
 
-For a diversified utility, the balance sheet is acceptable but not conservative. ENGIE reported **economic net debt / EBITDA of 3.1×** at FY2025, stable year on year and inside its stated target range. It also held investment-grade ratings: **S&P BBB+ / A-2 stable**, **Moody's Baa1 / P-2 stable**, and **Fitch BBB+ / F1 stable**. The local debt script showed 2025 net debt / EBITDA around **2.5×** using annual statement figures, EBIT interest coverage around **3.5×**, and snapshot net debt / EBITDA around **3.1×**.
+ENGIE had **€20.9b** of liquidity, including **€14.0b** of cash, and ratings remained **S&P BBB+**, **Moody's Baa1** and **Fitch BBB+**, all stable. Those buffers reduce refinancing risk, but the enlarged debt load constrains flexibility if UKPN returns disappoint, disposals lag, capex overruns or energy markets move adversely.
 
-The mark-down is for capital intensity, nuclear/decommissioning complexity, total debt over **€50b**, and near-term-debt coverage that the script estimated at only **0.6×** from cash plus FCF against current debt. Stable networks and contracted assets can carry more leverage than a cyclical industrial, but debt will constrain flexibility if capex overruns, regulated returns disappoint or energy markets swing against the company.
+### Key-Person Risk — 0.80 / confidence 0.70
 
-### Key-Person Risk — 0.80 / confidence 0.60
+ENGIE is an institutional utility platform, not a founder-led business. Operations, financing and regulation are handled across large teams and national subsidiaries, so a single executive departure should not break the business. Catherine MacGregor was reappointed CEO in 2025, but the score chiefly reflects organisational depth rather than reliance on her tenure.
 
-ENGIE is an institutional utility platform, not a founder-led business. Operations, financing and regulation are handled across large teams and national subsidiaries; a single executive departure should not break the business. Confidence is only moderate because I did not do a full board/management-depth review.
+### Incentive Alignment — 0.72 / confidence 0.90
 
-### Incentive Alignment — 0.55 / confidence 0.50
+The 2025 Universal Registration Document materially firms up alignment. The CEO's annual variable compensation is **65% financial**, equally split among NRIgs, EBIT, FCF and economic net debt, and **35% non-financial**. Long-term performance shares are weighted **35%** to relative total shareholder return, **35%** to ROACE and **30%** to quantified CSR measures. That combination directly rewards per-share market performance, return on capital and balance-sheet discipline rather than scale alone.
 
-I did not review the remuneration report in detail, so this is a low-confidence neutral-positive score. The strategy, dividend policy, credit-rating target and capex discipline are sensible. The potential misalignment is common for large utilities: management can be rewarded for scale, capex deployment and adjusted earnings rather than per-share value creation after capital cost. Firm this up at the next update by reading the FY2025 remuneration and share-ownership disclosures.
+Catherine MacGregor held **214,000 ENGIE shares** at 31 December 2025 against a required portfolio target equal to two years of fixed salary, or **€2.3m**; until the target is met, two-thirds of vested performance shares are non-transferable, and hedging is prohibited. The remaining caveat is that budget-based targets and company-defined FCF can be easier to satisfy than true long-term value creation. UKPN's returns after dilution and financing costs are the next practical test.
 
-**Why the other strategies lost:** Cash Cow is tempting because ENGIE pays a sizeable dividend, but it fails the clean-cash-cow test: the local FCF script showed 2025 free cash flow of about **-€8.7b**, a 2025 FCF margin of **-12.2%**, and cumulative FCF conversion of only **0.29×** over the Yahoo window. Freeroll lacks a hard floor and a sharp catalyst: the **~5%** dividend yield and regulated assets give some support, but price/book is about **2.3×** and the catalyst is gradual execution, not a forced re-rating. Rule Breakers loses because ENGIE is a mature utility with falling reported revenue and modest growth, not an emerging high-growth disruptor. Wonderful-and-Fair is the best fit, but only moderately: the thesis is a durable utility reinvesting into energy-transition infrastructure, not a high-return compounder.
+**Why the other strategies lost:** Cash Cow is a genuine secondary fit because the **€1.35** dividend yields about **5.2%** and H1 cash generation improved, but the record is too volatile and post-UKPN leverage too high for a clean cash-cow classification. Freeroll lacks a hard floor and a sharp catalyst: regulated assets and the dividend help, but price/book is about **1.9×** and the catalyst is gradual execution. Rule Breakers loses because ENGIE is a mature utility with modest organic growth, not an emerging high-growth disruptor. Wonderful-and-Fair remains the best fit, but only moderately: this is a durable utility reinvesting into transition infrastructure, not a high-return compounder.
 
 ## Overall
 
-ENGIE is a solid but not spectacular energy-transition utility. The attractive parts are durability, a real infrastructure/renewables runway, investment-grade funding, and a **~5%** dividend yield. The unattractive parts are capital intensity, modest returns on capital, leverage, regulatory/nuclear complexity, and poor conventional free-cash-flow optics in 2025.
+ENGIE's H1 update improved the earnings outlook but made the financing trade-off explicit. The positives are upgraded 2026 guidance, early UKPN contribution, growing regulated-network exposure, continued renewable and storage additions, strong PPA activity and a **~5.2%** dividend yield. The detractors are **4.2×** economic net debt / EBITDA, acquisition dilution, modest returns on capital, volatile cash-flow definitions and regulatory and nuclear complexity.
 
-My agent score is **0.58**: worth watching for income-plus-modest-growth exposure to electrification infrastructure, but not a top-tier compounder. The hurdle for upgrading the view would be evidence that UKPN, networks and Renewables/BESS are raising per-share recurring income without stretching the balance sheet or relying on adjusted cash-flow definitions.
+The agent score remains **0.58**. ENGIE is worth watching for income plus modest growth tied to electrification infrastructure, but the investment case now depends on UKPN lifting per-share recurring earnings enough to offset its acquisition premium, financing cost and 4.4% share issuance while leverage returns below 4×.
 
 ## Valuation
 
-Valuation method: **exit-multiple**, using recurring earnings as the owner-earnings proxy because conventional FCF is distorted by working capital, nuclear cash-outs and heavy growth capex.
+Valuation method: **exit-multiple**, using recurring earnings as the owner-earnings proxy because conventional FCF is distorted by working capital, nuclear cash-outs, acquisition spending and heavy growth capex.
 
 Inputs used:
 
-- **Price:** €26.78 from local `yfin quote`, accessed 2026-07-09.
-- **Current fundamental:** **€2.00/share** recurring earnings, triangulated from FY2025 NRIgs of **€4.9b**, 2026 NRIgs guidance of **€4.6–5.2b**, and roughly **2.5b** shares outstanding.
-- **Growth:** **4%** annual recurring-earnings growth, broadly consistent with management's 2026–2028 NRIgs midpoint rising from about **€4.9b** to **€5.5b**.
-- **Exit multiple:** **12.5×** earnings, slightly below the implied entry multiple, because this is a regulated/capital-intensive utility rather than a high-return compounder.
-- **Dividend yield:** **5.0%**, close to the proposed **€1.35/share** dividend over the current price.
-- **Dilution:** **0%**, because I found no clear buyback or structural dilution thesis.
+- **Price:** €25.72, the 14 August 2026 close from local `yfin`, accessed 16 August.
+- **Current fundamental:** **€2.05/share** recurring earnings, based on the upgraded 2026 NRIgs midpoint of **€5.2b** divided by **2.542b** shares after the UKPN capital raise.
+- **Growth:** **3%** annual recurring-earnings growth. The 2026 guidance midpoint of €5.2b to the 2028 target midpoint of €5.5b implies about 2.8% annual growth; 3% is a rounded through-cycle assumption.
+- **Exit multiple:** **12.5×** earnings, approximately flat against the **12.55×** entry multiple and appropriate for a regulated, capital-intensive utility.
+- **Dividend yield:** **5.2%**, based on the €1.35 ordinary dividend and current price.
+- **Dilution:** **0%** from today's enlarged share base. The completed 4.4% UKPN-related issuance is already reflected in the 2.542b shares used above.
 - **Horizon:** 5 years.
 
-The script-generated expected ROI is about **7.9% annualized**. Attribution is roughly **+4.0%** business growth, **0.0%** dilution, **-1.4%** multiple compression and **+5.3%** income. That is respectable for a utility, but the return depends heavily on the dividend being maintained and recurring income growing as guided.
+The script-generated expected ROI is about **8.3% annualized**. Attribution is roughly **+3.0%** business growth, **0.0%** dilution, **-0.1%** multiple change and **+5.4%** income. The return is respectable for a utility, but it relies on the dividend remaining covered and on UKPN and transition capex producing per-share recurring-income growth despite higher financing costs.
 
 ## Thesis Connections
 
-ENGIE fits the energy-transition infrastructure theme: renewables, BESS, grid/network reinforcement, biomethane, district heating/cooling, PPAs and flexible generation. It is a diversified, lower-beta way to own the electrification buildout rather than a pure-play battery or renewables developer.
+ENGIE fits the energy-transition infrastructure theme through regulated power and gas networks, renewables, BESS, data-centre PPAs, biomethane, district heating and cooling, and flexible generation. It is a diversified way to own the electrification buildout rather than a pure-play renewable developer; UKPN increases the regulated-network exposure but also raises the leverage and execution burden.
 
 ## Watch
 
-- 2026 NRIgs guidance: **€4.6–5.2b**; 2028 target **€5.2–5.8b**.
-- EBIT excluding Nuclear target: **€8.7–9.7b** in 2026, **€10.3–11.3b** in 2028.
-- UK Power Networks acquisition: completion, final funding, disposals, credit-rating impact and allowed-return/regulatory assumptions.
+- 2026 guidance: **€4.9–5.5b** NRIgs and **€9.2–10.2b** EBIT excluding Nuclear; 2028 targets remain **€5.2–5.8b** and **€10.3–11.3b** respectively.
+- UKPN: full-year EBIT, allowed-return assumptions, integration costs and return on the **€19b** enterprise funding burden relative to its **€11.4b** RAV.
+- Economic net debt / EBITDA: whether a full-year UKPN contribution and disposals bring it to **≤4.0×** without a ratings downgrade.
+- Per-share NRIgs after the **107m-share / 4.4%** UKPN capital raise, not just absolute EBIT growth.
 - Gross capex **€34–38b** over 2026–2028 and whether new investments deliver the promised **€2.7–3.1b** EBIT contribution.
-- Renewable/storage capacity additions versus the **95 GW by 2030** target; 2025 base **57.2 GW**.
-- Networks segment organic EBIT growth and tariff/regulatory resets in France, Brazil and the UK.
-- Conventional FCF versus ENGIE's CFFO definition; dividend cover under both recurring income and true free cash flow.
-- Economic net debt / EBITDA target range and rating agency outlook after UKPN.
-- Nuclear provisions, Belgian JV cash flows, and any revision to dismantling/decommissioning liabilities.
-- Remuneration/incentive-alignment review from the FY2025 Universal Registration Document.
+- Renewable and storage additions versus the **95 GW by 2030** target; June 2026 base **59.5 GW**, with **6.4 GW** under construction.
+- Data-centre pipeline conversion: **7 GW** load pipeline and **47%** of the 50 TWh 2030 supply target secured.
+- Networks tariff resets and organic EBIT growth in France, Brazil, the UK and other Latin American markets.
+- Statutory operating cash flow and maintenance capex versus ENGIE's CFFO definition; dividend cover through the cycle.
+- Belgian nuclear negotiations: proposed state acquisition of ENGIE and Electrabel nuclear activities and the targeted heads of terms by **1 October 2026**.
+- Nuclear provisions, Belgian JV cash flows and any revision to dismantling or decommissioning liabilities.
 
 ## Sources
 
-- ENGIE FY2025 Results press release, 25 Feb 2026, converted locally from `PR ENGIE FY 2025 VDEF.pdf` in `/tmp/engi/fy2025.txt`.
-- ENGIE FY2025 newsroom results page, accessed 2026-07-09: https://en.newsroom.engie.com/news/engie-fy-2025-results-95f16-314df.html
-- ENGIE 2025 Universal Registration Document, converted locally from `/tmp/engi/urd2025.txt`, reviewed 2026-07-09.
-- Yahoo Finance via local `yfin` for ENGI.PA quote/info/statements/dividends/metrics, run 2026-07-09.
-- Local stock-analysis scripts run 2026-07-09: `earnings_quality.py`, `free_cash_flow.py`, `fundamental_stability.py`, `conservative_debt.py`, `returns_on_capital.py`, `durable_growth.py`, `organic_growth.py`, `capital_allocation.py`, `downside_support.py`.
+- ENGIE H1 2026 Results press release, 31 Jul 2026: https://www.engie.com/app/uploads/2026/07/PR-ENGIE-H1-2026-results.pdf
+- ENGIE H1 2026 presentation, 31 Jul 2026: https://www.engie.com/app/uploads/2026/07/H1-2026-Presentation-VDEF.pdf
+- ENGIE 2026 First-Half Financial Report, 31 Jul 2026: https://www.engie.com/app/uploads/2026/07/2026-First-Half-financial-report-1.pdf
+- ENGIE 2025 Universal Registration Document, reviewed for compensation and capital-allocation disclosures: https://www.engie.com/app/uploads/2026/03/Universal-Registration-Document-2025.pdf
+- ENGIE FY2025 results page, 25 Feb 2026: https://en.newsroom.engie.com/news/engie-fy-2025-results-95f16-314df.html
+- Yahoo Finance via local `yfin` for ENGI.PA quote, history, info, statements and metrics, run 2026-08-16.
+- Local stock-analysis scripts run 2026-08-16: `company_score.py`, `exit_multiple_valuation.py`, and `overall_score.py`.

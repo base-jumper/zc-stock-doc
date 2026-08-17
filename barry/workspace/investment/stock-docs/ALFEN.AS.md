@@ -2,8 +2,8 @@
 ticker: ALFEN.AS
 company: Alfen N.V.
 watching: true
-last-updated: 2026-07-21
-updated-by: Nipa
+last-updated: 2026-08-16
+updated-by: Barry
 disqualified: false
 analysis-strategy: rule-breakers
 chosen:
@@ -15,8 +15,8 @@ traits:
   sustainable-advantage:     {score: 0.42, confidence: 0.62}
   durable-growth:            {score: 0.50, confidence: 0.78}
   organic-growth:            {score: 0.82, confidence: 0.75}
-  management-backing:        {score: 0.50, confidence: 0.60}
-  incentive-alignment:       {score: 0.45, confidence: 0.45}
+  management-backing:        {score: 0.42, confidence: 0.78}
+  incentive-alignment:       {score: 0.42, confidence: 0.80}
   customer-devotion:         {score: 0.48, confidence: 0.45}
 valuation:
   tam-capture:
@@ -39,11 +39,11 @@ valuation:
     date: 2026-07-21
 strategies:
   rule-breakers:
-    score:      0.5482
-    confidence: 0.6643
+    score:      0.5354
+    confidence: 0.7183
 overall:
-  qv_score:    0.483
-  cqv_score:   0.393
+  qv_score:    0.477
+  cqv_score:   0.404
   agent_score: 0.48
 ---
 
@@ -57,7 +57,7 @@ Alfen is a Dutch electrical-equipment company serving the European energy transi
 
 The most recent operating signal is better but not clean. Q1 2026 revenue rose **25.0% YoY to €129.7m**, with growth in Energy Storage Systems and Smart Grid Solutions partly offset by EV Charging weakness. Adjusted EBITDA rose to **€8.2m** (6.3% margin). Management reiterated 2026 guidance of **€435m-€475m** revenue, **4%-7%** adjusted EBITDA margin and capex below 4% of revenue, while warning revenue is front-loaded in 2026.
 
-Since the last review, Alfen and CATL agreed to target **5 GWh of sodium-ion battery-storage deployments in Europe**, extending their lithium-ion supply relationship. This could broaden Alfen's ESS offering, lower material-cost exposure and improve tender competitiveness, but no revenue, timing or firm-order economics were disclosed; it is strategic optionality rather than backlog today.
+Alfen and CATL agreed in July 2026 to target **5 GWh of sodium-ion battery-storage deployments in Europe**, extending their lithium-ion supply relationship. This could broaden Alfen's ESS offering, lower material-cost exposure and improve tender competitiveness, but no revenue, timing or firm-order economics were disclosed; it is strategic optionality rather than backlog today. No newer company operating release had been published as of **16 August 2026**; H1 results are due after market on **18 August**.
 
 ## Trait Assessment
 
@@ -95,17 +95,17 @@ The current thesis is mostly organic: product renewal, European expansion, local
 
 The caveat is that organic growth quality is not the same as organic growth itself. Alfen is not buying growth, which is good, but it still has to prove the organic initiatives can restore margins and sustained revenue growth.
 
-### Great Management & Smart Backing — 0.50 / 0.60
+### Great Management & Smart Backing — 0.42 / 0.78
 
-CEO Michael Colijn joined in late 2025 and has moved quickly: cost control, FTE reduction, a business-unit structure from May 2026, local-for-local sales/service expansion, and renewed strategic focus. The language is sensible and tied to customer needs, product excellence and execution rather than only financial optics.
+CEO Michael Colijn joined in late 2025 and has moved quickly: cost control, FTE reduction, a business-unit structure from May 2026, local-for-local sales/service expansion, and renewed focus on customer needs, product excellence and execution. The actions and language are sensible, but there is not yet a demonstrated operating record.
 
-Confidence and score stay moderate because the team is new and the record is not yet proven. 2024-2025 included revenue decline, one-off quality/inventory issues and weak EV Charging performance. The next proof point is whether the transformation turns into sustained revenue growth and margin recovery in 2027, not just a better Q1.
+Leadership continuity is now a larger concern. The 2025 annual report records the exits of the former CEO and CCO, and CFO Onno Krap then stepped down effective **1 July 2026** after roughly two years at Alfen. Bart Meussen, an experienced transformation finance executive, became interim CFO while the board searches for a permanent successor. Not all departures imply dysfunction, but turnover across three senior roles during a difficult operating reset lowers the score. H1 execution and the permanent-CFO appointment are the next evidence points.
 
-### Incentive Alignment — 0.45 / 0.45
+### Incentive Alignment — 0.42 / 0.80
 
-Evidence is thin from the sources used in this pass. Insider ownership from Yahoo is low at about **0.5%**, while institutional ownership is about **34%**. Low insider ownership does not automatically mean poor incentives, but it gives less visible owner-operator alignment than Nick’s preferred Rule Breaker profile.
+The 2025 remuneration report supports a mixed rather than unknown assessment. On-target STI is **50% of base salary** (maximum 75%); 2025 financial measures were revenue, adjusted EBITDA and inventory, while non-financial measures covered emissions, safety, product compliance and IT. The 2025-2027 LTI grants conditional shares worth **100% of base salary** at target, measured over three years and followed by a two-year holding period. Its 65% financial weighting uses revenue growth and adjusted EBITDA margin, with the remainder tied to quality, customer satisfaction and emissions.
 
-Next update should read the remuneration report directly: STI/LTI metrics, performance periods, ownership guidelines, whether targets reward ROIC/FCF/per-share value or revenue/adjusted EBITDA, and share-based dilution.
+The multi-year equity and holding period are positives, as are explicit customer/quality measures and share-ownership guidelines. The soft spots are material: most financial incentive weight still rewards size and adjusted accounting profit rather than per-share value, FCF or ROIC; key management collectively held **no ordinary shares at 31 December 2025**, only conditional rights; and Yahoo's broader insider-ownership estimate remains about **0.5%**. No recent insider transactions were available in Yahoo's feed. Confidence is higher after reading the report, but the score remains low-middling until the new CEO/CFO build meaningful ownership and the 2026 plan demonstrates stronger per-share-value alignment.
 
 ### Customer Devotion — 0.48 / 0.45
 
@@ -119,11 +119,11 @@ But customer-devotion evidence is weak. There are no retention, NPS, renewal, ch
 
 Alfen is an interesting but messy energy-transition specialist. The industry setup is good and Q1 2026 showed real improvement, especially ESS and SGS. The stock could work if the transformation lifts margins, ESS backlog converts cleanly, and EV Charging stabilises after product renewal.
 
-The negatives are substantial: weak moat, EV Charging competition, lumpy ESS projects, low current profitability, recent losses, modest current returns on capital, and limited insider-alignment evidence. This is not a high-conviction compounder yet. It belongs on watch as a recovery/growth-wave candidate, not near the top of the allocation list.
+The negatives are substantial: weak moat, EV Charging competition, lumpy ESS projects, low current profitability, recent losses, modest current returns on capital, senior-leadership turnover and little direct management ownership. This is not a high-conviction compounder yet. It belongs on watch as a recovery/growth-wave candidate, not near the top of the allocation list.
 
 ## Valuation
 
-Canonical valuation uses **Rule Breakers weighted-average**, with **TAM-capture at 100% weight**. Exit-multiple is omitted because current earnings are roughly breakeven and FY2026 consensus EPS of about €0.20 would imply a noisy, not-yet-underwritable current P/E anchor.
+Canonical valuation uses **Rule Breakers weighted-average**, with **TAM-capture at 100% weight**. Exit-multiple is omitted because current earnings are roughly breakeven and FY2026 consensus EPS of about €0.20 would imply a noisy, not-yet-underwritable current P/E anchor. The **16 August 2026** quote was **€13.36**, only 0.4% below the model's €13.41 entry price, so the stored valuation inputs and ROI were left unchanged pending the H1 release.
 
 TAM-capture inputs:
 
@@ -143,21 +143,23 @@ Potential FIT: European electrification and grid bottlenecks. Alfen gives exposu
 
 ## Watch
 
-- 2026 guidance delivery: revenue **€435m-€475m**, adjusted EBITDA margin **4%-7%**, capex below 4% of revenue.
-- Q2/Q3 2026 ESS conversion: Q1 was front-loaded; watch whether backlog converts without margin slippage.
+- **H1 results on 18 August 2026:** guidance delivery against revenue **€435m-€475m**, adjusted EBITDA margin **4%-7%** and capex below 4% of revenue; reconcile the front-loaded Q1 with Q2 revenue and orders.
+- H2 2026 ESS conversion: watch whether the **€82m** 2026 portion of Q1 backlog converts without project delay or margin slippage.
 - CATL sodium-ion agreement: confirm deployment timetable, firm orders, Alfen revenue content, gross-margin effect and whether the stated **5 GWh** becomes contracted backlog.
 - EV Charging revenue and ASP: needs evidence that product renewal and southern-Europe expansion offset competitive pressure.
 - SGS grid-operator demand: whether Dutch DSO investment plans and congestion regulation translate into orders.
 - Gross margin mix: ESS large projects can lower margin; watch group adjusted gross margin versus the 26%-30% zone.
 - Working capital: 2025 cash flow benefited from inventory/receivables reductions; confirm FCF remains positive without one-off releases.
-- Remuneration report: verify management incentives and insider ownership.
+- Leadership and incentives: permanent-CFO appointment, finance-function continuity, 2026 incentive metrics and any meaningful CEO/CFO open-market share purchases.
 
 ## Sources
 
 - Alfen FY2025 results release, 18 Feb 2026: revenue, segment revenue, margins, transformation, working capital, net debt, capex and 2026 guidance. <https://alfen.com/en/investor-relations/investor-relations-news/alfen-reports-results-fy2025-transforming-to-support-european-energy-independence>
 - Alfen Q1 2026 trading update, 12 May 2026: Q1 revenue/margins, segment performance, ESS backlog, guidance, SGS/EV/ESS commentary. <https://alfen.com/en/investor-relations/investor-relations-news/alfen-reports-q1-2026-results-good-start-to-the-year>
-- Yahoo Finance via `yfin`, retrieved 2026-07-21: price **€13.41**, market cap **€291.6m**, 2026 consensus revenue **€451.2m** and EPS **€0.20**, ownership and next results date.
+- Alfen Annual Report 2025: remuneration structure and outcomes, management changes, key-management share ownership, major shareholders and governance. <https://eu-assets.contentstack.com/v3/assets/blt08d332658a89f766/blt5a730a1862105091/698b732ef7607f82a821efe0/Alfen_Annual_Report_2025.pdf>
+- Alfen CFO announcements, 29-30 Jun 2026: Onno Krap's departure and Bart Meussen's interim appointment pending a permanent search. <https://alfen.com/en/investor-relations/investor-relations-news/cfo-to-step-down-per-1-july-2026> and <https://alfen.com/en/investor-relations/investor-relations-news/appointment-of-interim-cfo>
+- Yahoo Finance via `yfin`, retrieved 2026-08-16: price **€13.36**, market cap **€290.5m**, 2026 consensus revenue **€451.2m** and EPS **€0.20**, ownership, holders and next results date.
 - pv magazine / ESS News, 16 Jul 2026: Alfen-CATL agreement targeting 5 GWh of sodium-ion storage deployments in Europe; no disclosed order value or deployment schedule. <https://www.pv-magazine.com/2026/07/16/alfen-catl-to-deploy-5-gwh-of-sodium-ion-battery-storage-in-europe/>
-- Alfen financial calendar, checked 21 Jul 2026: Q2/H1 2026 results scheduled for **18 Aug 2026**. <https://alfen.com/en/investor-relations/financial-calendar>
+- Alfen financial calendar and IR news index, checked 16 Aug 2026: H1 results scheduled for **18 Aug 2026 at 19:00 CET**; no newer company operating release was listed. <https://alfen.com/en/investor-relations/financial-calendar>
 - ACER, distribution-grid investment report news, 2026: European distribution-grid investment trend context. <https://www.acer.europa.eu/news/visible-rise-electricity-distribution-grid-investment-acer-recommends-actions-optimise-ramp>
 - European Alternative Fuels Observatory, Q1 2026 BEV registration update, 17 Apr 2026: European BEV market context. <https://alternative-fuels-observatory.ec.europa.eu/general-information/news/eafo-data-update-strong-growth-bev-registrations-across-europe-q1-2026>
