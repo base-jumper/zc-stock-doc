@@ -60,6 +60,12 @@ players:
       mobility-adjusted-capture: 0.097099
       mobility-adjusted-revenue: 0.194198
   gone-probability: 0.1006
+  # Explicit outside-contender override for the stock-level TAM-capture valuation of AYA.AX.
+  override:
+    - name: Artrya
+      ticker: AYA.AX
+      capture: 0.05
+      reason: "Analyst-owned outside-contender estimate for the stock-doc TAM-capture valuation: AYA holds an early FDA-cleared beachhead (Anatomy + Plaque live; Flow pending clearance) across three US foundation health systems but is not yet a top-dog with broad share. A 5% terminal capture of the whole US CAD-AI software market is consistent with the rule-breaker trait read (credible early beachhead, not yet proven category leader) and is deliberately below its underpenetrated-revenue potential. See stock-doc AYA.AX."
   method: share-gap-mobility-weighted-geometric-capture
   date: 2026-08-03
 ---

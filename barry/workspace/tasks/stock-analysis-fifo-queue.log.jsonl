@@ -261,3 +261,12 @@
 {"event": "queued", "ticker": "1024.HK", "ts": "2026-08-17T14:25:53.217836+00:00"}
 {"event": "queued", "ticker": "TME", "ts": "2026-08-17T14:25:53.247042+00:00"}
 {"event": "queued", "ticker": "0981.HK", "ts": "2026-08-17T14:25:53.275815+00:00"}
+{"event": "completed", "ticker": "MELI", "ts": "2026-08-17T19:30:19.872196+00:00"}
+{"event": "completed", "ticker": "NU", "ts": "2026-08-17T22:39:12.058256+00:00"}
+{"event": "queued", "ticker": "AXON", "ts": "2026-08-18T00:25:43.646275+00:00"}
+{"event": "queued", "ticker": "SHOP", "ts": "2026-08-18T00:25:43.676180+00:00"}
+{"event": "completed", "ticker": "6326.T", "ts": "2026-08-18T01:51:13.129977+00:00"}
+{"event": "completed", "ticker": "DE", "ts": "2026-08-18T05:27:18.699742+00:00"}
+{"event": "completed", "ticker": "TRMB", "ts": "2026-08-18T08:40:33.121095+00:00"}
+{"event": "completed", "ticker": "VIK", "ts": "2026-08-18T12:44:21.113657+00:00"}
+{"event": "completed", "ticker": "MSGS", "ts": "2026-08-18T15:50:57.835933+00:00"}

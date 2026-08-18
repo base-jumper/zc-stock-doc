@@ -2,8 +2,8 @@
 ticker: AYA.AX
 company: Artrya Limited
 watching: true
-last-updated: 2026-07-25
-updated-by: Nipa
+last-updated: 2026-08-18
+updated-by: Barry
 disqualified: false
 analysis-strategy: rule-breakers
 traits:
@@ -28,19 +28,18 @@ traits:
   incentive-alignment:   {score: 0.45, confidence: 0.50}
 valuation:
   tam-capture:
-    price: 5.64
-    shares: 166141984
-    years: 8
-    tam: 10318099694
-    capture: "5%"
+    market-doc: us-coronary-artery-disease-ai-diagnostic-software
+    market-player: AYA.AX
+    price: 3.35
+    shares: 163500000
     margin: "30%"
     margin-basis: EBITDA
     exit-multiple: 20
-    dilution: ["5%", "5%", "5%", "4%", "4%", "3%", "3%", "3%"]
+    dilution: ["5%", "5%", "5%", "4%", "4%", "3%", "3%", "3%", "3%", "3%"]
     net-debt: 0
     role-model: PME.AX
-    roi: 0.116483
-    date: 2026-07-25
+    roi: -0.027753
+    date: 2026-08-18
 strategies:
   freeroll:
     score:      0.35
@@ -52,9 +51,9 @@ strategies:
     score:      0.0
     confidence: 0.6267
 overall:
-  qv_score:    0.493
-  cqv_score:   0.4
-  agent_score: 0.45
+  qv_score:    0.0
+  cqv_score:   0.0
+  agent_score: 0.25
 ---
 # AYA.AX — Artrya Limited
 
@@ -62,9 +61,9 @@ overall:
 
 Artrya is an Australian medical-technology company commercialising Salix®, an AI/cloud software platform for coronary CT angiography (CCTA) analysis. Salix sits inside hospital imaging workflows and produces near real-time point-of-care reporting for coronary anatomy, plaque and, pending clearance, coronary flow. The revenue model is SaaS subscription for the core anatomy platform plus per-scan fees for reimbursable modules, especially plaque and flow.
 
-The company is now early revenue-stage rather than purely development-stage. Salix Coronary Anatomy received US FDA 510(k) clearance in March 2025; Salix Coronary Plaque received FDA 510(k) clearance in August 2025; Salix Coronary Flow was calibrated/locked down in the March 2026 quarter and is being prepared for FDA submission, with commercial rollout targeted for 2H CY2026 if cleared. Artrya has three US foundation customers: Tanner Health, Northeast Georgia Health System and Cone Health. Tanner is live across five hospitals. On 23 July 2026, NGHS became the second live customer: its first site began routine clinical use and revenue generation, with rollout across all five NGHS hospitals planned in the near term. Cone is still awaiting activation.
+The company is now early revenue-stage rather than purely development-stage. Salix Coronary Anatomy received US FDA 510(k) clearance in March 2025; Salix Coronary Plaque received FDA 510(k) clearance in August 2025; Salix Coronary Flow completed validation during the June 2026 quarter (secured the required US clinical datasets), with FDA submission imminent and clearance + commercial launch targeted for 2H CY2026 if cleared. Artrya has three US foundation customers: Tanner Health, Northeast Georgia Health System and Cone Health. Tanner is live and using Salix Anatomy + Plaque routinely across all five hospitals, with growing scan volumes and fee-per-scan revenue. On 23 July 2026, NGHS became the second revenue-generating customer (Anatomy live, Plaque deploy completed in July); its first site is in routine clinical use with the broader five-hospital rollout planned. Cone is still completing integration ahead of clinical deployment. Management's stated objective is for all three foundation customers to be generating Anatomy and Plaque revenue by end of the September 2026 quarter.
 
-As of 31 March 2026, AYA had $76.6m of cash and term deposits, following an $80m capital raise in September/October 2025. The business is still tiny commercially: March-quarter customer receipts were only $46k, against operating costs excluding interest/R&D rebate of roughly $6.8m.
+Financially, AYA held **A$74.0m of cash and term deposits at 30 June 2026** (down from $76.6m at 31 March), including a $30m six-month term deposit. June-quarter customer receipts were only A$60k ($0.06m), against operating costs of $6.4m (down from $6.8m) excluding interest/R&D rebate; net operating cash outflow for the quarter was A$4.75m. The company has roughly 9.3 quarters of funding runway. In May 2026 AYA appointed **Clayton Hatch (former Pro Medicus CFO, June 2012–March 2026)** as CFO effective 1 September 2026 — relevant industry scale-up experience into the same North American hospital market. The business remains tiny commercially.
 
 ## Trait Assessment
 
@@ -78,7 +77,7 @@ To firm up: independent market-share data for CCTA plaque/FFRCT AI tools and hos
 
 ### Top Dog — 0.45 / 0.60
 
-Artrya is not yet a proven category leader. It has three US foundation customers under contract and two now live, and claims a differentiated near-real-time, single-platform workflow, but there is not yet evidence of broad market share, win rates, or dominance. Current disclosed commercial scale remains tiny: customer receipts were $46k in the March 2026 quarter.
+Artrya is not yet a proven category leader. It has three US foundation customers under contract and two now live, and claims a differentiated near-real-time, single-platform workflow, but there is not yet evidence of broad market share, win rates, or dominance. Current disclosed commercial scale remains tiny: customer receipts were $60k in the June 2026 quarter.
 
 Interpretation: AYA may be an early contender with a credible beachhead, not yet a top dog. The bull case needs Tanner/NGHS/Cone to become reference sites and SAPPHIRE sites to convert into paying customers.
 
@@ -94,7 +93,7 @@ To firm up: patent scope review, competitor product comparison, customer switchi
 
 ### Durable Growth — 0.55 / 0.65
 
-The growth engine is visible but unproven. AYA has moved from development into US commercial revenues, first fee-per-scan plaque revenue, and three US foundation customers. Tanner scan volumes reportedly increased consistently during the March quarter. NGHS went live at its first site on 23 July 2026, with Anatomy subscription and Plaque fee-per-scan revenue now being generated and rollout across its five-hospital network planned. That is concrete execution against a key watch item, but reported receipts remain immaterial: $46k in the March quarter and $116k year-to-date in the latest 4C.
+The growth engine is visible but unproven. AYA has moved from development into US commercial revenues, first fee-per-scan plaque revenue, and three US foundation customers. Tanner scan volumes reportedly increased during the March quarter, and NGHS went live in July 2026 as a second revenue-generating customer with Anatomy subscription and Plaque fee-per-scan revenue, rollout across its five-hospital network planned. That is concrete execution against a key watch item, but reported receipts remain immaterial: $60k in the June quarter and $176k year-to-date in the latest 4C.
 
 Interpretation: operational milestones are improving, but financial growth is still pre-scale. The next 2–4 quarters need to show customer receipts and scan volumes inflecting sharply.
 
@@ -108,9 +107,9 @@ Growth is overwhelmingly organic: internally developed software, regulatory subm
 
 Founder/CEO John Konstantopoulos is leading the US commercialisation push. He was a co-founder and held 7.0m shares at listing, equal to 8.95% then; after the September/October 2025 placement that is likely diluted to roughly mid-single-digit ownership if still held. The company has not yet given a fresh post-raise CEO holding disclosure, so exact alignment remains a caveat.
 
-The board/backing evidence is stronger than the first pass suggested. Executive Chair Bernie Ridgeway has a credible listed-company operator record from Imdex and remains materially exposed: the FY25 annual report showed 3.121m shares and 2.0m options; in 2026 he sold 300k shares for $1.38m specifically to fund option exercise, then exercised 500k options and later 750k options at $1.00, increasing ordinary shares despite some funding-related selling. Kate Hill adds audit, regulated-market, Nasdaq/AIM and medtech/biotech governance experience. In February 2026 Artrya added US healthcare operator Dr Jeffrey Le Benger, former Summit Health CEO / executive chair, whose tenure culminated in the US$8.9b Summit Health acquisition by VillageMD. That is genuinely relevant for US health-system sales and workflow adoption, although his initial director notice showed nil shares.
+The board/backing evidence is stronger than the first pass suggested. Executive Chair Bernie Ridgeway has a credible listed-company operator record from Imdex and remains materially exposed: the FY25 annual report showed 3.121m shares and 2.0m options; in 2026 he sold 300k shares for $1.38m to fund option exercise, then exercised 500k options at $1.00 (a later 750k holding at $1.00, previously reported as exercised, in fact **lapsed unexercised on 9 July 2026** per the 10 July Appendix 3Y). His shareholding remains material despite the funding-related selling. Kate Hill adds audit, regulated-market, Nasdaq/AIM and medtech/biotech governance experience. In February 2026 Artrya added US healthcare operator Dr Jeffrey Le Benger, former Summit Health CEO / executive chair, whose tenure culminated in the US$8.9b Summit Health acquisition by VillageMD. That is genuinely relevant for US health-system sales and workflow adoption, although his initial director notice showed nil shares. In May 2026 Artrya appointed Clayton Hatch (ex-Pro Medicus CFO) as CFO effective 1 September 2026, adding directly relevant US hospital imaging scale-up experience.
 
-The register also now includes credible small/mid-cap institutional support: Regal Funds Management became substantial at 6.58% in September 2025; Wilson Asset Management became substantial at 5.50% in October 2025; Paradice Investment Management became substantial around 5.0% from October/December 2025 and remained around that level in March 2026. UBS crossed 5.5% in March 2026, ceased in May, and crossed again at 5.04% on 26 June 2026, but the notice is heavily prime-broking / securities-lending driven, so I still treat UBS as trading/prime-broker noise rather than patient backing.
+The register also now includes credible small/mid-cap institutional support: Regal Funds Management became substantial at 6.58% in September 2025; Wilson Asset Management became substantial at 5.50% in October 2025; Paradice Investment Management became substantial around 5.0% from October/December 2025 and remained around that level in March 2026. UBS crossed 5.5% in March 2026, ceased in May, crossed again at 5.04% on 26 June 2026, and then **ceased to be a substantial holder on 30 July 2026** (Form 605, 3 Aug 2026). Its notices are heavily prime-broking / securities-lending driven, so I still treat UBS as trading/prime-broker noise rather than patient backing.
 
 Interpretation: this now screens as above-average management/backing for an early-stage ASX medtech: founder-led commercial phase, meaningful chair ownership, increasingly relevant US healthcare board expertise, and several recognised institutional holders. It is not “exceptional” yet because the CEO's current ownership is not freshly verified, the CEO seat changed hands from Mat Regan back to the founder in 2025, and the ultimate proof is still commercial execution — scaling US hospital adoption is a much harder test than FDA clearance and early contracts.
 
@@ -124,35 +123,35 @@ Interpretation: respected and potentially loved by early clinicians, but too ear
 
 To firm up: scan-volume growth by site, renewals, utilisation by clinician, expansion into more hospitals/practices per customer, and independent user feedback.
 
-**Why other strategies lost:** Freeroll fails because there is no real valuation floor near the current price: cash is about $0.46/share versus a $5.64 share price, and the downside is open-ended if adoption disappoints. Wonderful-and-fair fails because AYA has no demonstrated earnings quality: FY25 loss was $16.4m and March-quarter customer receipts were only $46k.
+**Why other strategies lost:** Freeroll fails because there is no real valuation floor near the current price: cash is about $0.45/share versus a $4.71 share price, and the downside is open-ended if adoption disappoints. Wonderful-and-fair fails because AYA has no demonstrated earnings quality: FY25 loss was $16.4m and June-quarter customer receipts were only $60k.
 
 ## Overall
 
-AYA is a high-upside, high-uncertainty rule-breaker candidate. The bull case is easy to see: a large reimbursed US market, FDA-cleared modules, early hospital adoption, reference customers, a large cash balance, and a potentially valuable clinical-validation funnel through SAPPHIRE. If fee-per-scan revenue scales across Tanner/NGHS/Cone and SAPPHIRE participants convert, this could become a real medtech/software growth story.
+AYA is a high-upside, high-uncertainty rule-breaker candidate. The bull case is easy to see: a large reimbursed US market, FDA-cleared modules, early hospital adoption, reference customers, a strong cash balance, and a potentially valuable clinical-validation funnel through SAPPHIRE. The June-quarter shows continued execution: Tanner is live routinely, NGHS became a second revenue-generating customer, Flow validation completed with FDA submission imminent, the SAPPHIRE study formally kicked off (investigator meeting, San Diego, 9 July 2026), and a Clinical Advisory Board chaired by Dr Ron Blankstein (Mass General Brigham) was formed. The appointment of ex-Pro Medicus CFO Clayton Hatch strengthens the finance/commercial bench for the US scale-up.
 
-The problem is valuation and proof. At $5.64/share and roughly $937m market cap, the market is still pricing in a lot of success despite negligible disclosed revenue. The NGHS go-live de-risks integration and validates the rollout schedule, but it did not disclose scan volume or revenue economics beyond the existing subscription/per-scan model. Cash runway is strong, but the company still has to prove repeatable adoption, utilisation and revenue density before the current valuation makes sense.
+The problem is valuation and proof. Despite the operational progress, financial growth is still pre-scale: June-quarter customer receipts were only A$60k. On the market-doc-driven TAM-capture method (whole US CAD-AI software expected market of US$2.0b by 2036, 5% terminal capture), the implied terminal revenue is only ~US$100m, and at the current A$4.71/share the 'it works' case now runs to a **negative** annualized ROI. The share price has also come off (A$4.71, down ~17% from its July 5.64 peak; market cap ~A$770m). The stock has run ahead of the financial evidence, and the market now prices little margin of safety against slower-than-hoped adoption or lower terminal capture.
 
-Current view: **watch / small speculative only**, not a high-conviction buy at this price. The setup is attractive, but the stock has run further ahead of financial evidence.
+Current view: **watch / small speculative only**, not a high-conviction buy at this price. Execution continues to track, but valuation is demanding relative to the still-negligible revenue base and the fragmented competitive outlook in the market-doc view.
 
 ## Valuation
 
 AYA is valued with the rule-breaker **TAM-capture** method rather than exit-multiple because it has no positive current earnings or FCF base. This is explicitly an “it works” case, not a probability-weighted expected return.
 
-As of 24 July 2026, the ASX header showed AYA at **$5.64/share** and market cap of about **$937.0m**, implying roughly **166.1m shares**. With $76.6m cash and term deposits at 31 March 2026, cash is roughly **$0.46/share** before post-quarter burn.
+As of 18 August 2026, AYA trades at **A$4.71/share** (down from A$5.64 on 24 July; ~A$770m market cap), implying roughly **163.5m shares** on issue. A$4.71 converts to roughly **US$3.35/share** at ~0.71 AUD/USD. Cash and term deposits were A$74.0m at 30 June 2026 (~A$0.45/share).
 
-Inputs used:
+Inputs used (market-doc driven):
 
-- **TAM:** A$10.3b terminal-year market. Basis: company-cited US plaque opportunity of US$4.4b, grown for 8 years at the company-cited 6.2% CCTA scan-growth rate, then translated at roughly 0.69 AUD/USD. This uses plaque only, not a heroic add-on for anatomy/flow.
-- **Capture:** 5% terminal share. This is the core judgement call: it assumes AYA becomes a meaningful but not dominant winner in US plaque analysis. That is consistent with the current trait read — credible early beachhead, not yet top dog.
-- **Mature margin / multiple:** 30% EBITDA margin and 20x EV/EBITDA. PME.AX is used as the role-model marker for high-quality medical-imaging workflow software, but the inputs are deliberately haircut far below PME's current economics/multiple to avoid baking in category-leader certainty.
-- **Dilution:** 5%, 5%, 5%, 4%, 4%, 3%, 3%, 3% annual issuance, or **36.8% total** over eight years. This assumes AYA still funds commercial scale-up with equity, but dilution tapers as revenue matures.
+- **Market doc:** `us-coronary-artery-disease-ai-diagnostic-software` (base-year 2026, maturity 2036, currency USD). This is the directly on-point CAD-AI software market, and the single source of truth for terminal revenue — AYA is entered there as an explicit outside-contender player override at **5% capture**. The market doc's mature expected whole-market value is US$2.0b; 5% capture implies **US$100m terminal revenue**.
+- **Capture:** 5% terminal share. This is the core judgement call and is consistent with the trait read — credible early beachhead, not yet top dog. Unlike the prior analyst TAM bridge (full-adoption A$10.3b TAM), the market doc's US$2.0b is an *expected realised* whole-market value across a fragmented field (HHI ~0.14, ≈7.1 equal competitors), so the same 5% capture now yields far lower terminal revenue.
+- **Mature margin / multiple:** 30% EBITDA margin and 20x EV/EBITDA. PME.AX is the role-model marker for high-quality medical-imaging workflow software, with inputs deliberately haircut below PME's current economics to avoid baking in category-leader certainty.
+- **Dilution:** 5%, 5%, 5%, 4%, 4%, 3%, 3%, 3%, 3%, 3% annual issuance over 10 years (~**46.6% total**). This is conservative — AYA has ~9.3 quarters of funding runway from $74m cash ($30m of it a 6-month term deposit) — but reflects a commercial-scale phase that likely needs further equity.
 - **Net debt:** 0 at maturity.
 
-Script result: **+11.65% annualized ROI** over eight years, or **2.41x** total return. Terminal build: about **A$516m revenue**, **A$155m EBITDA**, **A$3.10b enterprise/equity value**, and **$13.62/share** after dilution. Return attribution is **+16.11% p.a. value creation** offset by **-3.84% p.a. dilution**.
+Script result: **-2.78% annualized ROI** over ten years, or **0.75x** total return. Terminal build: **US$100m revenue**, **US$30m EBITDA**, **US$600m enterprise/equity value**, and **US$2.53/share** after dilution. Return attribution is **+0.92% p.a. value creation** but **-3.66% p.a. dilution** — the terminal economics no longer overcome the dilution drag at the current entry price.
 
-Read-through: this is acceptable upside if AYA genuinely wins, but not a fat margin of safety given execution/regulatory/adoption risk. The current market cap already requires a real US revenue ramp; if capture lands closer to 2–3%, or dilution/multiple pressure is worse, the return compresses quickly.
+Read-through: the market-doc method is materially more demanding than the old full-adoption TAM bridge. At A$4.71 the 'it works' terminal case does not clear the current price. Capture would need to be materially higher (or terminal revenue repriced) for the ROI to turn positive; conversely, a lower capture or worse dilution compresses it further. This is a meaningful change from the prior +11.65% read and argues for stricter discipline on the price.
 
-Valuation-aware score: **4.5/10**. Quality/setup is promising, but valuation is now more demanding and proof of revenue ramp is still missing.
+Valuation-aware score: **2.5/10** (was 4.5/10). Quality/setup is still promising and execution tracks, but under the defensible market-doc contract the current price offers no margin of safety before revenue is proven.
 
 ## Thesis Connections
 
@@ -160,29 +159,23 @@ AYA connects to an AI-in-healthcare / diagnostic automation thesis rather than t
 
 ## Watch
 
-- NGHS rollout: first site went live on 23 July 2026; watch rollout across all five hospitals, scan volumes and recurring/per-scan revenue.
+- **September-quarter objective:** management targets all three foundation customers (Tanner, NGHS, Cone) generating Anatomy + Plaque revenue by end-Sep 2026; watch confirmation and receipts inflect.
+- NGHS rollout: first site live (23 July 2026); watch expansion across all five hospitals, scan volumes and recurring/per-scan revenue.
 - Cone Health activation: timing, first clinical scans and revenue generation.
-- Tanner scan-volume ramp: weekly/monthly plaque assessment volume, fee-per-scan revenue and reimbursement workflow completion.
-- Salix Coronary Flow: no announced FDA submission as of 25 July 2026; watch submission, clearance timing, reimbursement pathway and customer activation.
-- SAPPHIRE: confirm whether the planned July 2026 SCCT principal-investigator kickoff occurred; watch contracting/ethics completion, Phase 1 timing, and whether participating centres become commercial prospects.
+- Tanner scan-volume ramp: weekly/monthly plaque assessment volume, fee-per-scan revenue and reimbursement (pre-authorisation) workflow completion.
+- Salix Coronary Flow: FDA submission imminent per the June-quarter report; watch submission, clearance timing (target 2H CY26), reimbursement (CPT, ~US$877/scan) and customer activation.
+- SAPPHIRE: formally kicked off (investigator meeting, San Diego, 9 July 2026); watch contracting/ethics completion, initial retrospective data collection, and whether participating centres convert to commercial prospects.
 - New US customer wins outside Tanner/NGHS/Cone.
-- Cash burn vs revenue ramp: operating costs were $6.8m in the March 2026 quarter before interest/R&D rebate; make sure commercial scaling is not just higher spend.
-- Dilution/option exercise: the company has already used large equity raises; watch future funding needs and employee/broker option dilution.
+- Cash burn vs revenue ramp: operating costs were $6.4m in the Jun 2026 quarter (down from $6.8m) before interest/R&D rebate; Net Op outflow $4.75m; watch that commercial scaling is not just higher spend.
+- Dilution/funding: ~9.3 quarters runway from $74m cash ($30m of it a 6-month term deposit); watch future funding needs, option exercise issuance, and CEO/chair holdings.
 
 ## Sources
 
-- Artrya FY2025 Annual Report / investor presentation, lodged 13 Oct 2025: company overview, TAM, module stack, Tanner, SAPPHIRE.
-- ASX announcement, 10 Jul 2025: Tanner Health five-year US$0.6m commercial agreement and first US revenue.
-- ASX announcement, 21 Aug 2025: FDA clearance of Salix Coronary Plaque and US$950 plaque reimbursement reference.
-- ASX announcement, 8 Dec 2025: Northeast Georgia Health System three-year agreement, minimum US$0.3m.
-- ASX announcement, 23 Dec 2025: Cone Health five-year agreement, minimum US$0.45m.
-- Appendix 4C quarter ended 31 Dec 2025, lodged 30 Jan 2026: first fee-per-scan plaque revenue, $80m capital raise, $76.5m cash/term deposits.
-- Appendix 4C quarter ended 31 Mar 2026, lodged 30 Apr 2026: Tanner rollout, NGHS/Cone integration, SAPPHIRE status, Flow module status, $46k customer receipts, $76.6m cash/term deposits.
-- ASX announcement, 1 Jul 2025: leadership transition appointing co-founder John Konstantopoulos as CEO and Bernie Ridgeway as Executive Chair.
-- FY2025 Annual Report: director/KMP holdings; Ridgeway 3.121m shares and 2.0m options; Hill 450k shares; Sokolov 330k shares and 3.9m options.
-- ASX director interest notices, Apr/Jun 2026: Ridgeway exercised 500k options, sold 300k shares to fund intended option exercise, then exercised 750k further options.
-- ASX announcement, 19 Feb 2026: appointment of US healthcare executive Dr Jeffrey Le Benger as non-executive director.
-- ASX substantial-holder notices, Sep 2025–Jun 2026: Regal, Wilson Asset Management, Paradice, and UBS substantial holder activity; UBS later ceased and re-crossed via prime-broking/securities-lending exposures, so is treated as lower-quality backing evidence.
-- ASX announcements, 25–30 Jun 2026: 57,000 ordinary shares issued on exercise of vested options; UBS became substantial at 5.04% on 26 Jun 2026.
-- ASX announcement, 23 Jul 2026: NGHS first site live in routine clinical use; Anatomy subscription and Plaque fee-per-scan revenue commenced; broader five-hospital rollout planned.
-- ASX Markit announcements and company-header APIs, checked 25 Jul 2026: latest operational announcement was the 23 Jul NGHS go-live; 24 Jul close $5.64 and market cap $937.0m.
+- Artrya, **June Quarterly Activities Report and Appendix 4C, quarter ended 30 Jun 2026, 29 Jul 2026**: Tanner routinely live across 5 hospitals; NGHS went live (Anatomy + Plaque) in July as second revenue customer; Cone progressing; Flow validation completed + FDA submission imminent (CPT ~US$877/scan); SAPPHIRE kickoff 9 Jul 2026 (SCCT, San Diego); Clinical Advisory Board chaired by Dr Ron Blankstein; $74.0m cash+term deposits; Q customer receipts $60k; Net Op outflow $4.75m; op costs $6.4m; ~9.27 quarters funding; $30m term deposit.
+- ASX announcement, 23 Jul 2026: Northeast Georgia Health System goes live with Salix (second revenue customer).
+- ASX announcement, 18 May 2026: Artrya appoints Clayton Hatch (ex-Pro Medicus CFO, Jun 2012–Mar 2026) as CFO, effective 1 Sep 2026.
+- Appendix 3Y, 10 Jul 2026: B Ridgeway — 750,000 options (exercise price $1.00) lapsed unexercised on 9 Jul 2026.
+- Form 605, 3 Aug 2026: UBS Group AG ceased to be a substantial holder (30 Jul 2026); prime-broking/securities-lending driven, treated as trading noise.
+- Market doc `us-coronary-artery-disease-ai-diagnostic-software` (2026-08-03): US CAD-AI software whole-market view, US$2.0b 2036 expected value, HHI 0.14; AYA entered as outside-contender override at 5% capture for this valuation.
+- ASX Markit / company-header APIs, checked 18 Aug 2026: AYA ~$4.71, market cap ~$770m, ~163.5m shares; AUD/USD ~0.71.
+- Prior sources retained: FY2025 Annual Report (13 Oct 2025), FDA clearances, Tanner/NGHS/Cone agreements, Mar 2026 and Dec 2025 Appendix 4Cs, leadership transition, director notices, substantial-holder notices.

@@ -99,7 +99,7 @@
     "sec:0001957132-26-000048:SN": "2026-08-09T18:38:30+00:00"
   },
   "last_acknowledged_at": "2026-08-13T12:39:36+00:00",
-  "last_discovered_at": "2026-08-13T12:30:39+00:00",
+  "last_discovered_at": "2026-08-18T13:22:19+00:00",
   "pending": {
     "asx:03122835": {
       "date": "2026-08-07",
@@ -134,6 +134,347 @@
       "title": "Presentation to Analysts and Financial Markets",
       "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03124677"
     },
+    "asx:03125554": {
+      "date": "2026-08-17",
+      "event_id": "asx:03125554",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "17/08/2026 8:08 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "ACL.AX",
+      "title": "Appendix 4E and FY26 financial reports",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03125554"
+    },
+    "asx:03125555": {
+      "date": "2026-08-17",
+      "event_id": "asx:03125555",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "17/08/2026 8:08 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "ACL.AX",
+      "title": "FY26 financial results investor presentation",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03125555"
+    },
+    "asx:03125563": {
+      "date": "2026-08-17",
+      "event_id": "asx:03125563",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "17/08/2026 8:10 am",
+      "reason": "ASX headline rule: financial-results",
+      "ticker": "RMS.AX",
+      "title": "FY26 Financial Results conference call details",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03125563"
+    },
+    "asx:03125580": {
+      "date": "2026-08-17",
+      "event_id": "asx:03125580",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "17/08/2026 8:12 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "ACL.AX",
+      "title": "Dividend/Distribution - ACL",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03125580"
+    },
+    "asx:03125723": {
+      "date": "2026-08-17",
+      "event_id": "asx:03125723",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "17/08/2026 9:22 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "PME.AX",
+      "title": "PME signs Convertible Note agreement with Echo IQ",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03125723"
+    },
+    "asx:03126041": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126041",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 7:30 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "MCY.AX",
+      "title": "FY26 Full Year Results",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126041"
+    },
+    "asx:03126042": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126042",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 7:30 am",
+      "reason": "ASX headline rule: financial-results",
+      "ticker": "MCY.AX",
+      "title": "FY26 Full Year Results Presentation",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126042"
+    },
+    "asx:03126047": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126047",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 7:30 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "MCY.AX",
+      "title": "Dividend/Distribution - MCY",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126047"
+    },
+    "asx:03126077": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126077",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 7:47 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "SRG.AX",
+      "title": "FY26 Annual Report and Appendix 4E",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126077"
+    },
+    "asx:03126080": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126080",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 7:47 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "SRG.AX",
+      "title": "FY26 Full Year Results Presentation",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126080"
+    },
+    "asx:03126081": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126081",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 7:48 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "SRG.AX",
+      "title": "FY26 Full Year Results Announcement",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126081"
+    },
+    "asx:03126093": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126093",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 7:58 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CSL.AX",
+      "title": "CSL Statutory Accounts for FY2026",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126093"
+    },
+    "asx:03126094": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126094",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:00 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CSL.AX",
+      "title": "CSL FY2026 Results",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126094"
+    },
+    "asx:03126098": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126098",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 8:00 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "CSL.AX",
+      "title": "Dividend/Distribution - CSL",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126098"
+    },
+    "asx:03126101": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126101",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:01 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CSL.AX",
+      "title": "CSL Results Presentation for FY2026",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126101"
+    },
+    "asx:03126159": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126159",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:12 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CGS.AX",
+      "title": "FY26 Appendix 4E",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126159"
+    },
+    "asx:03126163": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126163",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 8:12 am",
+      "reason": "ASX headline rule: financial-results",
+      "ticker": "CGS.AX",
+      "title": "FY26 Annual Report",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126163"
+    },
+    "asx:03126164": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126164",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 8:12 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "CGS.AX",
+      "title": "Dividend/Distribution - CGS",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126164"
+    },
+    "asx:03126166": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126166",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:13 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CGS.AX",
+      "title": "FY26 Financial Results and Operational Update",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126166"
+    },
+    "asx:03126174": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126174",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 8:14 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "SRG.AX",
+      "title": "Dividend/Distribution - SRG",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126174"
+    },
+    "asx:03126179": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126179",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:19 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "CGS.AX",
+      "title": "FY26 Results Investor Briefing",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126179"
+    },
+    "asx:03126193": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126193",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:31 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "BHP.AX",
+      "title": "BHP Appendix 4E and 2026 Annual Report",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126193"
+    },
+    "asx:03126194": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126194",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 8:31 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "BHP.AX",
+      "title": "Dividend/Distribution - BHP",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126194"
+    },
+    "asx:03126197": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126197",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:33 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "BHP.AX",
+      "title": "BHP FY2026 Results Announcement",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126197"
+    },
+    "asx:03126201": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126201",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 8:34 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "BHP.AX",
+      "title": "BHP FY2026 Results Presentation",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126201"
+    },
+    "asx:03126297": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126297",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 9:31 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "PME.AX",
+      "title": "Preliminary Final Report FY26 (Appendix 4E)",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126297"
+    },
+    "asx:03126298": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126298",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 9:32 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "PME.AX",
+      "title": "PME Full Year Results",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126298"
+    },
+    "asx:03126302": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126302",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 9:34 am",
+      "reason": "ASX headline rule: capital-allocation",
+      "ticker": "PME.AX",
+      "title": "Dividend/Distribution - PME",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126302"
+    },
+    "asx:03126309": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126309",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 9:36 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "PME.AX",
+      "title": "CEO Interview FY26 Results",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126309"
+    },
+    "asx:03126318": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126318",
+      "market": "AU",
+      "price_sensitive": true,
+      "published_at": "18/08/2026 9:44 am",
+      "reason": "ASX price-sensitive",
+      "ticker": "PME.AX",
+      "title": "PME FY26 results presentation",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126318"
+    },
+    "asx:03126343": {
+      "date": "2026-08-18",
+      "event_id": "asx:03126343",
+      "market": "AU",
+      "price_sensitive": false,
+      "published_at": "18/08/2026 10:05 am",
+      "reason": "ASX headline rule: financial-results",
+      "ticker": "PME.AX",
+      "title": "Annual Report FY26",
+      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03126343"
+    },
     "sec:0000831259-26-000036:FCX": {
       "date": "2026-08-06",
       "event_id": "sec:0000831259-26-000036:FCX",
@@ -143,6 +484,36 @@
       "ticker": "FCX",
       "title": "Form 10-Q \u2014 FREEPORT-MCMORAN INC",
       "url": "https://www.sec.gov/Archives/edgar/data/831259/0000831259-26-000036-index.html"
+    },
+    "sec:0000864749-26-000106:TRMB": {
+      "date": "2026-08-12",
+      "event_id": "sec:0000864749-26-000106:TRMB",
+      "form": "8-K",
+      "market": "US",
+      "reason": "SEC form 8-K",
+      "ticker": "TRMB",
+      "title": "Form 8-K \u2014 TRIMBLE INC.",
+      "url": "https://www.sec.gov/Archives/edgar/data/864749/0000864749-26-000106-index.html"
+    },
+    "sec:0000864749-26-000108:TRMB": {
+      "date": "2026-08-12",
+      "event_id": "sec:0000864749-26-000108:TRMB",
+      "form": "10-Q",
+      "market": "US",
+      "reason": "SEC form 10-Q",
+      "ticker": "TRMB",
+      "title": "Form 10-Q \u2014 TRIMBLE INC.",
+      "url": "https://www.sec.gov/Archives/edgar/data/864749/0000864749-26-000108-index.html"
+    },
+    "sec:0001045810-26-000069:NVDA": {
+      "date": "2026-08-17",
+      "event_id": "sec:0001045810-26-000069:NVDA",
+      "form": "8-K",
+      "market": "US",
+      "reason": "SEC form 8-K",
+      "ticker": "NVDA",
+      "title": "Form 8-K \u2014 NVIDIA CORP",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/0001045810-26-000069-index.html"
     },
     "sec:0001062993-26-004014:NXE": {
       "date": "2026-08-05",
@@ -204,6 +575,76 @@
       "title": "Form 10-Q \u2014 Rigetti Computing, Inc.",
       "url": "https://www.sec.gov/Archives/edgar/data/1838359/0001104659-26-091993-index.html"
     },
+    "sec:0001104659-26-096195:AMZN": {
+      "date": "2026-08-14",
+      "event_id": "sec:0001104659-26-096195:AMZN",
+      "form": "S-4/A",
+      "market": "US",
+      "reason": "SEC form S-4/A",
+      "ticker": "AMZN",
+      "title": "Form S-4/A \u2014 AMAZON COM INC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/0001104659-26-096195-index.html"
+    },
+    "sec:0001140361-26-032594:ON": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001140361-26-032594:ON",
+      "form": "8-K",
+      "market": "US",
+      "reason": "SEC form 8-K",
+      "ticker": "ON",
+      "title": "Form 8-K \u2014 ON SEMICONDUCTOR CORP",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/0001140361-26-032594-index.html"
+    },
+    "sec:0001213900-26-090504:SERV": {
+      "date": "2026-08-17",
+      "event_id": "sec:0001213900-26-090504:SERV",
+      "form": "8-K",
+      "market": "US",
+      "reason": "SEC form 8-K",
+      "ticker": "SERV",
+      "title": "Form 8-K \u2014 Serve Robotics Inc. /DE/",
+      "url": "https://www.sec.gov/Archives/edgar/data/1832483/0001213900-26-090504-index.html"
+    },
+    "sec:0001292814-26-004222:NU": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001292814-26-004222:NU",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "NU",
+      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004222-index.html"
+    },
+    "sec:0001292814-26-004225:NU": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001292814-26-004225:NU",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "NU",
+      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004225-index.html"
+    },
+    "sec:0001292814-26-004226:NU": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001292814-26-004226:NU",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "NU",
+      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004226-index.html"
+    },
+    "sec:0001292814-26-004228:NU": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001292814-26-004228:NU",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "NU",
+      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004228-index.html"
+    },
     "sec:0001601830-26-000097:RXRX": {
       "date": "2026-08-05",
       "event_id": "sec:0001601830-26-000097:RXRX",
@@ -243,6 +684,16 @@
       "ticker": "SERV",
       "title": "Form 10-Q \u2014 Serve Robotics Inc. /DE/",
       "url": "https://www.sec.gov/Archives/edgar/data/1832483/0001832483-26-000035-index.html"
+    },
+    "sec:0001855612-26-000131:GRAB": {
+      "date": "2026-08-13",
+      "event_id": "sec:0001855612-26-000131:GRAB",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "GRAB",
+      "title": "Form 6-K \u2014 Grab Holdings Ltd",
+      "url": "https://www.sec.gov/Archives/edgar/data/1855612/0001855612-26-000131-index.html"
     }
   },
   "version": 2
