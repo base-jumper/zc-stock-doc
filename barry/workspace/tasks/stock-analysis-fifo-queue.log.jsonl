@@ -270,3 +270,12 @@
 {"event": "completed", "ticker": "TRMB", "ts": "2026-08-18T08:40:33.121095+00:00"}
 {"event": "completed", "ticker": "VIK", "ts": "2026-08-18T12:44:21.113657+00:00"}
 {"event": "completed", "ticker": "MSGS", "ts": "2026-08-18T15:50:57.835933+00:00"}
+{"event": "completed", "ticker": "MSGE", "ts": "2026-08-18T19:13:06.891594+00:00"}
+{"event": "completed", "ticker": "LYV", "ts": "2026-08-18T22:23:33.798419+00:00"}
+{"event": "completed", "ticker": "TENG.L", "ts": "2026-08-19T01:38:03.706784+00:00"}
+{"event": "completed", "ticker": "9988.HK", "ts": "2026-08-19T04:50:57.436186+00:00"}
+{"event": "completed", "ticker": "9888.HK", "ts": "2026-08-19T08:14:00.098643+00:00"}
+{"event": "queued", "ticker": "SGH.AX", "ts": "2026-08-19T09:47:35.568432+00:00"}
+{"event": "queued", "ticker": "CWY.AX", "ts": "2026-08-19T11:48:45.832336+00:00"}
+{"event": "completed", "ticker": "1810.HK", "ts": "2026-08-19T11:58:02.589119+00:00"}
+{"event": "completed", "ticker": "1211.HK", "ts": "2026-08-19T15:20:05.016446+00:00"}
