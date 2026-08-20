@@ -2,8 +2,8 @@
 ticker: NG.L
 company: National Grid plc
 watching: true
-last-updated: 2026-07-14
-updated-by: Nipa
+last-updated: 2026-08-20
+updated-by: Barry
 disqualified: false
 analysis-strategy: wonderful-and-fair
 traits:
@@ -29,17 +29,17 @@ traits:
   customer-devotion: {score: 0.40, confidence: 0.45}
 valuation:
   exit-multiple:
-    price: 12.3868
-    entry-multiple: 15.88
+    price: 11.79
+    entry-multiple: 15.12
     years: 5
     metric: Earnings
     fundamental: 0.78
     growth: 8%
     exit-multiple: 15
-    dilution: 0.5%
-    dividend-yield: 4.0%
-    roi: 0.106379
-    date: 2026-07-14
+    dilution: 1.0%
+    dividend-yield: 4.1%
+    roi: 0.11164
+    date: 2026-08-20
 strategies:
   cash-cow:
     score:      0.5369
@@ -54,8 +54,8 @@ strategies:
     score:      0.665
     confidence: 0.7455
 overall:
-  qv_score:    0.486
-  cqv_score:   0.419
+  qv_score:    0.497
+  cqv_score:   0.43
   agent_score: 0.62
 ---
 # NG.L — National Grid plc
@@ -134,34 +134,41 @@ My view: attractive if Nick wants a lower-volatility infrastructure compounder, 
 
 Using the wonderful-and-fair exit-multiple method:
 
-- Price: **1,238.68p / £12.3868** from Google Finance quote data, 13 July 2026 London close/latest.
+- Price: **1,179p / £11.79** from Yahoo Finance quote data, 19 August 2026 (down ~4.8% from the £12.3868 / 1,238.68p used on 13 July).
 - Fundamental: **78.0p FY2026 underlying EPS**, the company’s stated baseline.
 - Growth: **8%**, the low end of management’s FY2027–FY2031 underlying EPS CAGR target of **8–10%**.
-- Exit multiple: **15x earnings**, slightly below the current underlying P/E implied by £12.3868 / £0.78 and close to a fair regulated-utility multiple.
-- Dividend yield: **4.0%**, close to the indicated market yield and FY2026 total dividend of **48.49p**.
-- Dilution: **0.5% p.a.**, a small ongoing allowance for scrip/equity leakage after the FY2025 rights issue.
+- Exit multiple: **15x earnings**, below the current underlying P/E implied by £11.79 / £0.78 and close to a fair regulated-utility multiple.
+- Dividend yield: **4.1%**, close to the indicated market yield and FY2026 total dividend of **48.49p**.
+- Dilution: **1.0% p.a.**, raised from 0.5% after the 2025/26 final-dividend scrip issue of 50.86M shares (22 Jul 2026) plus the Jan 2026 interim scrip; together these put measured FY2026 scrip dilution near ~1.15% p.a.
 
-This produces an annualized ROI of about **10.6%**. That is a respectable forward return, carried by earnings growth and dividend income, with a small multiple headwind. I set `overall.agent_score` at **0.62**: good enough to watch, but not a standout because leverage/funding risk and regulated return caps limit the upside.
+This produces an annualized ROI of about **11.2%** (up from 10.6% — the lower entry price more than offsets the slightly higher dilution allowance). That is a respectable forward return, carried by earnings growth and dividend income, with only a small multiple headwind. I set `overall.agent_score` at **0.62**: good enough to watch, but not a standout because leverage/funding risk and regulated return caps limit the upside.
 
 ## Thesis Connections
 
 Fits a grid-modernisation / electrification thesis: rising power demand, renewable connections, transmission bottlenecks, EV/heat-pump/load growth, and reliability spending all require regulated network investment. It is more “toll road on electrification” than explosive technology winner.
 
+National Grid Ventures is also pursuing unregulated AI/data-centre upside. In July 2026 it agreed to invest **$1.75bn for a 35% stake in Joulent**, a platform building integrated power for US large-load customers (co-located gas, storage, renewables, across-the-meter grid connections). Joulent's foundational Project Kilby is a **2.67GW co-located facility in West Texas** (50/50 with Chevron) supplying a Microsoft data-centre campus under a **20-year power purchase agreement**, targeting first power in **2028**, with a multi-GW pipeline behind it. The investment is incremental to the £70bn plan, funded from balance-sheet headroom, and is not expected to change the current financial framework; Joulent is expected to be free-cash-flow positive from the early 2030s. This adds optionality (contracted unregulated returns above regulated returns) but carries development/execution and merchant-stage risk.
+
 ## Watch
 
 - RIIO-T3 execution: project delivery, cost allowances, and any under/outperformance versus allowed returns.
 - US rate cases, especially affordability pushback in New York and Massachusetts.
-- Credit metrics: FFO/net debt, RCF/net debt, rating outlook, and refinancing costs.
+- Credit metrics: FFO/net debt, RCF/net debt, rating outlook, and refinancing costs. The **€20bn** NG plc / NG Electricity Transmission EMT program prospectus was re-published 17 Aug 2026 — watch funding spreads.
 - Whether the £70b capex plan continues earning acceptable incremental returns after financing costs.
-- Per-share outcomes after dilution/scrip: EPS CAGR must actually land near 8–10%.
+- Per-share outcomes after dilution/scrip: EPS CAGR must actually land near 8–10%. The 2025/26 final-dividend scrip issued **50.86M shares** (22 Jul 2026), lifting measured FY2026 scrip dilution near ~1.1% — track whether scrip take-up stays elevated.
 - Dividend coverage through the capex ramp; distinguish accounting payout from free-cash coverage.
+- Joulent: final investment decision expected by end-2026; Kilby first power targeted 2028; whether the initial $1.75bn / 35% earns contracted returns above the regulated cost of capital without straining balance-sheet headroom.
 - Any political/regulatory cap on allowed returns due to customer bill pressure.
 
 ## Sources
 
 - National Grid FY2026 full-year results statement, Investegate/RNS, 14 May 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./fy2026-full-year-results-statement/9567572
 - National Grid annual reports page, accessed 2026-07-02: https://www.nationalgrid.com/investors/resources/reports-plc
-- Investegate National Grid company RNS page, checked 2026-07-14: https://www.investegate.co.uk/company/NG.
-- Google Finance for NG:LON quote, market cap, P/E, dividend yield, analyst-target feed, and recent price history, accessed 2026-07-14: https://www.google.com/finance/quote/NG:LON
-- Yahoo Finance via `yfin` for historical info, financial statements, metrics, and dividends, accessed 2026-07-02.
-- Stock-analysis helper scripts: `earnings_quality`, `free_cash_flow`, `fundamental_stability`, `returns_on_capital`, `conservative_debt`, `capital_allocation`, `downside_support`, `durable_growth`, and `organic_growth`, run 2026-07-02. `exit_multiple_valuation.py` and `overall_score.py` re-run 2026-07-14.
+- NGV to invest $1.75bn in Joulent, Investegate/RNS, 1 Jul 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./ngv-to-invest-1-75bn-in-joulent/9647516
+- National Grid simplifies its operating model, Investegate/RNS, 3 Aug 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./national-grid-simplifies-its-operating-model-/9699757
+- National Grid plc Scrip Dividend (2025/26 final), Investegate/RNS, 22 Jul 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./national-grid-plc-scrip-dividend-/9681851
+- National Grid plc Total Voting Rights, Investegate/RNS, 3 Aug 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./total-voting-rights/9701673
+- Publication of a Prospectus (€20bn EMT program), Investegate/RNS, 17 Aug 2026: https://www.investegate.co.uk/announcement/rns/national-grid--ng./publication-of-a-prospectus/9725347
+- Investegate National Grid company RNS page, checked 2026-08-20: https://www.investegate.co.uk/company/NG.
+- Google Finance / Yahoo Finance via `yfin` for current quote, dividend, and statement data, accessed 2026-08-20. `yfin quote NG.L` gave 1,179p on 19 Aug 2026.
+- Stock-analysis helper scripts: `earnings_quality`, `free_cash_flow`, `fundamental_stability`, `returns_on_capital`, `conservative_debt`, `capital_allocation`, `downside_support`, `durable_growth`, and `organic_growth`, run 2026-07-02. `exit_multiple_valuation.py` and `overall_score.py` re-run 2026-08-20.

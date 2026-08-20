@@ -279,3 +279,10 @@
 {"event": "queued", "ticker": "CWY.AX", "ts": "2026-08-19T11:48:45.832336+00:00"}
 {"event": "completed", "ticker": "1810.HK", "ts": "2026-08-19T11:58:02.589119+00:00"}
 {"event": "completed", "ticker": "1211.HK", "ts": "2026-08-19T15:20:05.016446+00:00"}
+{"event": "completed", "ticker": "PDD", "ts": "2026-08-19T19:16:40.696857+00:00"}
+{"event": "completed", "ticker": "3690.HK", "ts": "2026-08-19T22:36:48.268210+00:00"}
+{"event": "completed", "ticker": "9618.HK", "ts": "2026-08-20T01:49:05.186966+00:00"}
+{"event": "completed", "ticker": "1024.HK", "ts": "2026-08-20T04:55:42.743447+00:00"}
+{"event": "completed", "ticker": "TME", "ts": "2026-08-20T08:44:57.793473+00:00"}
+{"event": "completed", "ticker": "0981.HK", "ts": "2026-08-20T12:04:43.404642+00:00"}
+{"event": "completed", "ticker": "AXON", "ts": "2026-08-20T15:34:52.077838+00:00"}

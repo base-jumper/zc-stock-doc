@@ -2,8 +2,8 @@
 ticker: EOAN.DE
 company: E.ON SE
 watching: true
-last-updated: 2026-07-02
-updated-by: Nipa
+last-updated: 2026-08-20
+updated-by: Barry
 disqualified: false
 analysis-strategy: wonderful-and-fair
 traits:
@@ -29,8 +29,8 @@ traits:
   customer-devotion:         {score: 0.45, confidence: 0.55}
 valuation:
   exit-multiple:
-    price: 17.66
-    entry-multiple: 16.05
+    price: 17.30
+    entry-multiple: 15.73
     years: 5
     metric: Earnings
     fundamental: 1.10
@@ -38,8 +38,8 @@ valuation:
     exit-multiple: 14
     dilution: 0%
     dividend-yield: 3.2%
-    roi: 0.067153
-    date: 2026-07-02
+    roi: 0.07112
+    date: 2026-08-20
 strategies:
   cash-cow:
     score:      0.5319
@@ -54,8 +54,8 @@ strategies:
     score:      0.6576
     confidence: 0.7353
 overall:
-  qv_score:    0.384
-  cqv_score:   0.329
+  qv_score:    0.395
+  cqv_score:   0.339
   agent_score: 0.52
 ---
 # EOAN.DE — E.ON SE
@@ -64,7 +64,7 @@ overall:
 
 E.ON is a Germany-based European utility focused on regulated/contracted energy infrastructure and customer supply rather than merchant generation. Its core profit engine is **Energy Networks**: electricity and gas distribution grids across Germany and other European markets. It also runs **Energy Infrastructure Solutions** and **Energy Retail**, serving customers with power, gas and energy-transition services. The business is capital-intensive and regulated: returns depend on allowed network returns, regulatory asset-base growth, financing costs, execution of grid capex, and retail margin discipline.
 
-The current case is a steady utility compounder built around electrification and grid reinforcement. E.ON reported FY2025 **adjusted Group EBITDA of €9.8b** and **adjusted Group net income of €3.0b**, and lifted its 2026–2030 investment plan to **€48b** with a 2030 target of about **€13b adjusted EBITDA** and **€3.8b adjusted net income**. Q1 2026 was on track: adjusted EBITDA rose about **2% to €3.3b**, adjusted net income about **7% to €1.3b**, and full-year 2026 guidance was reaffirmed.
+The current case is a steady utility compounder built around electrification and grid reinforcement. E.ON reported FY2025 **adjusted Group EBITDA of €9.8b** and **adjusted Group net income of €3.0b**, and lifted its 2026–2030 investment plan to **€48b** with a 2030 target of about **€13b adjusted EBITDA** and **€3.8b adjusted net income**. H1 2026 (published August 2026) was on track: adjusted EBITDA rose **1% to €5.4b**, adjusted net income **5% to €1.9b**, EPS **€0.74**, and full-year 2026 guidance was reaffirmed.
 
 ## Trait Assessment
 
@@ -120,7 +120,7 @@ Confidence is only moderate because I did not inspect the latest remuneration re
 
 E.ON looks like a reasonable **Wonderful-and-Fair / regulated reinvestment** candidate, but not a screaming bargain. The assets are durable, the reinvestment runway is unusually visible, and management has a credible 2030 earnings target. The main detractors are capital intensity, regulatory dependence, only moderate free-cash conversion, and a valuation that already prices in a fair amount of stability.
 
-At **€17.66**, the stock trades around **16×** my current adjusted EPS anchor and about **14×** Yahoo’s next-year consensus EPS. That is not excessive for a resilient grid-heavy utility, but the expected return relies on allowed earnings growth and dividends, not multiple expansion. I would keep it watched, with most attention on whether network capex converts into regulated earnings without leverage creeping too far.
+At **€17.30**, the stock trades around **15.7×** my current adjusted EPS anchor and about **14×** Yahoo’s next-year consensus EPS. That is not excessive for a resilient grid-heavy utility, but the expected return relies on allowed earnings growth and dividends, not multiple expansion. I would keep it watched, with most attention on whether network capex converts into regulated earnings without leverage creeping too far.
 
 ## Valuation
 
@@ -128,14 +128,14 @@ Valuation method: **exit-multiple**, using adjusted earnings rather than FCF bec
 
 Inputs used:
 
-- Price: **€17.66** from Yahoo Finance, accessed 2026-07-02.
+- Price: **€17.30** from Yahoo Finance, accessed 2026-08-20.
 - Current fundamental: **€1.10/share** adjusted EPS, based on E.ON’s 2026 guidance range of **€2.7–2.9b adjusted net income** / roughly 2.61b shares and Yahoo current-year EPS consensus around **€1.09**.
 - Growth: **6%** aggregate earnings CAGR for five years, below the rough 2025–2030 adjusted-net-income target CAGR implied by €3.0b to €3.8b because of regulatory and financing risk.
 - Exit multiple: **14×** earnings, around next-year forward PE territory and below the entry multiple implied by the €1.10 anchor.
 - Dividend yield: **3.2%**, based on the €0.57/share dividend and current price.
 - Dilution: **0%**, as the recent share count has been broadly stable.
 
-This produces a modest single-digit annualized return. The return is carried by business growth plus dividend income, partly offset by mild multiple compression. I set `overall.agent_score` at **0.52**: respectable durability and runway, but the valuation is only fair and the cash-flow optics are weak while capex is elevated.
+This produces a modest single-digit annualized return, a touch higher than at the July view (~7.1%) because the price has eased to €17.30. The return is carried by business growth plus dividend income, partly offset by mild multiple compression. I set `overall.agent_score` at **0.52**: respectable durability and runway, but the valuation is only fair and the cash-flow optics are weak while capex is elevated.
 
 ## Thesis Connections
 
@@ -146,7 +146,7 @@ This produces a modest single-digit annualized return. The return is carried by 
 
 ## Watch
 
-- 2026 results versus guidance: adjusted EBITDA **€9.4–9.6b**, adjusted net income **€2.7–2.9b**, EPS **€1.03–1.11**.
+- 2026 full-year versus guidance: adjusted EBITDA **€5.4b H1** tracked, full-year guidance **€9.4–9.6b** adjusted EBITDA, **€2.7–2.9b** adjusted net income, EPS **€1.03–1.11** reaffirmed; check H2 confirmation.
 - Whether the €48b 2026–2030 investment plan earns adequate regulated returns and remains politically supported.
 - Net debt/EBITDA and interest coverage as capex remains above depreciation and FCF.
 - Regulatory decisions in Germany and E.ON’s other network markets, especially allowed returns and tariff timing.
