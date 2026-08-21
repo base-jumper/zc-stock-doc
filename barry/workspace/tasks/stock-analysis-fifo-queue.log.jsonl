@@ -286,3 +286,5 @@
 {"event": "completed", "ticker": "TME", "ts": "2026-08-20T08:44:57.793473+00:00"}
 {"event": "completed", "ticker": "0981.HK", "ts": "2026-08-20T12:04:43.404642+00:00"}
 {"event": "completed", "ticker": "AXON", "ts": "2026-08-20T15:34:52.077838+00:00"}
+{"event": "completed", "ticker": "SHOP", "ts": "2026-08-20T18:42:42.644681+00:00"}
+{"event": "completed", "ticker": "SGH.AX", "ts": "2026-08-20T21:53:29.679197+00:00"}

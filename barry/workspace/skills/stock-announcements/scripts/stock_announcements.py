@@ -38,6 +38,7 @@ SEC_INDEX_ROOT = "https://www.sec.gov/Archives/edgar/daily-index"
 DEFAULT_USER_AGENT = "openclaw-stock-analysis (nbuters@gmail.com)"
 DEFAULT_MAX_AGE_DAYS = 30
 DEFAULT_MAX_CANDIDATES = 4
+DEFAULT_REFRESH_INTERVAL = dt.timedelta(hours=2)
 DEFAULT_QV_FLOOR = 0.05
 DEFAULT_URGENCY_TAU_DAYS = 10.0
 URGENCY_FLOOR = 0.25
@@ -338,6 +339,140 @@ def write_state(path: Path, state: dict[str, Any]) -> None:
     temporary.replace(path)
 
 
+def discovery_cache_is_fresh(
+    state: dict[str, Any], now: dt.datetime, interval: dt.timedelta
+) -> bool:
+    if not isinstance(state.get("discovery_cache"), list):
+        return False
+    stamp = state.get("last_downloaded_at")
+    if not isinstance(stamp, str):
+        return False
+    try:
+        downloaded_at = dt.datetime.fromisoformat(stamp)
+    except ValueError:
+        return False
+    if downloaded_at.tzinfo is None:
+        downloaded_at = downloaded_at.replace(tzinfo=dt.timezone.utc)
+    return dt.timedelta(0) <= now - downloaded_at < interval
+
+
+def discovery_cache_covers(state: dict[str, Any], tickers: set[str]) -> bool:
+    covered = state.get("discovery_cache_tickers")
+    return isinstance(covered, list) and tickers <= set(covered)
+
+
+def discover_candidates(
+    universe: set[str], as_of: dt.date, sec_lookback_days: int
+) -> tuple[list[dict[str, Any]], list[str], bool]:
+    warnings: list[str] = []
+    candidates: list[dict[str, Any]] = []
+    successful_sources = 0
+    au = {ticker for ticker in universe if ticker.endswith(".AX")}
+    us = universe - au
+    if au:
+        try:
+            candidates.extend(asx_candidates(au))
+            successful_sources += 1
+        except Exception as error:
+            warnings.append(f"ASX discovery failed: {error}")
+    if us:
+        try:
+            sec_events, unmapped = sec_candidates(us, as_of, sec_lookback_days)
+            candidates.extend(sec_events)
+            successful_sources += 1
+            if unmapped:
+                warnings.append("No SEC ticker/CIK mapping: " + ", ".join(unmapped))
+        except Exception as error:
+            warnings.append(f"SEC discovery failed: {error}")
+    expected_sources = int(bool(au)) + int(bool(us))
+    return candidates, warnings, successful_sources == expected_sources
+
+
+def update_discovery_cache(
+    state: dict[str, Any], candidates: list[dict[str, Any]],
+    tickers: set[str], now: dt.datetime,
+) -> None:
+    downloaded_at = now.isoformat(timespec="seconds")
+    state["discovery_cache"] = candidates
+    state["discovery_cache_tickers"] = sorted(tickers)
+    state["last_downloaded_at"] = downloaded_at
+    state["last_discovered_at"] = downloaded_at
+
+
+def ingest_candidates(state: dict[str, Any], candidates: list[dict[str, Any]]) -> None:
+    """Merge discoveries into the durable queue without ranking or expiry."""
+    acknowledged = state["acknowledged"]
+    pending = state["pending"]
+    for event in candidates:
+        if event["event_id"] not in acknowledged:
+            pending[event["event_id"]] = event
+
+
+def ensure_discovery(
+    args: argparse.Namespace, extra_tickers: set[str] | None = None
+) -> tuple[
+    dict[str, Any], dict[str, float | None], list[dict[str, Any]],
+    list[str], bool, bool,
+]:
+    """Refresh the shared cache when needed and always ingest it into pending."""
+    universe = stock_universe(args.stock_dir)
+    requested = set(universe) | (extra_tickers or set())
+    state = load_state(args.state)
+    now = dt.datetime.now(dt.timezone.utc)
+    cache_is_usable = (
+        discovery_cache_is_fresh(state, now, DEFAULT_REFRESH_INTERVAL)
+        and discovery_cache_covers(state, requested)
+    )
+    refresh = getattr(args, "force_refresh", False) or (
+        not getattr(args, "cache_only", False) and not cache_is_usable
+    )
+    if refresh:
+        candidates, warnings, refresh_completed = discover_candidates(
+            requested,
+            getattr(args, "as_of", dt.date.today()),
+            getattr(args, "sec_lookback_days", 7),
+        )
+        if refresh_completed:
+            update_discovery_cache(state, candidates, requested, now)
+    else:
+        candidates = state.get("discovery_cache", [])
+        warnings = (
+            ["Discovery cache is stale; --cache-only prevented refresh"]
+            if getattr(args, "cache_only", False) and not cache_is_usable
+            else []
+        )
+        refresh_completed = False
+    ingest_candidates(state, candidates)
+    write_state(args.state, state)
+    return state, universe, candidates, warnings, refresh, refresh_completed
+
+
+def prune_pending(
+    state: dict[str, Any],
+    universe: dict[str, float | None],
+    as_of: dt.date,
+    max_age_days: int,
+) -> tuple[int, int]:
+    """Remove invalid, expired, and out-of-scope events from the pending queue."""
+    cutoff = as_of - dt.timedelta(days=max_age_days)
+    expired: list[str] = []
+    out_of_scope: list[str] = []
+    for event_id, event in state["pending"].items():
+        try:
+            event_date = dt.date.fromisoformat(str(event["date"]))
+        except (KeyError, TypeError, ValueError):
+            expired.append(event_id)
+            continue
+        if event_date < cutoff:
+            expired.append(event_id)
+        elif event.get("ticker") not in universe:
+            out_of_scope.append(event_id)
+
+    for event_id in expired + out_of_scope:
+        state["pending"].pop(event_id, None)
+    return len(expired), len(out_of_scope)
+
+
 def queue_candidates(
     state: dict[str, Any],
     discovered: list[dict[str, Any]],
@@ -356,22 +491,9 @@ def queue_candidates(
         if event_id not in acknowledged:
             pending[event_id] = event
 
-    cutoff = as_of - dt.timedelta(days=max_age_days)
-    expired: list[str] = []
-    out_of_scope: list[str] = []
-    for event_id, event in pending.items():
-        try:
-            event_date = dt.date.fromisoformat(str(event["date"]))
-        except (KeyError, TypeError, ValueError):
-            expired.append(event_id)
-            continue
-        if event_date < cutoff:
-            expired.append(event_id)
-        elif event.get("ticker") not in universe:
-            out_of_scope.append(event_id)
-
-    for event_id in expired + out_of_scope:
-        pending.pop(event_id, None)
+    expired_count, _out_of_scope_count = prune_pending(
+        state, universe, as_of, max_age_days
+    )
 
     ranked = []
     for event in pending.values():
@@ -401,33 +523,14 @@ def queue_candidates(
             event["event_id"],
         ),
     )
-    return ordered[:max_candidates], len(expired), max(0, len(ordered) - max_candidates)
+    return ordered[:max_candidates], expired_count, max(0, len(ordered) - max_candidates)
 
 
 def cmd_poll(args: argparse.Namespace) -> int:
-    universe = stock_universe(args.stock_dir)
-    state = load_state(args.state)
-    warnings: list[str] = []
-    candidates: list[dict[str, Any]] = []
-    successful_sources = 0
+    state, universe, candidates, warnings, refresh, refresh_completed = ensure_discovery(args)
 
     au = {ticker for ticker in universe if ticker.endswith(".AX")}
     us = set(universe) - au
-    if au:
-        try:
-            candidates.extend(asx_candidates(au))
-            successful_sources += 1
-        except Exception as error:  # keep the other market useful on a partial outage
-            warnings.append(f"ASX discovery failed: {error}")
-    if us:
-        try:
-            sec_events, unmapped = sec_candidates(us, args.as_of, args.sec_lookback_days)
-            candidates.extend(sec_events)
-            successful_sources += 1
-            if unmapped:
-                warnings.append("No SEC ticker/CIK mapping: " + ", ".join(unmapped))
-        except Exception as error:
-            warnings.append(f"SEC discovery failed: {error}")
 
     batch, expired_count, deferred_count = queue_candidates(
         state,
@@ -439,10 +542,12 @@ def cmd_poll(args: argparse.Namespace) -> int:
         args.qv_floor,
         args.urgency_tau_days,
     )
-    state["last_discovered_at"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     write_state(args.state, state)
     output = {
         "as_of": args.as_of.isoformat(),
+        "downloaded": refresh_completed,
+        "using_cached_discovery": not refresh,
+        "last_downloaded_at": state.get("last_downloaded_at"),
         "universe": {
             "count": len(universe),
             "au": len(au),
@@ -465,11 +570,95 @@ def cmd_poll(args: argparse.Namespace) -> int:
     }
     json.dump(output, sys.stdout, indent=2)
     sys.stdout.write("\n")
-    return 0 if successful_sources or not universe else 1
+    return 0 if not refresh or refresh_completed else 1
+
+
+def cmd_pending(args: argparse.Namespace) -> int:
+    """Refresh when needed and return complete pending counts by ticker."""
+    state, universe, _, warnings, refresh, refresh_completed = ensure_discovery(args)
+    expired_count, out_of_scope_count = prune_pending(
+        state, universe, args.as_of, args.max_age_days
+    )
+    write_state(args.state, state)
+
+    ticker_counts: dict[str, int] = {}
+    for event in state["pending"].values():
+        ticker = str(event["ticker"])
+        ticker_counts[ticker] = ticker_counts.get(ticker, 0) + 1
+
+    requested = set(universe)
+    now = dt.datetime.now(dt.timezone.utc)
+    cache_stale = not (
+        discovery_cache_is_fresh(state, now, DEFAULT_REFRESH_INTERVAL)
+        and discovery_cache_covers(state, requested)
+    )
+    output = {
+        "as_of": args.as_of.isoformat(),
+        "downloaded": refresh_completed,
+        "using_cached_discovery": not refresh,
+        "cache_stale": cache_stale,
+        "last_downloaded_at": state.get("last_downloaded_at"),
+        "pending_count": sum(ticker_counts.values()),
+        "ticker_count": len(ticker_counts),
+        "tickers": dict(sorted(ticker_counts.items())),
+        "discarded_expired_count": expired_count,
+        "discarded_out_of_scope_count": out_of_scope_count,
+        "warnings": warnings,
+    }
+    json.dump(output, sys.stdout, indent=2)
+    sys.stdout.write("\n")
+    return 0 if not refresh or refresh_completed else 1
+
+
+def ticker_value(value: str) -> str:
+    ticker = value.strip().upper()
+    if not ticker or ("." in ticker and not ticker.endswith(".AX")):
+        raise argparse.ArgumentTypeError(
+            "ticker must be an ASX ticker ending in .AX or a US ticker without a suffix"
+        )
+    return ticker
+
+
+def cmd_ticker(args: argparse.Namespace) -> int:
+    """Return every filtered announcement currently exposed by the source feeds."""
+    state, _, discovered, warnings, refresh, refresh_completed = ensure_discovery(
+        args, {args.ticker}
+    )
+    # The source snapshot is intentionally short (ASX today/previous business day;
+    # SEC lookback window), while poll retains unacknowledged discoveries for up to
+    # 30 days. Merge both so ticker can return everything currently visible to poll.
+    ticker_candidates = {
+        event["event_id"]: event
+        for event in discovered
+        if event["ticker"] == args.ticker
+    }
+    ticker_candidates.update({
+        event["event_id"]: event
+        for event in state["pending"].values()
+        if event.get("ticker") == args.ticker
+    })
+    candidates = list(ticker_candidates.values())
+
+    candidates.sort(
+        key=lambda event: (event["date"], event["event_id"]), reverse=True
+    )
+    output = {
+        "as_of": args.as_of.isoformat(),
+        "ticker": args.ticker,
+        "downloaded": refresh_completed,
+        "using_cached_discovery": not refresh,
+        "last_downloaded_at": state.get("last_downloaded_at"),
+        "candidate_count": len(candidates),
+        "candidates": candidates,
+        "warnings": warnings,
+    }
+    json.dump(output, sys.stdout, indent=2)
+    sys.stdout.write("\n")
+    return 0 if not refresh or refresh_completed else 1
 
 
 def cmd_ack(args: argparse.Namespace) -> int:
-    state = load_state(args.state)
+    state, _, _, warnings, _, _ = ensure_discovery(args)
     acknowledged = state["acknowledged"]
     now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     for event_id in args.event_id:
@@ -485,7 +674,11 @@ def cmd_ack(args: argparse.Namespace) -> int:
     }
     state["last_acknowledged_at"] = now
     write_state(args.state, state)
-    print(json.dumps({"acknowledged": args.event_id, "state": str(args.state)}))
+    print(json.dumps({
+        "acknowledged": args.event_id,
+        "state": str(args.state),
+        "warnings": warnings,
+    }))
     return 0
 
 
@@ -497,6 +690,8 @@ def parser() -> argparse.ArgumentParser:
 
     poll = subparsers.add_parser("poll", help="print unseen candidate metadata as JSON")
     poll.add_argument("--as-of", type=dt.date.fromisoformat, default=dt.date.today())
+    poll.add_argument("--force-refresh", action="store_true",
+                      help="download announcement metadata even when the cache is fresh")
     poll.add_argument("--sec-lookback-days", type=int, default=7)
     poll.add_argument("--max-age-days", type=int, default=DEFAULT_MAX_AGE_DAYS,
                       help="discard queued candidates older than this many days")
@@ -507,6 +702,32 @@ def parser() -> argparse.ArgumentParser:
     poll.add_argument("--urgency-tau-days", type=float, default=DEFAULT_URGENCY_TAU_DAYS,
                       help="filing-age urgency time constant in days")
     poll.set_defaults(func=cmd_poll)
+
+    pending = subparsers.add_parser(
+        "pending", help="refresh when stale and print all pending ticker counts as JSON"
+    )
+    pending.add_argument("--as-of", type=dt.date.fromisoformat, default=dt.date.today())
+    refresh_group = pending.add_mutually_exclusive_group()
+    refresh_group.add_argument("--force-refresh", action="store_true")
+    refresh_group.add_argument(
+        "--cache-only", action="store_true",
+        help="use queued and cached data without contacting ASX or SEC",
+    )
+    pending.add_argument("--sec-lookback-days", type=int, default=7)
+    pending.add_argument(
+        "--max-age-days", type=int, default=DEFAULT_MAX_AGE_DAYS,
+        help="discard queued candidates older than this many days",
+    )
+    pending.set_defaults(func=cmd_pending)
+
+    ticker = subparsers.add_parser(
+        "ticker", help="print all filtered announcements for one AU/US ticker"
+    )
+    ticker.add_argument("ticker", type=ticker_value)
+    ticker.add_argument("--as-of", type=dt.date.fromisoformat, default=dt.date.today())
+    ticker.add_argument("--force-refresh", action="store_true")
+    ticker.add_argument("--sec-lookback-days", type=int, default=7)
+    ticker.set_defaults(func=cmd_ticker)
 
     ack = subparsers.add_parser("ack", help="acknowledge candidates only after review")
     ack.add_argument("event_id", nargs="+")

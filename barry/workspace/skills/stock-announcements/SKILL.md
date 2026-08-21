@@ -1,6 +1,6 @@
 ---
 name: stock-announcements
-description: Discover, review, and process new ASX announcements and SEC filings for AU/US companies with stock-docs, updating only materially affected living research documents. Use when asked to "process stock announcements", "check stock announcements", "review new company filings", monitor company announcements, or perform the scheduled announcement-processing run.
+description: Discover, inspect pending, review, and process new ASX announcements and SEC filings for AU/US companies with stock-docs, updating only materially affected living research documents. Use when asked to "process stock announcements", "check stock announcements", "review new company filings", monitor company announcements, or perform the scheduled announcement-processing run.
 ---
 
 # Stock Announcements
@@ -24,6 +24,40 @@ stock-doc universe, applies deterministic materiality filters, and maintains a d
 pending queue. It returns the four highest-priority candidates per run, retains deferred
 candidates for later runs, and automatically discards candidates more than 30 days old.
 It does not download filing bodies, edit stock-docs, or mark candidates handled.
+Downloaded discovery metadata remains fresh for two hours. Polls during that interval
+use the durable pending queue without contacting ASX or SEC. To bypass the interval:
+
+```bash
+stock_announcements poll --force-refresh --max-candidates 4 --max-age-days 30
+```
+
+To return every pending ticker and its candidate count for automation, without the
+poll batch limit:
+
+```bash
+stock_announcements pending
+```
+
+This refreshes stale discovery, ingests new candidates, and reconciles queue expiry
+and stock-doc scope. Use `--force-refresh` to bypass a fresh cache or `--cache-only`
+to prohibit network access. Treat a non-empty `warnings` array or `cache_stale: true`
+as incomplete coverage rather than as evidence that a ticker has no announcements.
+
+To inspect every currently discovered announcement for one company that passes the
+same deterministic filters, without the poll batch limit:
+
+```bash
+stock_announcements ticker PLS.AX
+```
+
+This uses the source coverage of the poller: the current and previous ASX business
+day, or seven calendar days of SEC daily indexes. Use `--sec-lookback-days` to change
+the SEC window. `ticker` and `poll` share the two-hour discovery cache. Use
+`--force-refresh` with either command to bypass it.
+
+By default, every command first refreshes the shared discovery cache when necessary and merges
+its filtered announcements into the durable pending queue. Command-specific work
+begins only after this ingestion step.
 
 Recalculate priority from the current stock-doc on every poll:
 

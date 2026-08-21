@@ -21,6 +21,7 @@ directory, instead of `cd`-ing in and calling `python3 <script>.py`.
 | `fundamental_stability`| `skills/stock-analysis/scripts/fundamental_stability.py` |
 | `downside_support` | `skills/stock-analysis/scripts/downside_support.py`       |
 | `stock_doc`        | `skills/stock-doc/scripts/stock_doc.py`                    |
+| `stock_focus`      | `skills/stock-update/scripts/stock_focus.py`               |
 | `market_queue`     | `skills/market-queue/scripts/market_queue.py`              |
 | `market_doc`       | `skills/market-doc/scripts/market_doc.py`                  |
 | `penetration_fit`  | `skills/market-analysis/scripts/penetration_fit.py`       |
