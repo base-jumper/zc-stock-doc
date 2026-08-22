@@ -1,4 +1,4 @@
 interface:
   display_name: "Stock Update"
-  short_description: "Refresh one stock doc from current evidence"
-  default_prompt: "Use $stock-update to refresh the existing stock-doc for the supplied ticker."
+  short_description: "Refresh one stock doc"
+  default_prompt: "Use $stock-update to refresh the stock-doc for the supplied ticker."

@@ -5,8 +5,13 @@ description: Refresh an existing stock-doc for a supplied ticker by starting fro
 
 # Stock Update
 
-Update one existing stock-doc as a living current view. The caller supplies the ticker; ticker
-selection is outside this workflow. Automation may use `stock_focus` upstream to choose a ticker.
+Update one existing stock-doc as a living current view. The caller always supplies the ticker;
+this skill never selects one.
+
+## Use the supplied ticker
+
+- Normalize the supplied ticker and use it. Update no other ticker.
+- If no ticker was supplied, report the blocker and stop; do not invent or select one.
 
 ## Load the governing methods
 
@@ -23,8 +28,8 @@ update.
 
 ## 1. Establish the stored view
 
-1. Normalize the supplied ticker and open `investment/stock-docs/<TICKER>.md`. If it does not
-   exist, stop and ask for a fresh `stock-analysis`; do not silently create a partial stock-doc.
+1. Open `investment/stock-docs/<TICKER>.md` for the supplied ticker. If it does not exist, stop and
+   ask for a fresh `stock-analysis`; do not silently create a partial stock-doc.
 2. Read the entire document before researching. Read **Watch** especially closely.
 3. Extract the claims, dates, valuation inputs, trait evidence, uncertainties, and concrete Watch
    questions that could be confirmed, refuted, or made stale.

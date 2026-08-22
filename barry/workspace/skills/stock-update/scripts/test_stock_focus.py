@@ -104,7 +104,7 @@ class MainTests(unittest.TestCase):
                 "overall": {"qv_score": 0.8},
             },
         ]
-        argv = ["stock_focus.py", "--today", "2026-08-21"]
+        argv = ["stock_focus.py", "list", "--today", "2026-08-21"]
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(focus, "load_frontmatter", return_value=documents), \
                 mock.patch.object(
@@ -117,12 +117,52 @@ class MainTests(unittest.TestCase):
         self.assertIn("pending=0", lines[1])
 
     def test_zero_weight_skips_announcement_command(self) -> None:
-        argv = ["stock_focus.py", "--today", "2026-08-21", "--wa", "0"]
+        argv = ["stock_focus.py", "list", "--today", "2026-08-21", "--wa", "0"]
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(focus, "load_frontmatter", return_value=[]), \
                 mock.patch.object(focus, "load_pending_announcements") as pending, \
                 contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(focus.main(), 0)
+        pending.assert_not_called()
+
+    def test_peek_prints_exactly_the_top_ticker(self) -> None:
+        documents = [
+            {
+                "ticker": "AAA",
+                "company": "Alpha",
+                "watching": True,
+                "last-updated": "2026-08-21",
+                "analysis-strategy": "chosen",
+                "strategies": {"chosen": {"confidence": 0.8}},
+                "overall": {"qv_score": 0.4},
+            },
+            {
+                "ticker": "BBB",
+                "company": "Beta",
+                "watching": True,
+                "last-updated": "2026-08-20",
+                "analysis-strategy": "chosen",
+                "strategies": {"chosen": {"confidence": 0.5}},
+                "overall": {"qv_score": 0.8},
+            },
+        ]
+        argv = ["stock_focus.py", "peek", "--today", "2026-08-21"]
+        with mock.patch.object(sys, "argv", argv), \
+                mock.patch.object(focus, "load_frontmatter", return_value=documents), \
+                mock.patch.object(
+                    focus, "load_pending_announcements", return_value=({}, [])
+                ), contextlib.redirect_stdout(io.StringIO()) as stdout:
+            self.assertEqual(focus.main(), 0)
+        self.assertEqual(stdout.getvalue().splitlines(), ["BBB"])
+
+    def test_peek_prints_nothing_when_no_stock_eligible(self) -> None:
+        argv = ["stock_focus.py", "peek", "--today", "2026-08-21", "--wa", "0"]
+        with mock.patch.object(sys, "argv", argv), \
+                mock.patch.object(focus, "load_frontmatter", return_value=[]), \
+                mock.patch.object(focus, "load_pending_announcements") as pending, \
+                contextlib.redirect_stdout(io.StringIO()) as stdout:
+            self.assertEqual(focus.main(), 1)
+        self.assertEqual(stdout.getvalue(), "")
         pending.assert_not_called()
 
 
