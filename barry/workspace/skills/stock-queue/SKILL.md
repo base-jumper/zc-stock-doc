@@ -9,10 +9,10 @@ Use this skill to manage Nick's plain-text FIFO queue for stock-analysis jobs.
 
 ## Locations
 
-- Queue file: `tasks/stock-analysis-fifo-queue.txt`
-- Audit log: `tasks/stock-analysis-fifo-queue.log.jsonl`
+- Queue file: `state/stock-analysis-fifo-queue.txt`
+- Audit log: `state/stock-analysis-fifo-queue.log.jsonl`
 - Helper script: `skills/stock-queue/scripts/stock_queue.py`
-- Worker prompt: `tasks/stock-analysis-fifo-worker.md`
+- Worker prompt template: `tasks/stock-analysis-prompt.md`
 
 The queue is one ticker per line. The first non-empty line is the next ticker.
 
@@ -57,16 +57,23 @@ actual completion time.
 
 ZeroClaw 0.8.4 does not store per-run token counts in cron history, so the migrated `token-burn` command exits with an explicit unsupported-version message. Queue operations and the scheduled worker are unaffected.
 
-## Worker behavior
+## Worker dispatch
 
-A cron job runs every 3 hours and follows `tasks/stock-analysis-fifo-worker.md`.
+A shell cron job runs every 3 hours. It pipes the queue head into the worker prompt
+template and schedules a one-shot Barry agent job only when a ticker is present:
+
+```bash
+stock_queue peek | prompt-from-template --agent barry tasks/stock-analysis-prompt.md
+```
+
+The template uses `{{TICKER}}`. The `stock-analysis` skill owns the stock-doc
+documentation workflow; the template owns FIFO completion and worker guardrails.
 
 The worker must:
 
-1. Use the `stock-analysis` and `stock-doc` skills for the research/update work.
-2. Analyze exactly one ticker per run: the first line in the FIFO queue.
-3. Not remove the ticker until the stock doc is updated and verified.
-4. Remove only the first line using:
+1. Analyze exactly one ticker per run: the value supplied by the dispatcher.
+2. Not remove the ticker until the stock doc is updated and verified.
+3. Remove only the first line using:
 
 ```bash
 python3 skills/stock-queue/scripts/stock_queue.py complete-first TICKER

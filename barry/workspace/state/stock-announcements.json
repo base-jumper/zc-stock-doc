@@ -42,6 +42,7 @@
     "sec:0000929869-26-000062:RELX": "2026-08-09T12:33:05+00:00",
     "sec:0001018724-26-000024:AMZN": "2026-08-02T00:48:05+00:00",
     "sec:0001018724-26-000026:AMZN": "2026-08-02T00:48:05+00:00",
+    "sec:0001045810-26-000069:NVDA": "2026-08-22T05:14:32+00:00",
     "sec:0001062993-26-003907:HBM": "2026-08-02T12:48:33+00:00",
     "sec:0001062993-26-003944:HBM": "2026-08-02T12:48:33+00:00",
     "sec:0001062993-26-003991:NXE": "2026-08-08T06:38:39+00:00",
@@ -65,6 +66,10 @@
     "sec:0001193125-26-338256:TRI": "2026-08-09T06:38:56+00:00",
     "sec:0001193125-26-342390:GOOG": "2026-08-11T18:34:29+00:00",
     "sec:0001292814-26-003952:ENIC": "2026-08-02T06:40:18+00:00",
+    "sec:0001292814-26-004222:NU": "2026-08-22T08:32:47+00:00",
+    "sec:0001292814-26-004225:NU": "2026-08-22T08:32:47+00:00",
+    "sec:0001292814-26-004226:NU": "2026-08-22T08:32:47+00:00",
+    "sec:0001292814-26-004228:NU": "2026-08-22T08:32:47+00:00",
     "sec:0001403161-26-000103:V": "2026-08-01T06:40:49+00:00",
     "sec:0001403161-26-000104:V": "2026-08-01T12:39:24+00:00",
     "sec:0001490978-26-000067:SDGR": "2026-08-09T12:33:05+00:00",
@@ -221,114 +226,24 @@
       "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127925"
     },
     {
-      "date": "2026-08-20",
-      "event_id": "asx:03127524",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 9:23 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "SHL.AX",
-      "title": "Financial and Operational Review - Year Ended 30 June 2026",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127524"
+      "date": "2026-08-21",
+      "event_id": "sec:0001140361-26-033970:ON",
+      "form": "S-4",
+      "market": "US",
+      "reason": "SEC form S-4",
+      "ticker": "ON",
+      "title": "Form S-4 \u2014 ON SEMICONDUCTOR CORP",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/0001140361-26-033970-index.html"
     },
     {
-      "date": "2026-08-20",
-      "event_id": "asx:03127519",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 9:22 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "SHL.AX",
-      "title": "Media Release - Full Year Results to 30 June 2026",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127519"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127492",
-      "market": "AU",
-      "price_sensitive": false,
-      "published_at": "20/08/2026 9:17 am",
-      "reason": "ASX headline rule: capital-allocation",
-      "ticker": "SHL.AX",
-      "title": "Dividend/Distribution - SHL",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127492"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127489",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 9:17 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "SHL.AX",
-      "title": "Preliminary Final Report FY2026",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127489"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127303",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 8:19 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "APA.AX",
-      "title": "APA FY26 Final Distribution Information",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127303"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127302",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 8:18 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "APA.AX",
-      "title": "APA FY26 Results Presentation",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127302"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127285",
-      "market": "AU",
-      "price_sensitive": false,
-      "published_at": "20/08/2026 8:13 am",
-      "reason": "ASX headline rule: capital-allocation",
-      "ticker": "SGH.AX",
-      "title": "Update - Notification of buy-back - SGH",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127285"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127279",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 8:12 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "APA.AX",
-      "title": "APA delivers strong FY26 results",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127279"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127274",
-      "market": "AU",
-      "price_sensitive": false,
-      "published_at": "20/08/2026 8:11 am",
-      "reason": "ASX headline rule: capital-allocation",
-      "ticker": "APA.AX",
-      "title": "Update - Dividend/Distribution - APA",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127274"
-    },
-    {
-      "date": "2026-08-20",
-      "event_id": "asx:03127268",
-      "market": "AU",
-      "price_sensitive": true,
-      "published_at": "20/08/2026 8:09 am",
-      "reason": "ASX price-sensitive",
-      "ticker": "APA.AX",
-      "title": "APA FY26 Appendix 4E and Annual Report",
-      "url": "https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&idsId=03127268"
+      "date": "2026-08-21",
+      "event_id": "sec:0001104659-26-099679:PDD",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "PDD",
+      "title": "Form 6-K \u2014 PDD Holdings Inc.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1737806/0001104659-26-099679-index.html"
     },
     {
       "date": "2026-08-20",
@@ -510,7 +425,7 @@
     "ETN",
     "FCX",
     "FDS",
-    "FOO",
+    "FMG.AX",
     "GEV",
     "GNE.AX",
     "GOOG",
@@ -587,9 +502,9 @@
     "XRO.AX",
     "ZEAL"
   ],
-  "last_acknowledged_at": "2026-08-13T12:39:36+00:00",
-  "last_discovered_at": "2026-08-21T13:26:47+00:00",
-  "last_downloaded_at": "2026-08-21T13:26:47+00:00",
+  "last_acknowledged_at": "2026-08-22T08:32:47+00:00",
+  "last_discovered_at": "2026-08-22T14:22:39+00:00",
+  "last_downloaded_at": "2026-08-22T14:22:39+00:00",
   "pending": {
     "asx:03122835": {
       "date": "2026-08-07",
@@ -1346,16 +1261,6 @@
       "title": "Form 6-K \u2014 Youdao, Inc.",
       "url": "https://www.sec.gov/Archives/edgar/data/1781753/0000950103-26-012675-index.html"
     },
-    "sec:0001045810-26-000069:NVDA": {
-      "date": "2026-08-17",
-      "event_id": "sec:0001045810-26-000069:NVDA",
-      "form": "8-K",
-      "market": "US",
-      "reason": "SEC form 8-K",
-      "ticker": "NVDA",
-      "title": "Form 8-K \u2014 NVIDIA CORP",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/0001045810-26-000069-index.html"
-    },
     "sec:0001062993-26-004014:NXE": {
       "date": "2026-08-05",
       "event_id": "sec:0001062993-26-004014:NXE",
@@ -1476,6 +1381,16 @@
       "title": "Form 8-K \u2014 Rigetti Computing, Inc.",
       "url": "https://www.sec.gov/Archives/edgar/data/1838359/0001104659-26-098999-index.html"
     },
+    "sec:0001104659-26-099679:PDD": {
+      "date": "2026-08-21",
+      "event_id": "sec:0001104659-26-099679:PDD",
+      "form": "6-K",
+      "market": "US",
+      "reason": "SEC form 6-K",
+      "ticker": "PDD",
+      "title": "Form 6-K \u2014 PDD Holdings Inc.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1737806/0001104659-26-099679-index.html"
+    },
     "sec:0001140361-26-032594:ON": {
       "date": "2026-08-13",
       "event_id": "sec:0001140361-26-032594:ON",
@@ -1495,6 +1410,16 @@
       "ticker": "SPOT",
       "title": "Form 6-K \u2014 Spotify Technology S.A.",
       "url": "https://www.sec.gov/Archives/edgar/data/1639920/0001140361-26-033885-index.html"
+    },
+    "sec:0001140361-26-033970:ON": {
+      "date": "2026-08-21",
+      "event_id": "sec:0001140361-26-033970:ON",
+      "form": "S-4",
+      "market": "US",
+      "reason": "SEC form S-4",
+      "ticker": "ON",
+      "title": "Form S-4 \u2014 ON SEMICONDUCTOR CORP",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/0001140361-26-033970-index.html"
     },
     "sec:0001171843-26-005599:NVO": {
       "date": "2026-08-18",
@@ -1535,46 +1460,6 @@
       "ticker": "SERV",
       "title": "Form 8-K \u2014 Serve Robotics Inc. /DE/",
       "url": "https://www.sec.gov/Archives/edgar/data/1832483/0001213900-26-090504-index.html"
-    },
-    "sec:0001292814-26-004222:NU": {
-      "date": "2026-08-13",
-      "event_id": "sec:0001292814-26-004222:NU",
-      "form": "6-K",
-      "market": "US",
-      "reason": "SEC form 6-K",
-      "ticker": "NU",
-      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004222-index.html"
-    },
-    "sec:0001292814-26-004225:NU": {
-      "date": "2026-08-13",
-      "event_id": "sec:0001292814-26-004225:NU",
-      "form": "6-K",
-      "market": "US",
-      "reason": "SEC form 6-K",
-      "ticker": "NU",
-      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004225-index.html"
-    },
-    "sec:0001292814-26-004226:NU": {
-      "date": "2026-08-13",
-      "event_id": "sec:0001292814-26-004226:NU",
-      "form": "6-K",
-      "market": "US",
-      "reason": "SEC form 6-K",
-      "ticker": "NU",
-      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004226-index.html"
-    },
-    "sec:0001292814-26-004228:NU": {
-      "date": "2026-08-13",
-      "event_id": "sec:0001292814-26-004228:NU",
-      "form": "6-K",
-      "market": "US",
-      "reason": "SEC form 6-K",
-      "ticker": "NU",
-      "title": "Form 6-K \u2014 Nu Holdings Ltd.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1691493/0001292814-26-004228-index.html"
     },
     "sec:0001581280-26-000050:TWST": {
       "date": "2026-08-19",

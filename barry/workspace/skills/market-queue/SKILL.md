@@ -9,10 +9,10 @@ Manage the plain-text FIFO queue for scheduled market-analysis jobs.
 
 ## Locations
 
-- Queue: `tasks/market-analysis-fifo-queue.txt`
-- Audit log: `tasks/market-analysis-fifo-queue.log.jsonl`
+- Queue: `state/market-analysis-fifo-queue.txt`
+- Audit log: `state/market-analysis-fifo-queue.log.jsonl`
 - Helper: `skills/market-queue/scripts/market_queue.py`
-- Worker prompt: `tasks/market-analysis-fifo-worker.md`
+- Worker prompt template: `tasks/market-analysis-prompt.md`
 
 Store one lowercase market ID per line. Treat the first non-empty line as next.
 
@@ -33,9 +33,19 @@ Inspect recent worker token usage with:
 python3 skills/market-queue/scripts/market_queue.py token-burn -n 10
 ```
 
-## Worker behavior
+## Worker dispatch
 
-The cron worker runs every three hours and follows `tasks/market-analysis-fifo-worker.md`. It must use the `market-analysis` and `market-doc` skills, analyze exactly the first market, validate the saved market-doc, and only then remove the head:
+The shell cron worker runs every three hours. It pipes the queue head into the worker prompt
+template and schedules a one-shot Barry agent job only when a market ID is present:
+
+```bash
+market_queue peek | prompt-from-template --agent barry tasks/market-analysis-prompt.md
+```
+
+The template uses `{{TICKER}}`. The `market-analysis` skill owns the market-doc
+documentation workflow; the template owns FIFO completion and worker guardrails.
+
+The worker must analyze exactly the supplied market ID, validate the saved market-doc, and only then remove the head:
 
 ```bash
 python3 skills/market-queue/scripts/market_queue.py complete-first MARKET_ID

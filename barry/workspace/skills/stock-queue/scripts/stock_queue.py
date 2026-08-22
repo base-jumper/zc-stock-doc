@@ -12,13 +12,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 WORKSPACE = Path(__file__).resolve().parents[3]
-DEFAULT_QUEUE = WORKSPACE / 'tasks' / 'stock-analysis-fifo-queue.txt'
-DEFAULT_LOG = WORKSPACE / 'tasks' / 'stock-analysis-fifo-queue.log.jsonl'
+DEFAULT_QUEUE = WORKSPACE / 'state' / 'stock-analysis-fifo-queue.txt'
+DEFAULT_LOG = WORKSPACE / 'state' / 'stock-analysis-fifo-queue.log.jsonl'
 DEFAULT_HOURS_PER_RUN = 3.0
 TICKER_RE = re.compile(r'^[A-Z0-9][A-Z0-9.\-]{0,15}$')
 
 DEFAULT_CRON_DIR = Path.home() / '.zeroclaw' / 'data' / 'cron'
-FIFO_JOB_RE = re.compile(r'(?=.*stock)(?=.*fifo)', re.IGNORECASE)
+WORKER_JOB_RE = re.compile(r'^stock-analysis$', re.IGNORECASE)
 # Max input context per model-name prefix, used to estimate context window use.
 CONTEXT_WINDOWS = [
     ('gpt-5', 272_000),
@@ -172,7 +172,7 @@ def cmd_estimate(args) -> int:
     return 0
 
 
-def resolve_fifo_job_id(cron_dir: Path) -> str:
+def resolve_worker_job_id(cron_dir: Path) -> str:
     jobs_path = cron_dir / 'jobs.json'
     if jobs_path.exists():
         data = json.loads(jobs_path.read_text())
@@ -196,9 +196,9 @@ def resolve_fifo_job_id(cron_dir: Path) -> str:
                 f'could not query current cron metadata: {exc}'
             ) from exc
     jobs = data if isinstance(data, list) else data.get('jobs', [])
-    matches = [j for j in jobs if FIFO_JOB_RE.search(j.get('name', ''))]
+    matches = [j for j in jobs if WORKER_JOB_RE.search(j.get('name', ''))]
     if not matches:
-        raise SystemExit(f'no stock FIFO cron job found via {source}')
+        raise SystemExit(f'no stock-analysis cron job found via {source}')
     if len(matches) > 1:
         names = ', '.join(f"{j['id']} ({j['name']})" for j in matches)
         raise SystemExit(f'multiple stock FIFO cron jobs found, pass --job-id: {names}')
@@ -234,7 +234,7 @@ def completed_events(log_path: Path) -> list[tuple[float, str]]:
 def cmd_token_burn(args) -> int:
     raise SystemExit("ZeroClaw 0.8.4 does not store per-run token usage in cron history")
     cron_dir = Path(args.cron_dir)
-    job_id = args.job_id or resolve_fifo_job_id(cron_dir)
+    job_id = args.job_id or resolve_worker_job_id(cron_dir)
     runs_path = cron_dir / 'runs' / f'{job_id}.jsonl'
     runs = []
     if runs_path.exists():

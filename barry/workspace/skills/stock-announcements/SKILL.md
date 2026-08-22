@@ -9,6 +9,9 @@ Process primary-source company disclosures without spending model tokens scannin
 market-wide feeds. Use the bundled poller for discovery and deduplication; use agent
 judgement only for the small set of matched candidates.
 
+Store the durable discovery cache, pending queue, and acknowledgement history in
+`state/stock-announcements.json`.
+
 ## Discover candidates
 
 Run from any directory:

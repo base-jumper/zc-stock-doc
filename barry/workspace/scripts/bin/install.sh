@@ -29,7 +29,7 @@ commands=(company_score asymmetric_payoff exit_multiple tam_capture tam_capture_
           weighted_average conservative_debt returns_on_capital free_cash_flow earnings_quality
           durable_growth capital_allocation organic_growth fundamental_stability downside_support
           stock_doc stock_focus stock_queue market_queue yfin edgar market_doc penetration_fit concentration_fit
-          mobility_panels mobility_fit stock_announcements test_stock_announcements)
+          mobility_panels mobility_fit stock_announcements test_stock_announcements prompt-from-template)
 
 for cmd in "${commands[@]}"; do
   chmod +x "$here/$cmd"

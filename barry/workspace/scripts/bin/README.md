@@ -30,6 +30,7 @@ directory, instead of `cd`-ing in and calling `python3 <script>.py`.
 | `mobility_fit`     | `skills/market-analysis/scripts/mobility_fit.py`          |
 | `stock_announcements`| `skills/stock-announcements/scripts/stock_announcements.py` |
 | `test_stock_announcements`| `skills/stock-announcements/scripts/test_stock_announcements.py` |
+| `prompt-from-template` | `scripts/prompt_from_template.py`                       |
 | `yfin`             | `skills/yahoo-finance/scripts/yfin.py`                     |
 | `edgar`            | `skills/sec-edgar/scripts/edgar.py`                       |
 

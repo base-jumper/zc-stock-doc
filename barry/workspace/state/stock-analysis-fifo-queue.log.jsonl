@@ -288,3 +288,5 @@
 {"event": "completed", "ticker": "AXON", "ts": "2026-08-20T15:34:52.077838+00:00"}
 {"event": "completed", "ticker": "SHOP", "ts": "2026-08-20T18:42:42.644681+00:00"}
 {"event": "completed", "ticker": "SGH.AX", "ts": "2026-08-20T21:53:29.679197+00:00"}
+{"event": "queued", "ticker": "FMG.AX", "ts": "2026-08-22T03:05:45.957190+00:00"}
+{"event": "completed", "ticker": "FMG.AX", "ts": "2026-08-22T03:28:26.724796+00:00"}

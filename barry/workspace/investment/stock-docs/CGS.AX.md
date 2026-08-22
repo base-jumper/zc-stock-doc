@@ -2,8 +2,8 @@
 ticker: CGS.AX
 company: Cogstate Limited
 watching: true
-last-updated: 2026-08-01
-updated-by: Nipa
+last-updated: 2026-08-22
+updated-by: Barry
 analysis-strategy: rule-breakers
 disqualified: false
 traits:
@@ -17,21 +17,21 @@ traits:
   customer-devotion:     {score: 0.48, confidence: 0.55}
 valuation:
   exit-multiple:
-    price: 2.50              # Yahoo Finance close 2026-07-31, AUD
-    entry-multiple: 25.0
+    price: 3.10              # Yahoo Finance ~2026-08-22, AUD
+    entry-multiple: 31.0
     years: 5
     metric: Earnings
-    fundamental: 0.100       # current earnings/share estimate, AUD; rounded FY26 consensus A$0.0983, below FY27 consensus A$0.1337
+    fundamental: 0.100       # current earnings/share estimate, AUD; triangulated between audited FY26 EPS ~A$0.097 and FY27 consensus A$0.124
     growth: [25%, 22%, 18%, 15%, 12%]
     exit-multiple: 25
     dilution: -1.0%
-    dividend-yield: 0.8%     # A$0.02 / A$2.50
-    roi: 0.205144
-    date: 2026-08-01
+    dividend-yield: 1.29%    # A$0.04 / A$3.10
+    roi: 0.162474
+    date: 2026-08-22
   weighted-average:
     weights: {exit-multiple: 1.0}
-    roi: 0.205144
-    date: 2026-08-01
+    roi: 0.162474
+    date: 2026-08-22
 chosen:
   valuation: weighted-average
 strategies:
@@ -39,9 +39,9 @@ strategies:
     score:      0.7469
     confidence: 0.7239
 overall:
-  qv_score:    0.715
-  cqv_score:   0.608
-  agent_score: 0.74
+  qv_score:    0.636
+  cqv_score:   0.541
+  agent_score: 0.70
 ---
 # CGS.AX — Cogstate Limited
 
@@ -51,7 +51,7 @@ Cogstate is an ASX-listed neuroscience technology company focused on digital cog
 
 FY25 was a record year: revenue **US$53.1M**, up **22%**; EBITDA **US$16.0M**, up **72%**; EBITDA margin **30.1%**; clinical-trials new contract sales **US$41.3M**, up **53%**; operating cash flow **US$11.5M**; cash **US$35.6M**. Clinical Trials generated **US$50.6M** revenue, while Healthcare declined to **US$2.5M**.
 
-FY26 momentum accelerated: 1H26 revenue was **US$26.9M**, up **12%**, with Clinical Trials sales contracts of **US$41.7M**, up **105%**. Cogstate then executed **US$25.4M** in 3Q26 and **US$21.9M** in 4Q26, taking FY26 net sales contracts to a record **US$89.0M**, up **116%** versus FY25’s **US$41.3M** and **230%** versus FY24’s **US$27.0M**. Cogstate enters FY27 with **US$118.5M** contracted future revenue, up **32%**; **US$48.3M** is expected to be recognised in FY27, up **54%** year on year. FY27 contracted Clinical Trials revenue is **US$46.1M**, up **58%**, while contracted Healthcare revenue is flat at **US$2.3M**.
+FY26 momentum accelerated through the year and the audited result (18 Aug 2026) confirmed a record year: group revenue **US$60.9M**, up **15%**; EBITDA **US$18.3M**, up **15%** at a **30%** margin; EBIT **US$15.2M** (25% margin); profit before tax **US$16.1M**; profit after tax **US$11.9M** (EPS **US$0.0696**); operating cash in-flow **US$8.5M**; year-end cash **US$34.8M**, no debt. FY26 net sales contracts were a record **US$89.0M**, up **116%** versus FY25’s **US$41.3M** and **230%** versus FY24’s **US$27.0M**. Active trials grew from **110** at 1 Jul 2025 to **171** at 30 Jun 2026 across psychiatric/mood (25% of FY26 new business), rare disease (27%), Alzheimer’s (23%), neurological/other (17%), and sleep (8%). Cogstate enters FY27 with **US$118.5M** contracted future revenue, up **32%**, of which **US$48.3M** is expected to be recognised in FY27, up **54%**. The board declared a second fully franked dividend of **A$0.04/share** (up from A$0.02).
 
 ## Trait Assessment
 
@@ -63,7 +63,7 @@ FY26 momentum accelerated: 1H26 revenue was **US$26.9M**, up **12%**, with Clini
 
 ### Top Dog — 0.70 / confidence 0.65
 
-**Facts:** Cogstate calls itself a global leader in clinical-trial endpoint data quality and digital cognitive assessments. It has over 20–25 years of operating history, supports biopharma and academic research customers, and reported **133 active trials** at 1H26. Competitors/alternatives in the broader market include Cambridge Cognition, MedAvante-ProPhase, Signant Health, VeraSci/NeuroCog Trials, Pearson, Quest Diagnostics, and others.
+**Facts:** Cogstate calls itself a global leader in clinical-trial endpoint data quality and digital cognitive assessments. It has over 20 years of operating history, supports biopharma and academic research customers, and reported **171 active trials** at 30 Jun 2026 (up from 110 a year earlier). Competitors/alternatives in the broader market include Cambridge Cognition, MedAvante-ProPhase, Signant Health, VeraSci/NeuroCog, Pearson, CRO/eCOA bundles, and others.
 
 **Interpretation:** Cogstate appears to be a leading specialist in a niche that matters. But “top dog” is not fully proven because the market is fragmented, private competitors limit visibility, and Cogstate is still tiny in absolute terms. Good candidate, not yet obviously dominant.
 
@@ -75,7 +75,7 @@ FY26 momentum accelerated: 1H26 revenue was **US$26.9M**, up **12%**, with Clini
 
 ### Evidence of Durable, Accelerating Growth — 0.88 / confidence 0.90
 
-**Facts:** FY25 revenue grew **22%**, EBITDA grew **72%**, EBITDA margin expanded to **30.1%**, and Clinical Trials contract sales grew **53%**. FY26 net sales contracts accelerated to **US$89.0M**, up **116%** from **US$41.3M** in FY25 and **230%** from **US$27.0M** in FY24. Quarterly FY26 net sales were consistently strong: **US$21.4M**, **US$20.3M**, **US$25.4M**, and **US$21.9M**. Cogstate enters FY27 with **US$118.5M** contracted future revenue, including **US$48.3M** expected to be recognised in FY27, up **54%**. Contracted FY27 Clinical Trials revenue is **US$46.1M**, up **58%**; Healthcare is flat at **US$2.3M**.
+**Facts:** FY25 revenue grew **22%**, EBITDA grew **72%**, EBITDA margin expanded to **30.1%**, and Clinical Trials contract sales grew **53%**. FY26 net sales contracts accelerated to **US$89.0M**, up **116%** from **US$41.3M** in FY25 and **230%** from **US$27.0M** in FY24. Quarterly FY26 net sales were consistently strong: **US$21.4M**, **US$20.3M**, **US$25.4M**, and **US$21.9M**. The audited FY26 result confirmed: revenue **US$60.9M** (+15%), EBITDA **US$18.3M** at **30%** margin, EBIT **US$15.2M** (25% margin), profit after tax **US$11.9M** (EPS US$0.0696), and active trials up to **171** from 110. Cogstate enters FY27 with **US$118.5M** contracted future revenue, including **US$48.3M** expected to be recognised in FY27, up **54%**.
 
 **Interpretation:** This is the best Rule Breaker trait and the 4Q/FY26 update strengthens it. Revenue still lags contract wins because clinical-trial work is recognised over milestones and can take months to 4–5 years, but the backlog/revenue-visibility bridge is now much cleaner: FY26 bookings were not a one-quarter spike, and FY27 contracted revenue already covers a large base before new-year wins. The business is already profitable and cash generative, which is rare for a small-cap growth candidate.
 
@@ -115,17 +115,17 @@ FY26 momentum accelerated: 1H26 revenue was **US$26.9M**, up **12%**, with Clini
 
 Cogstate is a **natural Rule Breaker candidate**: small, specialist, founder-ish/insider-aligned, profitable, exposed to a large emerging need, and showing accelerating leading indicators. The attractive version of the thesis is simple: CNS clinical trials get more complex and numerous, cognitive endpoints matter more, and Cogstate becomes one of the default specialist platforms for measuring cognition and endpoint quality.
 
-The 4Q/FY26 update moves the thesis in the right direction: bookings strength persisted through June and FY27 starts with materially better revenue visibility. The main reason this is not an obvious slam dunk is still evidence depth. We need better independent confirmation of market share, customer concentration, win rates, retention, and whether Medidata/AI materially widen the moat. Still, as a small-cap compounder candidate, this is increasingly interesting.
+The audited 4Q/FY26 result (18 Aug 2026) resolves the key open question and moves the thesis in the right direction: record revenue, EBITDA margin held at **30%** despite growth investment, gross margin improved from 53% (1H26) to 62% (2H26), active trials up to 171, record bookings, and a doubled dividend. FY27 opens with materially better revenue visibility (US$48.3M contracted revenue expected to be recognised, +54%). The main reason this is not an obvious slam dunk is still evidence depth — market share, customer concentration, win rates, retention, and whether Medidata/AI materially widen the moat — plus the re-rated entry price. Still, as a small-cap compounder candidate, this is increasingly interesting.
 
 ## Valuation
 
-At the 31 July 2026 close, CGS.AX traded at **A$2.50**, with market capitalisation about **A$424.8M**. Yahoo showed trailing EPS of **A$0.09**, FY26 consensus EPS of **A$0.0983**, FY27 consensus EPS of **A$0.1337**, trailing P/E of **27.8x**, forward P/E of **18.7x**, and an annual dividend of **A$0.02/share**. The earnings estimates have limited analyst depth (three for EPS), but FY27 EPS consensus rose from A$0.1213 thirty days earlier to A$0.1337 while the share price fell 9.7% from the prior valuation's A$2.77 entry price.
+At the 22 August 2026 close (intraday ~A$3.10), CGS.AX market capitalisation was about **A$527M**. Trailing EPS is **A$0.09**, FY26 (audited) EPS **US$0.0696**, current-year consensus EPS **A$0.124**, next-year consensus EPS **A$0.170**, with a **~1.3%** dividend yield (A$0.04 declared). The earnings estimates have limited analyst depth (two for FY26, three for FY27), but FY27 EPS consensus rose from A$0.161 to A$0.170 over the last quarter. The share price has re-rated up **~24%** to A$3.10 versus the A$2.50 stored entry and is near its 52-week high (A$3.23).
 
-**Expected ROI (Rule Breakers weighted-average).** The canonical `weighted-average` now contains only the applicable bottom-up `exit-multiple` component. The old TAM component has been removed because it used a retired analyst-supplied `TAM × capture` estimate rather than the required market-doc output; retaining it would create false precision. A top-down component can be restored if a dedicated CNS cognitive-endpoint market document is produced.
+**Expected ROI (Rule Breakers weighted-average).** The canonical `weighted-average` contains only the applicable bottom-up `exit-multiple` component. The old TAM component has been removed because it used a retired analyst-supplied `TAM × capture` estimate rather than the required market-doc output; retaining it would create false precision. A top-down component can be restored if a dedicated CNS cognitive-endpoint market document is produced.
 
-**Exit-multiple component.** The model starts from **A$0.100/share** of current earnings power: a rounded FY26 consensus anchor, above trailing A$0.09 but below FY27 consensus A$0.1337. Holding five years from **A$2.50**, it assumes aggregate earnings growth of **25/22/18/15/12%**, **1%/yr** net buybacks, a **0.8%** entry dividend yield, and a **25x** exit P/E — equal to the 25.0x entry multiple, so no rerating is required. It returns **20.5%/yr** (`valuation.exit-multiple.roi: 0.205144`), or **2.54x** over five years. Attribution is +18.3%/yr business growth, +1.0%/yr buybacks, 0.0%/yr multiple rerating, and about +1.0%/yr income.
+**Exit-multiple component.** The model starts from **A$0.100/share** of current earnings power: triangulated between the audited FY26 EPS (≈A$0.097 at the current AUD/USD) and FY27 consensus A$0.124, i.e. roughly today's run-rate. Holding five years from **A$3.10**, it assumes aggregate earnings growth of **25/22/18/15/12%**, **1%/yr** net buybacks, a **1.29%** entry dividend yield, and a **25x** exit P/E — below the 31.0x entry multiple, so a **–4.2%/yr** rerating drag is required to exit at 25x. It returns **16.2%/yr** (`valuation.exit-multiple.roi: 0.162474`), or **2.12x** over five years. Attribution is +18.3%/yr business growth, +1.0%/yr buybacks, –4.2%/yr multiple rerating, and +1.8%/yr income.
 
-The canonical ROI is therefore **20.5%/yr** (`valuation.weighted-average.roi: 0.205144`). This is materially more attractive than the prior 14.5% estimate because of the lower entry price and firmer current earnings anchor, not a more generous exit multiple. Valuation-aware score: **7.4/10** — attractive expected return without rerating, offset by small-cap contract timing, customer concentration uncertainty, and the still-unaudited FY26 earnings base.
+The canonical ROI is therefore **16.2%/yr** (`valuation.weighted-average.roi: 0.162474`). This is lower than the prior 20.5% estimate entirely because the entry price re-rated to A$3.10 (31.0x entry) versus the A$2.50 (25x) entry — with the 25x exit multiple now below the 31.0x entry, a –4.2%/yr rerating drag is required; the underlying business case is stronger (audited FY26 confirmed 30% EBITDA margin and record bookings). Valuation-aware score: **7.0/10** — still an attractive compounder, but the market has already marked the re-rating up, leaving less headroom; offset remains small-cap contract timing and customer concentration.
 
 ## Thesis Connections
 
@@ -136,13 +136,13 @@ The canonical ROI is therefore **20.5%/yr** (`valuation.weighted-average.roi: 0.
 
 ## Watch
 
-- FY27 revenue conversion from **US$89.0M** FY26 net sales contracts and **US$48.3M** contracted FY27 revenue expected to be recognised.
-- Audited FY26 result on **18 Aug 2026**: whether EBITDA margin stayed near FY25 levels despite planned growth investment, plus FY27 priorities/capital allocation.
-- Evidence that Medidata contributes material revenue rather than just pipeline language.
+- FY27 revenue conversion from **US$89.0M** FY26 net sales contracts and **US$48.3M** contracted FY27 revenue expected to be recognised (up 54%), noting management's expectation of a second-half bias.
+- Whether FY27 EBITDA margins hold near the FY26 **30%** level given the planned two-year (FY27–FY28) AI/workflow-orchestration build-out; management guides margins maintained but this is the key execution watch.
+- Evidence that Medidata contributes material revenue rather than just pipeline language (co-selling arrangements called out in FY26 result).
 - Customer concentration and repeat-contract data.
 - Independent market-share evidence versus Cambridge Cognition, Signant, MedAvante-ProPhase, VeraSci/NeuroCog, and CRO/eCOA bundles.
-- Healthcare segment: stabilisation or continued decline.
-- AI product launch: actual revenue, customer adoption, and margin impact.
+- Healthcare segment: FY26 was flat at **US$2.5M** with stable gross contribution; watch for stabilisation/uptick from the Eisai Global License.
+- AI product adoption (Rater Training, Central Monitoring) and margin impact; gross margin path (1H26 53% → 2H26 62%).
 - Director/insider trading and whether high insider ownership remains aligned.
 
 ## Sources
@@ -151,6 +151,11 @@ The canonical ROI is therefore **20.5%/yr** (`valuation.weighted-average.roi: 0.
 - Cogstate FY25 Annual Report, ASX PDF, 22 Aug 2025: https://announcements.asx.com.au/asxpdf/20250822/pdf/06n5q0yp7j5rv0.pdf
 - Cogstate 1H26 Financial Results summary, InvestorPA mirror of ASX announcement, 19 Feb 2026: https://investorpa.com/announcement/258209/
 - Cogstate 3Q26 Business Update, ASX PDF, 8 Apr 2026: https://announcements.asx.com.au/asxpdf/20260408/pdf/06y7hvf4s7ztb5.pdf
-- Cogstate 4Q26 and FY26 Business Update, ASX/Markit PDF, 8 Jul 2026, document key `2924-03108884-3A696806`: https://asx.api.markitdigital.com/asx-research/1.0/file/2924-03108884-3A696806
-- Yahoo Finance via local `yfin` CLI for CGS.AX 31 Jul 2026 close, market cap, valuation, EPS estimates, dividends, financial snapshot, and estimate revisions; refreshed 2026-08-01.
-- ASX company-announcements search checked 2026-08-01; no Cogstate announcement after 10 Jul 2026.
+- Cogstate FY26 Financial Results and Operational Update, ASX PDF, 18 Aug 2026: https://announcements.asx.com.au/asxpdf/20260818/pdf/072vvqt4lj74ny.pdf
+- Cogstate FY25 Financial Results and Operational Update, ASX PDF, 22 Aug 2025: https://announcements.asx.com.au/asxpdf/20250822/pdf/06n5qcfnnhlh6w.pdf
+- Cogstate FY25 Annual Report, ASX PDF, 22 Aug 2025: https://announcements.asx.com.au/asxpdf/20250822/pdf/06n5q0yp7j5rv0.pdf
+- Cogstate 1H26 Financial Results summary, InvestorPA mirror of ASX announcement, 19 Feb 2026: https://investorpa.com/announcement/258209/
+- Cogstate 3Q26 Business Update, ASX PDF, 8 Apr 2026: https://announcements.asx.com.au/asxpdf/20260408/pdf/06y7hvf4s7ztb5.pdf
+- Cogstate FY26 Annual Report and Appendix 4E, ASX, 18 Aug 2026.
+- Yahoo Finance via local `yfin` CLI for CGS.AX, refreshed 2026-08-22 (price A$3.10, market cap ~A$527M, EPS estimates, dividends).
+- ASX company-announcements search via `stock_announcements` ticker CGS.AX checked 2026-08-22; FY26 results, investor briefing, dividend, annual report and Appendix 4E all released 18 Aug 2026.

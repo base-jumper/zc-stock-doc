@@ -2,7 +2,7 @@
 ticker: NU
 company: Nu Holdings Ltd.
 watching: true
-last-updated: 2026-08-18
+last-updated: 2026-08-22
 updated-by: Barry
 disqualified: false
 analysis-strategy: rule-breakers
@@ -32,8 +32,8 @@ traits:
   catalyst:              {score: 0.40, confidence: 0.60}
 valuation:
   exit-multiple:
-    price: 14.74
-    entry-multiple: 17.34
+    price: 14.58
+    entry-multiple: 17.15
     years: 10
     metric: Earnings
     fundamental: 0.85
@@ -41,13 +41,13 @@ valuation:
     exit-multiple: 15
     dilution: 1.5%
     dividend-yield: 0%
-    roi: 0.162307
-    date: 2026-08-18
+    roi: 0.163576
+    date: 2026-08-22
   weighted-average:
     weights:
       exit-multiple: 1.0
-    roi: 0.162307
-    date: 2026-08-18
+    roi: 0.163576
+    date: 2026-08-22
 strategies:
   cash-cow:
     score:      0.7795
@@ -62,15 +62,15 @@ strategies:
     score:      0.7517
     confidence: 0.7442
 overall:
-  qv_score:    0.678
-  cqv_score:   0.604
+  qv_score:    0.681
+  cqv_score:   0.606
   agent_score: 0.68
 ---
 # NU — Nu Holdings Ltd.
 
 ## Business Overview
 
-Nu Holdings (NYSE: NU) is the holding company for Nubank, the largest digital bank in Latin America — a mobile-first bank with no branches serving **139 million customers** across Brazil (~118m), Mexico (~16m) and Colombia (~5.2m). Founded in 2013 by David Vélez, Edward Wible and Cristina Junqueira, it is headquartered in São Paulo, listed on the NYSE (Cayman-incorporated), and valued at ~$71b at the time of writing.
+Nu Holdings (NYSE: NU) is the holding company for Nubank, the largest digital bank in Latin America — a mobile-first bank with no branches serving **139 million customers** across Brazil (~118m), Mexico (~16m) and Colombia (~5.2m). Founded in 2013 by David Vélez, Edward Wible and Cristina Junqueira, it is headquartered in São Paulo, listed on the NYSE (Cayman-incorporated), and valued at ~$70b at the time of writing.
 
 **How it makes money** (managerial P&L, Q2 2026): gross revenue of **$5.88b** split among Credit Income $3.60b (61%), Float income $1.45b (25%) and Fee income $0.82b (14%). It funds itself largely with deposits ($45.3b) priced at 88% of interbank, and earns a 22.9% NIM / 12.4% risk-adjusted NIM on a $39.4b credit portfolio (cards $26b, unsecured $10.3b, secured $3.1b). Cost-to-serve is ~$1/active customer/month, with an efficiency ratio of 19.5% — roughly a third to a half of incumbent Brazilian banks. Gross profit is contributed ~41% by credit, 34% by float and 25% by fees.
 
@@ -82,7 +82,7 @@ Q2 2026 (quarter ended 30 June 2026, reported 13 Aug 2026) was a milestone: **ne
 
 **Industry.** Digital banking in Latin America is still structurally under-penetrated: Brazil remains over-banked by branches with high fee loads, and Mexico/Colombia even earlier. Nu reaches only 16.5% of Mexico's adult population — comparable to Brazil in 2020 — with Mexico cohorts monetizing earlier (ARPAC $12.3 at the same stage vs $5.6 in Brazil). 90+ delinquency is improving for Nu across every income band since July 2025 while peer banks deteriorated, evidence the digital-credit wave still retains wins.
 
-Growth drivers are durable (branchless economics, PIX/USP/SPEI modernization, regulation standardizing payment rails by year-end 2026 in Mexico, super-app credit culture) and the market is enormous relative to penetration. Main structural risks: Brazil macro/currency and Selic (14% after 4 consecutive 25bp cuts), competition in Mexico from Incumbents, and regulation.
+Growth drivers are durable (branchless economics, PIX/USP/SPEI modernization, regulation standardizing payment rails by year-end 2026 in Mexico, super-app credit culture) and the market is enormous relative to penetration. Main structural risks: Brazil macro/currency and Selic (still elevated after successive 25bp cuts), competition in Mexico from Incumbents, and regulation.
 
 ### Top Dog — 0.85 / 0.80
 
@@ -144,22 +144,22 @@ Confidence 0.75 because NPS is not reported formally in the last release — a n
 
 Nu is a high-momentum compounding fintech: top-dog brand with a real data moat, cash-engine unit economics ($0.7-1 cost to serve), yet still early in Mexico/Colombia. Q2 2026 crossed $1b quarterly net income — its profitability is real but not mature.
 
-**Top detractors** from a higher score: (1) decelerating customer growth — revenue quality now a function of monetization, a 2-year clock; (2) Brazil rate cycle + macro (Selic 14%); (3) credit quality normalized after riskier cohorts (90+ NPL 6.9%, +35bps); (4) competition rising in Mexico from incumbent capital; (5) the share multiple is not distressed — 20x trailing, 13x forward.
+**Top detractors** from a higher score: (1) decelerating customer growth — revenue quality now a function of monetization, a 2-year clock; (2) Brazil rate cycle + macro (Selic still elevated after successive cuts); (3) credit quality normalized after riskier cohorts (90+ NPL 6.9%, +35bps); (4) competition rising in Mexico from incumbent capital; (5) the share multiple is not distressed — ~19x trailing, ~13x forward.
 
-Current rating (agent_score 0.68): best-of-breed LatAm fintech at a reasonable but not cheap price; ROI hinges on the growth path holding high-teens EPS gains for the decade.
+Current rating (agent_score 0.68): best-of-breed LatAm fintech at a reasonable but not cheap price; ROI hinges on the growth path holding high-teens EPS gains for the decade. Valuation refreshed 2026-08-22 at $14.58 (+16.36%/yr expected) — the ~$0.16 price drift since the 08-18 update barely moved the ROI.
 
 ## Valuation
 
 Rule-breaker/weighted-average blend. The TAM-capture lens would normally join but **no market-doc exists for LatAm digital banking** (prerequisite: create one via market-analysis); the build below runs with the exit-multiple lens only, honestly.
 
 **Exit-multiple (10y, Earnings):**
-- Price **$14.74/share** (2026-08-18 market close).
-- Fundamental: **$0.85/share** current EPS — intentionally between TTM $0.73/yr and the ~$0.87 2026E consensus figure, reflecting Q2's $0.22 run rate (annualizing ~$0.88) with conservatism for seasonality and macro.
+- Price **$14.58/share** (2026-08-22 market close, ~$70.4b market cap).
+- Fundamental: **$0.85/share** current EPS — intentionally between TTM $0.75/yr (FY25 $0.58 diluted + Q2-run-rate uplift) and the ~$0.84-0.89 2026E consensus figure, reflecting Q2's $0.22 run rate (annualizing ~$0.88) with conservatism for seasonality and macro.
 - Growth path: fade from 39% current growth to decade-end high-teens/teens: [28, 26, 24, 22, 20, 19, 17, 16, 14, 12] — compound **~19.7%/yr**.
-- Exit multiple **15x** (below the **17.34x** entry multiple — no re-rating relied on), dilution **1.5%/yr** (SBC + option vesting), dividend **0%**.
-- **Result: annualized ROI +16.23%/yr** (script, 2026-08-18): business growth +19.7% carries the return, dilution −1.5%, multiple re-rating −1.4% (17.34x → 15x is a small drag), income 0. Exit price $66.33 in 10y.
+- Exit multiple **15x** (below the **17.15x** entry multiple — no re-rating relied on), dilution **1.5%/yr** (SBC + option vesting), dividend **0%**.
+- **Result: annualized ROI +16.36%/yr** (script, 2026-08-22): business growth +19.7% carries the return, dilution −1.5%, multiple re-rating −1.3% (17.15x → 15x is a small drag), income 0. Exit price $66.33 in 10y.
 
-The exit lens is well anchored — Nu is genuinely profitable (TTM EPS $0.73, Q2 run-rate ~$0.88). The **weighted-average** blend currently has a single applicable component (weights {exit-multiple: 1.0}), so the blended ROI is also **+16.23%/yr**. A TAM-capture lens cannot be computed until a LatAm digital-banking market doc is created; that is the next update's unlock — when both lenses exist, the blend weights and strategy confidence should be revisited.
+The exit lens is well anchored — Nu is genuinely profitable (TTM EPS $0.75, Q2 run-rate ~$0.88, 2026E ~$0.84-0.89). The **weighted-average** blend currently has a single applicable component (weights {exit-multiple: 1.0}), so the blended ROI is also **+16.36%/yr**. A TAM-capture lens cannot be computed until a LatAm digital-banking market doc is created; that is the next update's unlock — when both lenses exist, the blend weights and strategy confidence should be revisited.
 
 ## Thesis Connections
 
@@ -169,12 +169,11 @@ The exit lens is well anchored — Nu is genuinely profitable (TTM EPS $0.73, Q2
 
 ## Watch
 
-- **Q3 2026, next earnings (Nov 13 2026)**: revenues trend vs +39-40% FXN; NIM 22-23% and risk-adjusted NIM 12.4% hold vs Selic cuts; cost of credit path in seasonal Q4.
-- **Credit quality**: 90+ 6.9% NPL migration of the 2025-26 riskier (unsecured-first) cohorts; card and personal-loan 50-90 trends; provisions.
-- **Mexico**: post-bank-launch (Aug 2026) — deposit optimization (LDR 35%), ARPAC progression vs Brazilian cohorts, GDP-linked customer adds; full bank license ramp.
-- **Efficiency ratio**: 19.5% vs Q-investment cycle; watch whether expansion spending (Real-estate/marketing shift) inflects back toward ~17-18% through H2'26.
-- **Brazil structure**: full banking license application in Brazil, upmarket products (Ultravioleta, Croma), and any new consumer or SME product roadmap.
-- **Funding**: deposit mix, USD funding (low-LFL), and interbank-rate correlation (cost 88% of Selic).
+- **Q3 2026, next earnings (Nov 13 2026)**: revenues trend vs +39-40% FXN; NIM 22-23% and risk-adjusted NIM 12.4% hold as the Selic cut cycle continues; cost of credit path in seasonal Q4; Q2's efficiency uptick (19.5% vs 17.6% Q1) is quarter-timing (real-estate/marketing shift) — watch reversion toward ~17-18%.
+- **Credit quality**: 90+ 6.9% NPL migration of the 2025-26 riskier (unsecured-first) cohorts; card and personal-loan 50-90 trends (15-90 improved 16bps to 4.8% in Q2); provisions.
+- **Mexico**: post-bank-launch (launched Aug 2026, now the largest digital bank in Mexico) — deposit optimization (LDR 35%), ARPAC progression ($12.3 vs $5.6 Brazil at same stage) vs Brazilian cohorts; full bank license ramp; SPEI standardization effect by year-end 2026.
+- **Brazil structure**: full banking license application in Brazil (announced with Q2 2026), upmarket products (Ultravioleta, Croma launched July 2026 for Super Core), and any new consumer or SME product roadmap.
+- **Funding**: deposit mix, USD funding (low-LFL), and interbank-rate correlation (cost 88% of Selic, -3pp YoY).
 - **Share & SBC**: dilution (~1.5%/yr) and buyback watch; insider sales (small, none alarming).
 - **Regulatory**: Mexico–Brazil payment rails (PIX/SPEI) standardization, Pix escrow returns or limit framework; any antitrust/data-privacy actions.
 - **Next research step**: create a LatAm digital-banking market doc to add the tam-capture lens and weights (rule-breakers' blend).
@@ -186,6 +185,6 @@ The exit lens is well anchored — Nu is genuinely profitable (TTM EPS $0.73, Q2
 - Nu Holdings Annual Report Form 20-F for FY2025 (filed 8 Apr 2026), SEC — risk factors, audited financials, business description. https://www.sec.gov/ix?doc=/Archives/edgar/data/0001691493/000129281426002166/nuform20f_2025.htm
 - Nu Holdings Q4 2025 / FY2025 results (Form 6-K, filed 25 Feb 2026): FY revenue, net income. https://www.sec.gov/Archives/edgar/data/1691493/000129281426000501/nu20260225_6k.htm
 - SEC EDGAR company filings index for CIK 1691493 (validates FY2025 12/31 year-end, no fiscal change). https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1691493
-- Yahoo Finance via `yfin`, NU quote & data fetched 17-18 Aug 2026 (price 14.74, market cap ~$71b, P/E data, financials, holders).
+- Yahoo Finance via `yfin`, NU quote & data fetched 17-18 Aug 2026 (price 14.74, market cap ~$71b, P/E data, financials, holders) and refreshed 22 Aug 2026 (price 14.58, market cap ~$70.4b, trailing P/E 19.4, fwd P/E 12.7, 2026E EPS ~$0.84-0.89).
 - Nu investor relations / Newsroom (results pages). https://international.nubank.com.br/newsroom/
 - Wikipedia: Nubank (August), company profile, capital markets facts, listed on NYSE, Berkshire — cross-check only. https://en.wikipedia.org/wiki/Nubank

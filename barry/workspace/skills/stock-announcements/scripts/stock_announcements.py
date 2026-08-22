@@ -27,7 +27,7 @@ import yaml
 
 WORKSPACE = Path(__file__).resolve().parents[3]
 DEFAULT_STOCK_DIR = WORKSPACE / "investment" / "stock-docs"
-DEFAULT_STATE = WORKSPACE / "tasks" / "stock-announcement-monitor-state.json"
+DEFAULT_STATE = WORKSPACE / "state" / "stock-announcements.json"
 
 ASX_URLS = (
     "https://www.asx.com.au/asx/v2/statistics/todayAnns.do",
